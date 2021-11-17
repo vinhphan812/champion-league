@@ -1,10 +1,14 @@
-module.exports = function (req, res, next) {
-	const userId = req.signedCookies.userId;
-	if (!userId) return res.redirect("/login");
+const User = require("../model/user.model");
 
-     // get user from db 
-     const user;
-     if(!user) res.redirect("/login");
-	res.locals.user = user;
-	next();
+module.exports = {
+	authMiddleware: async (req, res, next) => {
+		const userId = req.signedCookies.userId;
+		if (!userId) return res.redirect("/login");
+		const user = await User.findOne({ _id: userId });
+
+		if (!user) res.redirect("/login");
+
+		res.locals.user = user;
+		next();
+	},
 };

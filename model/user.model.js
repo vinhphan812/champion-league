@@ -6,7 +6,9 @@ const userSchema = new Schema({
 	username: String,
 	password: String,
 	email: String,
+	isVerifyEmail: Boolean,
 	phone: String,
+	permission: { type: String, enum: ["admin", "manager", "user"] },
 });
 
 const User = model("User", userSchema, "Users");

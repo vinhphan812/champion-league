@@ -1,8 +1,10 @@
 const express = require("express");
 
+const { authMiddleware } = require("../middlewares/auth.middleware");
+
 const router = express.Router();
 
-// router.use();
+router.use(authMiddleware);
 
 router.get("/", function (req, res) {
 	res.send("USER");

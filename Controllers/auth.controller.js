@@ -1,14 +1,42 @@
 const { nanoid } = require("nanoid"),
 	md5 = require("md5"),
-	mongoose = require("mongoose"),
-	User = require("../model/user.modal");
+	{ sendMail } = require("../modules/mailer.js");
+const User = require("../model/user.model"),
+	Permission = require("../model/permission.model");
 
 module.exports = {
 	loginPage: (req, res, next) => {
-		res.send("Login page");
+		res.render("auth/login");
 	},
-	postLogin: (req, res, next) => {
-		res.send("post login");
+	postLogin: async (req, res, next) => {
+		const { username, pass } = req.body;
+		const user = await User.findOne({
+			$and: [
+				{
+					$or: [
+						{ username },
+						{ email: username },
+						{ phone: username },
+					],
+				},
+				{ password: md5(pass) },
+			],
+		});
+
+		if (!user) {
+			return res.render("auth/login", {
+				username,
+				pass,
+				errors: ["username or password is incorrect"],
+			});
+		}
+
+		res.cookie("userId", user._id.toString(), {
+			signed: true,
+			maxAge: 60 * 60 * 1000,
+		});
+		if (user.permission == "admin") res.redirect("/admin");
+		else res.redirect("/");
 	},
 	registerPage: (req, res, next) => {
 		res.render("auth/register");
@@ -17,35 +45,13 @@ module.exports = {
 		const { user, pass, confirm, email, phone, firstName, lastName } =
 				req.body,
 			errors = [];
-		if (
-			!user ||
-			!pass ||
-			!confirm ||
-			!email ||
-			!phone ||
-			!firstName ||
-			!lastName
-		)
-			errors.push("Vui lòng điền đầy đủ thông tin để đăng kí.");
 
-		if (errors.length)
-			return res.render("auth/register", {
-				errors,
-				user,
-				pass,
-				confirm,
-				email,
-				phone,
-				firstName,
-				lastName,
-			});
 		try {
-			console.log(email, phone);
 			const correct = await User.find({
 				$or: [{ email }, { phone }],
 			});
 			if (correct.length) {
-				errors.push(["Email, số điện thoại đã được đăng kí."]);
+				errors.push("Email, số điện thoại đã được đăng kí.");
 				return res.render("auth/register", {
 					errors,
 					user,
@@ -57,6 +63,7 @@ module.exports = {
 					lastName,
 				});
 			}
+
 			const info = new User({
 				username: user,
 				password: md5(pass),
@@ -64,10 +71,14 @@ module.exports = {
 				firstName,
 				lastName,
 				phone,
+				permission: "user",
 			});
-			await info.save();
+
+			const result = await info.save();
+			console.log(result);
 			res.redirect("/");
 		} catch (error) {
+			console.log(error);
 			errors.push(["Xảy ra lỗi khi tạo tài khoản"]);
 			res.render("auth/register", {
 				errors,
@@ -80,5 +91,18 @@ module.exports = {
 				lastName,
 			});
 		}
+	},
+	forgotPage: (req, res, next) => {
+		res.render("auth/forgot");
+	},
+	postForgot: async (req, res, next) => {
+		const { email } = req.body;
+
+		const user = await User.findOne({ email });
+
+		if (user) {
+			sendMail(email);
+			res.redirect("/login");
+		} else res.render("auth/forgot", { errors: ["Account Not Found."] });
 	},
 };

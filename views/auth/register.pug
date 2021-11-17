@@ -1,6 +1,6 @@
 extend ../layouts/common.pug
 
-block title
+block head
      title Register Account
 
 
@@ -19,4 +19,6 @@ block content
                input.form-control.my-2(type="password", name="confirm", placeholder="confirm", value=confirm||"")
                input.form-control.my-2(type="email", name="email", placeholder="email", value=email||"")
                input.form-control.my-2(type="text", name="phone", placeholder="phone", value=phone||"")
-               input.btn.btn-primary(type="submit", name="submit", value="Register")
+               .d-flex.justify-content-between.align-items-center
+                    a(href="/login") have a account?
+                    input.btn.btn-primary(type="submit", name="submit", value="Register")

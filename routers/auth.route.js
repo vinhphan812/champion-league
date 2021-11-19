@@ -17,11 +17,6 @@ const router = express.Router();
 
 router.route("/login").get(loginPage).post(loginValidation, postLogin);
 
-router
-	.route("/register")
-	.get(registerPage)
-	.post(registerValidation, postRegister);
-
 router.get("/logout", function (req, res, next) {
 	res.clearCookie("userId").redirect("/");
 });

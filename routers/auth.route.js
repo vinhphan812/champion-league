@@ -7,7 +7,7 @@ const {
 		postRegister,
 		forgotPage,
 		postForgot,
-	} = require("../Controllers/auth.controller"),
+	} = require("../controllers/auth.controller"),
 	{
 		registerValidation,
 		loginValidation,

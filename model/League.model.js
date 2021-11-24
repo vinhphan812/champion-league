@@ -2,7 +2,7 @@ const { Schema, model } = require("mongoose");
 
 const LeagueSchema = new Schema(
 	{
-		leagueName: String,
+		name: String,
 		description: String,
 		startTime: Date,
 		endTime: Date,

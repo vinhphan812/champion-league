@@ -6,6 +6,8 @@ const LeagueSchema = new Schema(
 		description: String,
 		startTime: Date,
 		endTime: Date,
+		logo_path: { type: String, default: "/" },
+		backdrop_path: { type: String, default: "/" },
 	},
 	{ versionKey: false }
 );

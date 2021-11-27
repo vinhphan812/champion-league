@@ -5,8 +5,8 @@ const TeamSchema = new Schema(
 		name: String,
 		founded: Date,
 		manager: String,
-		logo_path: String,
-		drop_path: String,
+		logo_path: { type: String, default: "/" },
+		backdrop_path: { type: String, default: "/" },
 		leagueId: { type: Schema.Types.ObjectId, ref: "Leagues" },
 	},
 	{ versionKey: false }

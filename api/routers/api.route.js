@@ -1,35 +1,36 @@
 const express = require("express");
 
 // middleware
-const { authMiddleware } = require("../../middlewares/auth.middleware"),
+const { authMiddleware } = require("../middlewares/auth.middleware"),
 	{
 		decentralization,
 	} = require("../../middlewares/decentralization.middleware");
 
+const leaguesRoute = require("./league.route");
 // controller
-const {
-	infoAPI,
-	createLeague,
-	notFound,
-	getLeagues,
-} = require("../Controllers/api.controller");
+const ctrler = require("../controllers/api.controller");
 
 const router = express.Router();
 
-router.use(authMiddleware, decentralization("user"));
+router.use("/leagues", leaguesRoute);
 
-router.get("/", infoAPI);
+router.use(authMiddleware, decentralization("manager"));
 
-router.route("/leagues").get(getLeagues).post(createLeague);
+router.get("/", ctrler.infoAPI);
 
-router.route("/leagues/:id").get().put().delete();
+// router
+// 	.route("/leagues/:league/teams")
+// 	.get(ctrler.getTeams)
+// 	.post(ctrler.createTeam);
 
-router.route("/team").get().post();
+// router.route("/leagues/:league/teams/:team").get().put().delete();
 
-router.route("/team/:id").get().put().delete();
+// router.route("/teams/:team/player/:id").get().post().put().delete();
 
-router.route("/player").get().post().put().delete();
+// router.route("/leagues/:league/match").get().post();
 
-router.use(notFound);
+// router.route("/leagues/:league/match:match").get().put().delete();
+
+router.use(ctrler.notFound);
 
 module.exports = router;

@@ -2,8 +2,12 @@ const Team = require("../../model/team.model.js");
 
 module.exports = {
 	getTeams: async (req, res) => {
-		const teams = await Team.find({});
-		res.json({
+		const teams = await Team.find(
+			{ leagueId: req.params.league },
+			{ _id: 1, name: 1, manager: 1, logo_path: 1, backdrop_path: 1 }
+		);
+
+		res.status(200).json({
 			success: true,
 			code: 200,
 			data: teams,
@@ -12,32 +16,7 @@ module.exports = {
 	},
 	// CURD teams in League
 	createTeams: async (req, res) => {
-		const { name, founded, manager, logo_path, drop_path } = req.body;
-
-		if (!name || !founded || !manager || !logo_path || !drop_path)
-			return res.status(403).json({
-				success: false,
-				message: "please fill out name, founded, manager, logo_path, drop_path",
-				code: 403,
-			});
-
-		const teams = await Team.findOne({ name });
-
-		if (teams)
-			return res.status(403).json({
-				success: false,
-				message: "Team name already exists",
-				code: 403,
-			});
-
-		const team = await Team.create({
-			name,
-			founded,
-			manager,
-			logo_path,
-			drop_path,
-			leagueId: req.params.league,
-		});
+		const team = await Team.create(res.locals.body);
 
 		res.json({
 			success: true,
@@ -47,8 +26,8 @@ module.exports = {
 		});
 	},
 	updateTeam: async (req, res) => {
-		const { body } = req;
-		const { id } = res.locals.team;
+		const { body } = req,
+			{ id } = res.locals.team;
 
 		await Team.update({ _id: id }, body);
 
@@ -63,7 +42,7 @@ module.exports = {
 			success: true,
 			code: 200,
 			data: res.locals.team,
-			message: `get data ${req.params.team} in ${req.params.league}`,
+			message: `${req.params.team} in ${req.params.league}`,
 		});
 	},
 	removeTeam: async (req, res) => {

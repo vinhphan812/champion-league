@@ -2,6 +2,7 @@ const User = require("../../model/user.model");
 
 module.exports = {
 	authMiddleware: async (req, res, next) => {
+		if (req.method == "GET") return next();
 		const userId = req.signedCookies.userId;
 
 		const error = {

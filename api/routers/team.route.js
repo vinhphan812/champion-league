@@ -3,14 +3,18 @@ const express = require("express");
 const ctrler = require("../controllers/team.controller");
 
 const { authMiddleware } = require("../middlewares/auth.middleware"),
-	leagueMiddleware = require("../middlewares/league.middleware"),
-	teamMiddleware = require("../middlewares/team.middleware");
+	teamMiddleware = require("../middlewares/team.middleware"),
+	{ createTeam } = require("../validation/api.validation");
+
+const teamRoute = require("./player.route.js");
 
 const router = express.Router({ mergeParams: true });
 
-router.use(authMiddleware, leagueMiddleware);
+router.use(authMiddleware);
 
-router.route("/").get(ctrler.getTeams).post(ctrler.createTeams);
+router.use("/:team/players", teamRoute);
+
+router.route("/").get(ctrler.getTeams).post(createTeam, ctrler.createTeams);
 
 router
 	.route("/:team")

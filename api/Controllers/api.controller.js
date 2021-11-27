@@ -6,9 +6,6 @@ module.exports = {
 			message: "this is a api football league",
 		});
 	},
-	// router /teams
-	getTeams: (req, res, next) => {},
-	createTeam: (req, res) => {},
 	notFound: (req, res, next) => {
 		res.status(404).json({
 			success: false,

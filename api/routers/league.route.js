@@ -5,21 +5,29 @@ const { authMiddleware } = require("../middlewares/auth.middleware"),
 
 const ctrler = require("../controllers/league.controller");
 
-const teamRoute = require("./team.route");
+const teamRoute = require("./team.route"),
+	matchRoute = require("./match.route");
+
+const { createLeague } = require("../validation/api.validation");
 
 const router = express.Router();
 
 router.use(authMiddleware);
 
-router.use("/:league/teams", teamRoute);
+router.use("/:league/matchs", leagueMiddleware, matchRoute);
 
-router.route("/").get(ctrler.getLeagues).post(ctrler.createLeague);
+router.use("/:league/teams", leagueMiddleware, teamRoute);
+
+router
+	.route("/")
+	.get(ctrler.getLeagues)
+	.post(createLeague, ctrler.createLeague);
 
 router
 	.route("/:league")
 	.all(leagueMiddleware)
-	.get(ctrler.getDetailLeague)
+	.get(ctrler.getLeague)
 	.put(ctrler.updateLeague)
-	.delete(ctrler.removeLeague);
+	.delete(ctrler.removeLeague); // remove league => remove all team in league and all match in league
 
 module.exports = router;

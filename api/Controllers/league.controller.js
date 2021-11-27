@@ -9,21 +9,7 @@ module.exports = {
 
 	// CURD leagues
 	createLeague: async (req, res, next) => {
-		const { leagueName, startTime, endTime, description } = req.body;
-
-		if (!leagueName || !startTime || !endTime || !description)
-			return res.json({
-				code: 404,
-				success: false,
-				message: "please fill out leagueName, description startTime, endTime",
-			});
-
-		const league = await League.create({
-			leagueName,
-			description,
-			startTime: new Date(startTime),
-			endTime: new Date(endTime),
-		});
+		const league = await League.create(res.locals.league);
 
 		res.json({
 			success: true,
@@ -32,7 +18,7 @@ module.exports = {
 			code: 200,
 		});
 	},
-	getDetailLeague: async (req, res, next) => {
+	getLeague: async (req, res, next) => {
 		res.json({
 			success: true,
 			data: res.locals.league,
@@ -41,7 +27,7 @@ module.exports = {
 	},
 	updateLeague: async (req, res, next) => {
 		const { body } = req,
-			_id = res.locals.league._id.toString();
+			_id = res.locals.league._id;
 
 		await League.update({ _id }, body);
 
@@ -55,9 +41,9 @@ module.exports = {
 		});
 	},
 	removeLeague: async (req, res, next) => {
-		const _id = res.locals.league._id.toString();
+		const _id = res.locals.league;
 
-		await League.remove({ _id: _id });
+		await League.remove({ _id });
 
 		res.json({
 			success: true,

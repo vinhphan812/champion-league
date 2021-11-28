@@ -1,4 +1,7 @@
-const League = require("../../model/league.model");
+const League = require("../../model/league.model"),
+	Team = require("../../model/team.model"),
+	Player = require("../../model/player.model"),
+	Match = require("../../model/match.model");
 
 module.exports = {
 	// get all Leagues
@@ -43,9 +46,17 @@ module.exports = {
 	removeLeague: async (req, res, next) => {
 		const _id = res.locals.league;
 
+		const teamsInLeague = await Team.find({ leagueId: _id });
+
+		await Player.remove({ teamId: teamsInLeague });
+
+		await Team.remove({ leagueId: _id });
+
+		await Match.remove({ leagueId: _id });
+
 		await League.remove({ _id });
 
-		res.json({
+		await res.json({
 			success: true,
 			message: "League deleted successfully",
 			code: 200,

@@ -46,6 +46,7 @@ app.use("/admin", adminRoute);
 app.set("view engine", "pug");
 app.set("views", "./views");
 
+// error 404
 app.use(notFoundMiddlware);
 
 // host server

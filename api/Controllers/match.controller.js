@@ -1,5 +1,4 @@
-const Match = require("../../model/match.model"),
-	Team = require("../../model/team.model");
+const Match = require("../../model/match.model");
 
 module.exports = {
 	getMatchs: async (req, res, next) => {
@@ -29,7 +28,16 @@ module.exports = {
 	getMatch: async (req, res, next) => {
 		let { match } = res.locals;
 
-		match.teams = await Team.find({ _id: match.teams });
+		match = await Match.findOne(
+			{ _id: match },
+			{
+				createAt: 0,
+				updateAt: 0,
+			}
+		).populate("teams", {
+			createAt: 0,
+			updateAt: 0,
+		});
 
 		res.json({
 			success: true,

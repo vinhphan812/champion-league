@@ -33,7 +33,7 @@ module.exports = {
 	},
 	updateLeague: async (req, res, next) => {
 		const { body } = req,
-			{ createAt, _id } = res.locals.league;
+			{ createAt, _id, name } = res.locals.league;
 
 		body.updateAt = new Date();
 		body.createAt = createAt;
@@ -45,15 +45,16 @@ module.exports = {
 		res.json({
 			success: true,
 			data: league,
-			message: "League updated successfully",
+			message: `Updated ${name} successfully`,
 			code: 200,
 		});
 	},
 	removeLeague: async (req, res, next) => {
-		const _id = res.locals.league;
+		const { _id, name } = res.locals.league;
 
 		const teamsInLeague = await Team.find({ leagueId: _id });
 
+		// remove all life cycle
 		await Player.remove({ teamId: teamsInLeague });
 
 		await Team.remove({ leagueId: _id });
@@ -64,7 +65,7 @@ module.exports = {
 
 		await res.json({
 			success: true,
-			message: "League deleted successfully",
+			message: `Deleted ${name} successfully`,
 			code: 200,
 		});
 	},

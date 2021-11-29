@@ -18,21 +18,26 @@ module.exports = {
 		res.json({ success: true, code: 200, data });
 	},
 	updatePlayer: async (req, res, next) => {
-		const _id = res.locals.player.id;
+		const { _id } = res.locals.player;
 
-		await Player.update({ _id }, req.body);
+		await Player.updateOne({ _id }, req.body);
 
 		const data = await Player.findOne({ _id });
 
 		res.json({ success: true, code: 200, data });
 	},
-	getPlayer: (req, res, next) => {
-		res.json({ success: true, code: 200, data: res.locals.player });
+	getPlayer: async (req, res, next) => {
+		const { player } = res.locals;
+
+		const data = await Player.find(player, {
+			createAt: 0,
+			updateAt: 0,
+		}).populate("team", { createAt: 0, updateAt: 0 });
+
+		res.json({ success: true, code: 200, data });
 	},
 	deletePlayer: async (req, res, next) => {
-		console.log(res.locals);
-
-		const _id = res.locals.player.id;
+		const { _id } = res.locals.player;
 
 		await Player.remove({ _id });
 

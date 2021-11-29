@@ -29,9 +29,12 @@ module.exports = {
 	},
 	updateTeam: async (req, res) => {
 		const { body } = req,
-			{ id } = res.locals.team;
+			{ _id, createAt } = res.locals.team;
 
-		await Team.update({ _id: id }, body);
+		body.updateAt = new Date();
+		body.createAt = createAt;
+
+		await Team.updateOne({ _id }, body);
 
 		res.json({
 			success: true,

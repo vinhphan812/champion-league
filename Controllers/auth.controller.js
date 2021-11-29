@@ -4,7 +4,7 @@ const User = require("../model/user.model");
 
 module.exports = {
 	loginPage: (req, res, next) => {
-		res.render("auth/login");
+		res.render("auth/login", { isLogin: true });
 	},
 	postLogin: async (req, res, next) => {
 		const { username, pass } = req.body;
@@ -34,7 +34,7 @@ module.exports = {
 			// maxAge: 60 * 60 * 1000,
 		});
 		if (user.permission == "admin") res.redirect("/admin");
-		else res.redirect("/");
+		else res.redirect("/manager");
 	},
 	forgotPage: (req, res, next) => {
 		res.render("auth/forgot");

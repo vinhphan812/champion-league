@@ -1,0 +1,32 @@
+body {
+	height: 100vh;
+}
+
+.dark {
+	background-color: #2b2f31;
+}
+
+.page-footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	color: #fff;
+}
+
+.page-footer.dark ul {
+	list-style-type: none;
+}
+
+.page-footer.dark a {
+	color: #fff;
+}
+
+.user-avatar {
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	border: 1px solid #eee;
+	margin-right: 0.5rem;
+	background-color: #999;
+}

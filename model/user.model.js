@@ -6,10 +6,13 @@ const userSchema = new Schema(
 		lastName: String,
 		username: String,
 		password: String,
+		avatar: { type: String, default: "/public/images/user_48px.png" },
 		email: String,
 		isVerifyEmail: Boolean,
 		phone: String,
 		permission: { type: String, enum: ["admin", "manager", "user"] },
+		createAt: { type: Date, default: new Date() },
+		updateAt: { type: Date, default: new Date() },
 	},
 	{ versionKey: false }
 );

@@ -1,18 +1,16 @@
 const { Schema, model } = require("mongoose");
 
-const TeamSchema = new Schema(
+const StadiumSchema = new Schema(
 	{
 		name: String,
-		founded: Date,
-		manager: String,
-		logo_path: { type: String, default: "/" },
-
+		capacity: Number,
+		teamId: { type: Schema.Types.ObjectId, ref: "Team" },
 		createAt: { type: Date, default: new Date() },
 		updateAt: { type: Date, default: new Date() },
 	},
 	{ versionKey: false }
 );
 
-const Team = model("Team", TeamSchema, "Teams");
+const Stadium = model("Player", StadiumSchema, "Players");
 
-module.exports = Team;
+module.exports = Stadium;

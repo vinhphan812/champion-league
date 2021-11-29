@@ -8,6 +8,8 @@ const MatchSchema = new Schema(
 		startTime: Date,
 		placeIn: String,
 		leagueId: { type: Schema.Types.ObjectId, ref: "Leagues" },
+		createAt: { type: Date, default: new Date() },
+		updateAt: { type: Date, default: new Date() },
 	},
 	{ versionKey: false }
 );

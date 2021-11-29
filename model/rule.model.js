@@ -1,18 +1,15 @@
 const { Schema, model } = require("mongoose");
 
-const TeamSchema = new Schema(
+const RuleSchema = new Schema(
 	{
 		name: String,
-		founded: Date,
-		manager: String,
-		logo_path: { type: String, default: "/" },
-
+		detail: String,
 		createAt: { type: Date, default: new Date() },
 		updateAt: { type: Date, default: new Date() },
 	},
 	{ versionKey: false }
 );
 
-const Team = model("Team", TeamSchema, "Teams");
+const Rule = model("Rule", RuleSchema, "Rules");
 
-module.exports = Team;
+module.exports = Rule;

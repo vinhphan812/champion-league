@@ -6,6 +6,7 @@ const fields = {
 	team: "",
 	match: "{ name, description, teams, placeIn, startTime }",
 	player: "{name, weight, height, numberInTeam, birthday, position}",
+	rule: "{name, description}",
 };
 
 const ERROR_MSG = {
@@ -21,7 +22,7 @@ module.exports = {
 		const { name, startTime, endTime, description } = req.body;
 
 		if (checkNotContain([name, startTime, endTime, description]))
-			return responseError(res, ERROR_MSG.invalid + fields.league);
+			return Error(res, ERROR_MSG.invalid + fields.league);
 
 		res.locals.league = req.body;
 
@@ -46,34 +47,32 @@ module.exports = {
 				code: 403,
 			});
 
-		res.locals.team = {
-			...req.body,
-		};
+		res.locals.team = req.body;
+
 		next();
 	},
 	createMatch: async (req, res, next) => {
 		const { name, description, teams, placeIn, startTime } = req.body;
 
 		if (checkNotContain([name, description, teams, placeIn, startTime]))
-			return responseError(res, ERROR_MSG.invalid + fields.match);
+			return Error(res, ERROR_MSG.invalid + fields.match);
 
 		const teamList = teams.split(/-| - | -|- /);
 
 		if (teamList.length != 2)
-			return responseError(
+			return Error(
 				res,
 				'Create a match containing 2 teams separated by a "-" sign'
 			);
 
 		if (teamList[0].length != 24 || teamList[1].length != 24)
-			return responseError(res, "item in teams must a 24 characters.");
+			return Error(res, "item in teams must a 24 characters.");
 
 		const teamsCorrect = await Team.find({
 			_id: teamList,
 		});
 
-		if (teamsCorrect.length != 2)
-			return responseError(res, "id teams invalid.");
+		if (teamsCorrect.length != 2) return Error(res, "id teams invalid.");
 		res.locals.match = {
 			name,
 			description,
@@ -89,11 +88,10 @@ module.exports = {
 
 		if (body.teams) {
 			const teams = body.teams.split(/-| - | -|- /);
-			if (teams.length != 2)
-				return responseError(res, ERROR_MSG.twoTeamErr);
+			if (teams.length != 2) return Error(res, ERROR_MSG.twoTeamErr);
 
 			if (teams[0].length != 24 || teams[1].length != 24)
-				return responseError(res, teamIdErr);
+				return Error(res, teamIdErr);
 
 			const teamsCorrect = await Team.find({
 				_id: teams,
@@ -101,7 +99,7 @@ module.exports = {
 			});
 
 			if (teamsCorrect.length != 2)
-				return responseError(res, ERROR_MSG.teamInexist);
+				return Error(res, ERROR_MSG.teamInexist);
 
 			body.teams = teams;
 		}
@@ -109,8 +107,7 @@ module.exports = {
 		next();
 	},
 	createPlayer: async (req, res, next) => {
-		const teamId = req.params.team,
-			leagueId = req.params.league;
+		const { team } = req.params;
 		const {
 			name,
 			weight,
@@ -130,33 +127,41 @@ module.exports = {
 			position,
 		]);
 
-		if (invalidData)
-			return responseError(res, ERROR_MSG.invalid + fields.player);
+		if (invalidData) return Error(res, ERROR_MSG.invalid + fields.player);
 
-		const playerContain = await Player.find({ name, teamId, leagueId });
+		const playerContain = await Player.find({ name, team });
 
 		if (playerContain.length)
-			return responseError(res, ERROR_MSG.playerContain(name));
+			return Error(res, ERROR_MSG.playerContain(name));
 
 		res.locals.body = {
 			name,
-			teamId,
+			team,
 			weight,
 			height,
 			numberInTeam,
 			birthday,
-			leagueId,
 			position,
 			avatar,
 		};
 
 		next();
 	},
+	createRule: async (req, res, next) => {
+		const { name, description } = req.body;
+
+		if (checkNotContain([name, description]))
+			return Error(res, ERROR_MSG.invalid + fields.rule);
+
+		res.locals.body = req.body;
+
+		next();
+	},
 };
 
-function responseError(res, message) {
-	return res.json({
-		code: 404,
+function Error(res, message) {
+	return res.status(400).json({
+		code: 400,
 		success: false,
 		message,
 	});

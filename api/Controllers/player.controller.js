@@ -3,6 +3,7 @@ const Player = require("../../model/player.model");
 module.exports = {
 	getPlayers: async (req, res, next) => {
 		const { team, league } = req.params;
+
 		const data = await Player.find(
 			{
 				leagueId: league,

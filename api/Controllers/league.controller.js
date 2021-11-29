@@ -3,17 +3,20 @@ const League = require("../../model/league.model");
 module.exports = {
 	// get all Leagues
 	getLeagues: async (req, res) => {
-		const leagues = await League.find({});
+		const leagues = await League.find(
+			{},
+			{ _id: 1, name: 1, startTime: 1, logo_path: 1 }
+		);
 		res.json({ code: 200, data: leagues, success: true });
 	},
 
 	// CURD leagues
 	createLeague: async (req, res, next) => {
-		const league = await League.create(res.locals.league);
+		const data = await League.create(res.locals.league);
 
 		res.json({
 			success: true,
-			data: league,
+			data: data,
 			message: "League created successfully",
 			code: 200,
 		});
@@ -27,9 +30,12 @@ module.exports = {
 	},
 	updateLeague: async (req, res, next) => {
 		const { body } = req,
-			_id = res.locals.league._id;
+			{ createAt, _id } = res.locals.league;
 
-		await League.update({ _id }, body);
+		body.updateAt = new Date();
+		body.createAt = createAt;
+
+		await League.updateOne({ _id }, body);
 
 		const league = await League.findOne({ _id });
 

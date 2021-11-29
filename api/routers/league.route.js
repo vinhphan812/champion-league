@@ -5,8 +5,7 @@ const { authMiddleware } = require("../middlewares/auth.middleware"),
 
 const ctrler = require("../controllers/league.controller");
 
-const teamRoute = require("./team.route"),
-	matchRoute = require("./match.route");
+const matchRoute = require("./match.route");
 
 const { createLeague } = require("../validation/api.validation");
 
@@ -15,8 +14,6 @@ const router = express.Router();
 router.use(authMiddleware);
 
 router.use("/:league/matchs", leagueMiddleware, matchRoute);
-
-router.use("/:league/teams", leagueMiddleware, teamRoute);
 
 router
 	.route("/")

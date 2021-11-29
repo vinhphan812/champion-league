@@ -1,28 +1,30 @@
-const Team = require("../../model/team.model.js");
+const Team = require("../../model/team.model.js"),
+	Player = require("../../model/player.model.js"),
+	Match = require("../../model/match.model.js");
 
 module.exports = {
 	getTeams: async (req, res) => {
 		const teams = await Team.find(
-			{ leagueId: req.params.league },
-			{ _id: 1, name: 1, manager: 1, logo_path: 1, backdrop_path: 1 }
+			{},
+			{ _id: 1, name: 1, manager: 1, logo_path: 1 }
 		);
 
 		res.status(200).json({
 			success: true,
 			code: 200,
 			data: teams,
-			message: `teams in ${req.params.league}`,
+			message: `teams`,
 		});
 	},
-	// CURD teams in League
+	// CURD teams
 	createTeams: async (req, res) => {
-		const team = await Team.create(res.locals.body);
+		const team = await Team.create(res.locals.team);
 
 		res.json({
 			success: true,
 			code: 201,
 			data: team,
-			message: `create in ${req.params.league}`,
+			message: `${team.name} create successful`,
 		});
 	},
 	updateTeam: async (req, res) => {
@@ -34,7 +36,7 @@ module.exports = {
 		res.json({
 			success: true,
 			code: 200,
-			message: `update team ${req.params.team} in ${req.params.league}`,
+			message: `update team ${req.locals.team.name}`,
 		});
 	},
 	getTeam: (req, res) => {
@@ -42,16 +44,25 @@ module.exports = {
 			success: true,
 			code: 200,
 			data: res.locals.team,
-			message: `${req.params.team} in ${req.params.league}`,
+			message: `detail ${req.params.team}`,
 		});
 	},
 	removeTeam: async (req, res) => {
-		const { id } = res.locals.team;
-		await Team.remove({ _id: id });
+		const { team } = res.locals;
+
+		// remove player in team
+		await Player.deleteMany({ teamId: team });
+
+		// remove all match have a team join in.
+		await Match.deleteMany({ teams: team });
+
+		// remove team
+		await Team.deleteOne({ _id: team });
+
 		res.json({
 			success: true,
 			code: 200,
-			message: `delete ${req.params.team} team in ${req.params.league}`,
+			message: `delete ${team.name} team`,
 		});
 	},
 };

@@ -3,8 +3,16 @@ const Match = require("../../model/match.model"),
 
 module.exports = {
 	getMatchs: async (req, res, next) => {
-		console.log(req.params);
-		const match = await Match.find({ leagueId: req.params.league });
+		const match = await Match.find(
+			{ leagueId: req.params.league },
+			{
+				description: 0,
+				updateAt: 0,
+				placeIn: 0,
+				leagueId: 0,
+				teams: 0,
+			}
+		);
 		res.json({ code: 200, data: match, success: true });
 	},
 	// CURD for match
@@ -14,7 +22,7 @@ module.exports = {
 		res.json({
 			success: true,
 			data: match,
-			message: `Match created successfully in ${req.params.league}`,
+			message: `Match created successfully in ${res.locals.league.name}`,
 			code: 200,
 		});
 	},
@@ -31,9 +39,12 @@ module.exports = {
 	},
 	updateMatch: async (req, res, next) => {
 		const { body } = res.locals,
-			_id = res.locals.match._id;
+			{ _id, createAt } = res.locals.match;
 
-		await Match.update({ _id }, body);
+		body.createMatch = createAt;
+		body.updateAt = new Date();
+
+		await Match.updateOne({ _id }, body);
 
 		const league = await Match.findOne({ _id });
 
@@ -45,13 +56,13 @@ module.exports = {
 		});
 	},
 	removeMatch: async (req, res, next) => {
-		const _id = res.locals.match._id;
+		const { _id, name } = res.locals.match;
 
-		await Match.remove({ _id });
+		await Match.deleteOne({ _id });
 
 		res.json({
 			success: true,
-			message: "Match deleted successfully",
+			message: `deleted Match "${name}" successfully`,
 			code: 200,
 		});
 	},

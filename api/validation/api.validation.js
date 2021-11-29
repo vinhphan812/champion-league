@@ -30,8 +30,6 @@ module.exports = {
 	createTeam: async (req, res, next) => {
 		const { name, founded, manager, logo_path, backdrop_path } = req.body;
 
-		const league = req.params.league;
-
 		if (checkNotContain([name, founded, manager]))
 			return res.status(403).json({
 				success: false,
@@ -39,7 +37,7 @@ module.exports = {
 				code: 403,
 			});
 
-		const teams = await Team.findOne({ name, leagueId: league });
+		const teams = await Team.findOne({ name });
 
 		if (teams)
 			return res.status(403).json({
@@ -48,9 +46,8 @@ module.exports = {
 				code: 403,
 			});
 
-		res.locals.body = {
+		res.locals.team = {
 			...req.body,
-			leagueId: req.params.league,
 		};
 		next();
 	},

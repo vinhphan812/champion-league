@@ -24,6 +24,8 @@ const {
 	adminRoute,
 } = require("./routers/routers");
 
+const notFoundMiddlware = require("./middlewares/error.middleware");
+
 // type content used
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -43,6 +45,8 @@ app.use("/admin", adminRoute);
 // set up view engine
 app.set("view engine", "pug");
 app.set("views", "./views");
+
+app.use(notFoundMiddlware);
 
 // host server
 app.listen(PORT, function () {

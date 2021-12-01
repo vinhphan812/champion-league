@@ -7,17 +7,21 @@ html(lang="en")
           link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU' crossorigin='anonymous')
           link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css')
           link(href="/public/css/style.css" rel="stylesheet")
-     body.position-relative
+     body
           nav.navbar.navbar-expand-lg.navbar-dark.dark.text-light
                .container
-                    a.navbar-brand(href='#') Football League
+                    a.navbar-brand(href='/') Football League
                     button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
                          span.navbar-toggler-icon
                     #navbarSupportedContent.collapse.navbar-collapse
                          ul.navbar-nav.me-auto.mb-2.mb-lg-0
                               li.nav-item
                                    a.nav-link.active(aria-current='page' href='/') Home
-                         form.d-flex.px-2(action="/search")
+                              if menu
+                                   for item in menu 
+                                        li.nav-item
+                                             a.nav-link.active(aria-current='page' href=item.url)= item.title
+                         form.d-flex.p-2(action="/search")
                               input.form-control.me-2(type='search' placeholder='Search' aria-label='Search')
                               button.btn.btn-outline-light(type='submit') Search
 
@@ -34,7 +38,7 @@ html(lang="en")
                                                   a.dropdown-item(href='/logout') Đăng Xuất
                               else     
                                    a.text-light(href="/login") Đăng Nhập
-          .container-fluid.pt-5
+          main.container.py-5
                block content
      block footer
           footer.page-footer.dark
@@ -79,6 +83,12 @@ html(lang="en")
                .footer-copyright.py-2.text-white.text-center
                     p.m-0 &copy; Football League 2021
 
-
+     if scripts 
+          for script in scripts
+               script(src=script)
      block script
+     script(src='//cdn.jsdelivr.net/npm/sweetalert2@11')
+     script(src='/public/js/script.js')
+     
+     script(src='https://code.jquery.com/jquery-3.6.0.min.js' integrity='sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=' crossorigin='anonymous')
      script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js' integrity='sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ' crossorigin='anonymous')

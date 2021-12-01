@@ -4,8 +4,11 @@ const TeamSchema = new Schema(
 	{
 		name: String,
 		founded: Date,
+		description: String,
 		manager: String,
-		logo_path: { type: String, default: "/" },
+		coach: String,
+		stadium: { type: Schema.Types.ObjectId, ref: "Stadium" },
+		logo_path: { type: String, default: "/public/images/team.png" },
 
 		createAt: { type: Date, default: new Date() },
 		updateAt: { type: Date, default: new Date() },

@@ -3,14 +3,15 @@ const { Schema, model } = require("mongoose");
 const StadiumSchema = new Schema(
 	{
 		name: String,
+		address: String,
 		capacity: Number,
-		team: { type: Schema.Types.ObjectId, ref: "Team" },
+		team: { type: Schema.Types.ObjectId, ref: "Teams" },
 		createAt: { type: Date, default: new Date() },
 		updateAt: { type: Date, default: new Date() },
 	},
 	{ versionKey: false }
 );
 
-const Stadium = model("Player", StadiumSchema, "Players");
+const Stadium = model("Stadium", StadiumSchema, "Stadiums");
 
 module.exports = Stadium;

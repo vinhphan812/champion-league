@@ -22,7 +22,12 @@ const {
 	authRoute,
 	publicRoute,
 	adminRoute,
+	managerRoute,
 } = require("./routers/routers");
+
+const {
+	decentralization,
+} = require("./middlewares/decentralization.middleware");
 
 const notFoundMiddlware = require("./middlewares/error.middleware");
 
@@ -35,12 +40,15 @@ app.use("/public", express.static(path.join(__dirname, "public")));
 // config signed cookie
 app.use(cookieParser(process.env.CECRET_KEY));
 
+app.use(decentralization("user"));
+
 // config routers
 app.use("/api", apiRoute);
 app.use("/user", userRoute);
 app.use("/", authRoute);
 app.use("/", publicRoute);
 app.use("/admin", adminRoute);
+app.use("/manager", managerRoute);
 
 // set up view engine
 app.set("view engine", "pug");

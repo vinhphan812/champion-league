@@ -1,9 +1,20 @@
+:root {
+	font-size: 16px;
+}
+
 body {
-	height: 100vh;
+	height: 100%;
+	width: 100%;
+}
+
+main {
+	height: auto;
+	min-height: 80vh;
 }
 
 .dark {
 	background-color: #2b2f31;
+	color: #fff;
 }
 
 .page-footer {
@@ -11,14 +22,13 @@ body {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	color: #fff;
 }
 
-.page-footer.dark ul {
+.dark ul {
 	list-style-type: none;
 }
 
-.page-footer.dark a {
+footer.dark a {
 	color: #fff;
 }
 
@@ -29,4 +39,28 @@ body {
 	border: 1px solid #eee;
 	margin-right: 0.5rem;
 	background-color: #999;
+}
+
+.league .card-img-top {
+	background-color: #efefef;
+}
+
+.league .delete {
+	position: absolute;
+	top: -1rem;
+	right: -1rem;
+	opacity: 0;
+	transition: opacity 300ms ease-in-out;
+}
+
+.league:hover .delete {
+	opacity: 1;
+}
+
+.option i[class*="trash"] {
+	color: #dc3545;
+}
+
+.option i[class*="pencil"] {
+	color: #ffc107;
 }

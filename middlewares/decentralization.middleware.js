@@ -1,7 +1,14 @@
 const User = require("../model/user.model");
 
 const lvlPerms = { admin: 3, manager: 2, user: 1 };
-const menu = { admin: [], manager: [{ title: "Manager", url: "/manager" }] };
+const menus = {
+	admin: [
+		{ title: "Quản Trị", url: "/admin" },
+		{ title: "Quản Lý", url: "/manager" },
+	],
+	manager: [{ title: "Quản Lý", url: "/manager" }],
+	user: [],
+};
 
 module.exports = {
 	decentralization: (perms) => {
@@ -18,8 +25,9 @@ module.exports = {
 
 			if (lvlPerms[userPerms] < lvlPerms[perms])
 				return res.status(404).render("error/permission");
+			let menu = [];
 
-			res.locals.menu = menu[userPerms];
+			res.locals.menu = menus[userPerms];
 
 			next();
 		};

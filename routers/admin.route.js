@@ -8,14 +8,16 @@ const {
 
 const router = express.Router();
 
+// router.use();
+
 router.get(
 	"/",
 	authMiddleware,
 	decentralization("admin"),
 	async (req, res, next) => {
-		const userId = req.signedCookies.userId;
-		const user = await User.findOne({ _id: userId });
-		res.render("admin/home", { user });
+		const user = await User.findOne({ _id: req.signedCookies.userId });
+
+		res.render("admin/home");
 	}
 );
 

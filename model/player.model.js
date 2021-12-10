@@ -12,7 +12,10 @@ const PlayerSchema = new Schema(
 		avatar: { type: String, default: "/public/images/player_st.png" },
 		numberInTeam: { type: Number, min: 0, max: 100 },
 		birthday: Date,
-		position: { type: String, enum: [] },
+		position: {
+			type: String,
+			enum: ["Tiền Đạo", "Tiền Vệ", "Hậu Vệ", "Thủ Môn"],
+		},
 		createAt: { type: Date, default: new Date() },
 		updateAt: { type: Date, default: new Date() },
 	},

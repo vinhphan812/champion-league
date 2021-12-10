@@ -3,15 +3,10 @@ const express = require("express");
 const {
 		loginPage,
 		postLogin,
-		registerPage,
-		postRegister,
 		forgotPage,
 		postForgot,
 	} = require("../controllers/auth.controller"),
-	{
-		registerValidation,
-		loginValidation,
-	} = require("../validation/auth.validation");
+	{ loginValidation } = require("../validations/auth.validation");
 
 const router = express.Router();
 

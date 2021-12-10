@@ -1,0 +1,5 @@
+extend ../layouts/common.pug
+block head 
+     title= league.name + " - League"
+block content
+     img.img-fluid.w-50(src= league.logo_path alt="logo của " + league.name)

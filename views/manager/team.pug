@@ -1,0 +1,42 @@
+extend ../layouts/common.pug
+block head 
+     title= team.name + " - Teams"
+block script 
+     script.
+          const id = "#{team.id}";
+block content
+     .d-flex.justify-content-center.align-items-center.team(id=team.id)
+          .border-end.w-25.px-2.d-flex.justify-content-center
+               img.image-fluid.w-75(src=team.logo_path).border.border-dark.rounded-circle.mb-2
+          .flex-grow-1.px-5
+               .h2= team.name
+               .h6.text-muted= team.founded.toLocaleDateString()
+               .d-flex.justify-content-between
+                    div.d-flex.align-items-center.w-50
+                         img.image-fluid.w-25.px-2(src="/public/images/stadium-64.png")
+                         if team.stadium
+                              .d-flex.flex-column.stadium-info(id=team.stadium.id)
+                                   .fw-bold.fs-5.name #{team.stadium.name}
+                                   .fw-bold.fs-5.address #{team.stadium.address}
+                                   .fw-bold.fs-5.capacity Sức Chứa: #{team.stadium.capacity} người
+                              .d-flex.flex-column.option
+                                   button.btn
+                                        i.bi.bi-pencil-square
+                                   button.btn
+                                        i.bi.bi-trash
+                         else 
+                              .d-flex.flex-column.stadium-info
+                              .d-flex.flex-column.option
+                                   button.btn.btn-primary(onclick=`addStadium("${team.id}")`) +Stadium
+                    div.d-flex.w-50.align-items-center.justify-content-center
+                         img.image-fluid.w-25(src="/public/images/coach.png")
+                         .fw-bold.fs-5= " " + team.coach
+     .container.px-5.mt-5
+          .d-flex.justify-content-between
+               h2 Player
+               .d-flex.align-items-center
+                    input#search-player.form-control.mx-2(type='text' placeholder='Search Player')
+                    button.btn.btn-primary#btn-add-player Add
+          include ../components/playerTable.pug
+              
+                    

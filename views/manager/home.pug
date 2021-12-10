@@ -1,0 +1,54 @@
+extend ../layouts/common.pug
+block head
+     title Manager Page
+block content
+     #leagues.pb-5
+          .d-flex.justify-content-between.align-items-center
+               h1#title Leagues
+               a.d-block.btn.btn-primary(href="/manager/leagues")
+                    i.bi.bi-plus-lg
+                    span &nbsp;Create
+          hr
+          #root.row.d-flex.justify-content-evenly
+               if leagues
+                    for league in leagues
+                         .card.league.my-2.py-2(id=league.id style='width: 18rem;')
+                              a.d-flex.flex-column.text-black.text-decoration-none.h-100( href="/manager/leagues/"+ league.id )
+                                   img.card-img-top(src=league.logo_path alt="hình ảnh tượng trương của " + league.name)
+                                   .card-body.d-flex.flex-row
+                                        .d-flex.flex-column.w-100.h-100.justify-content-end
+                                             h5.card-title= league.name
+                                             p.card-text= league.description
+                                             p.card-text= league.startTime.toLocaleDateString() + " - " + league.endTime.toLocaleDateString()
+                              button.btn.btn-danger.delete
+                                        i.bi.bi-trash
+          hr
+     #teams.pb-5
+          .d-flex.justify-content-between.align-items-center
+               h1#title Teams
+               a.d-block.btn.btn-primary(href="/manager/teams")
+                    i.bi.bi-plus-lg
+                    span &nbsp;Create
+          hr
+          #root.row.d-flex.justify-content-evenly
+               table.table.table-hover
+                    thead
+                         tr
+                              th(scope='col') #
+                              th(scope='col') Team
+                              th(scope='col') Manager
+                              th(scope='col') Founded
+                              th
+                    tbody
+                         if teams 
+                              for team,i in teams
+                                   tr(id=team.id).align-middle
+                                        th(scope='col')= i 
+                                        td
+                                             a(href=`/manager/teams/${team.id}/`)= team.name
+                                        td= team.manager
+                                        td= team.founded.toLocaleDateString()
+                                        td  
+                                             button.btn.btn-danger.delete
+                                                  i.bi.bi-trash
+          hr

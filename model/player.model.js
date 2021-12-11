@@ -14,7 +14,15 @@ const PlayerSchema = new Schema(
 		birthday: Date,
 		position: {
 			type: String,
-			enum: ["Tiền Đạo", "Tiền Vệ", "Hậu Vệ", "Thủ Môn"],
+			enum: [
+				"Thủ môn",
+				"Hậu vệ",
+				"Tiền vệ",
+				"Tiền đạo",
+				"Trợ lý HLV",
+				"Huấn luyện viên",
+				"Trung vệ",
+			],
 		},
 		createAt: { type: Date, default: new Date() },
 		updateAt: { type: Date, default: new Date() },

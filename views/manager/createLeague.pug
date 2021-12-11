@@ -10,16 +10,16 @@ block content
      form.px-5.w-50.mx-auto(action="leagues", method="POST" enctype="multipart/form-data")
           .mb-3
                label.form-label(for='league') Tên Giải
-               input.form-control(type='text' placeholder='League Name' name='name' id="league")
+               input.form-control(type='text' placeholder='League Name' name='name' id="league" value= body.name || "")
           .mb-3
                label.form-label(for='description') Mô Tả
-               textarea.form-control(rows='3' id = "description", name='description')
+               textarea.form-control(rows='3' id = "description", name='description' value = body.description || "")
           .mb-3
                label.form-label(for='startTime') Thời Gian Bắt Đầu 
-               input.form-control(type='date' name='startTime' id="startTime")
+               input.form-control(type='date' name='startTime' id="startTime" value= body.startTime)
           .mb-3
                label.form-label(for='endTime') Thời Gian Bắt Đầu Kết Thúc
-               input.form-control(type='date' name='endTime' id="endTime")
+               input.form-control(type='date' name='endTime' id="endTime" value = body.endTime)
           .mb-3
                label.form-label(for='thumnails') Biểu Tượng
                input.form-control(type='file' name='logo' id="thumnails" accept="image/*")

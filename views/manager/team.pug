@@ -7,10 +7,10 @@ block script
 block content
      .d-flex.justify-content-center.align-items-center.team(id=team.id)
           .border-end.w-25.px-2.d-flex.justify-content-center
-               img.image-fluid.w-75(src=team.logo_path).border.border-dark.rounded-circle.mb-2
+               img.image-fluid.w-75.mb-2(src=team.logo_path)
           .flex-grow-1.px-5
                .h2= team.name
-               .h6.text-muted= team.founded.toLocaleDateString()
+               .h6.text-muted= team.founded.getFullYear()
                .d-flex.justify-content-between
                     div.d-flex.align-items-center.w-50
                          img.image-fluid.w-25.px-2(src="/public/images/stadium-64.png")
@@ -33,7 +33,7 @@ block content
                          .fw-bold.fs-5= " " + team.coach
      .container.px-5.mt-5
           .d-flex.justify-content-between
-               h2 Player
+               h2 Thành Viên
                .d-flex.align-items-center
                     input#search-player.form-control.mx-2(type='text' placeholder='Search Player')
                     button.btn.btn-primary#btn-add-player Add

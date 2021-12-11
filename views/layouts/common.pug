@@ -23,7 +23,7 @@ html(lang="en")
                                              a.nav-link.active(aria-current='page' href=item.url)= item.title
                          form.d-flex.p-2(action="/search")
                               input.form-control.me-2(type='search' placeholder='Tìm Kiếm' name="q" aria-label='Search')
-                              button.btn.btn-outline-light(type='submit') Tìm Kiếm
+                              button.btn.btn-outline-light.w-50(type='submit') Tìm Kiếm
 
                          if !isLogin
                               if user

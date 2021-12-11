@@ -4,10 +4,10 @@ block head
 block content
      #leagues.pb-5
           .d-flex.justify-content-between.align-items-center
-               h1#title Leagues
+               h1#title Giải Bóng Đá
                a.d-block.btn.btn-primary(href="/manager/leagues")
                     i.bi.bi-plus-lg
-                    span &nbsp;Create
+                    span &nbsp;Tạo Giải
           hr
           #root.row.d-flex.justify-content-evenly
                if leagues
@@ -18,36 +18,36 @@ block content
                                    .card-body.d-flex.flex-row
                                         .d-flex.flex-column.w-100.h-100.justify-content-end
                                              h5.card-title= league.name
-                                             p.card-text= league.description
+                                             p.card-text.show-less= league.description
                                              p.card-text= league.startTime.toLocaleDateString() + " - " + league.endTime.toLocaleDateString()
                               button.btn.btn-danger.delete
                                         i.bi.bi-trash
           hr
      #teams.pb-5
           .d-flex.justify-content-between.align-items-center
-               h1#title Teams
+               h1#title Đội Bóng
                a.d-block.btn.btn-primary(href="/manager/teams")
                     i.bi.bi-plus-lg
-                    span &nbsp;Create
+                    span &nbsp;Tạo Đội
           hr
           #root.row.d-flex.justify-content-evenly
                table.table.table-hover
                     thead
                          tr
                               th(scope='col') #
-                              th(scope='col') Team
-                              th(scope='col') Manager
-                              th(scope='col') Founded
+                              th(scope='col') Đội Bóng
+                              th(scope='col') Năm Thành Lập
+                              th(scope='col') Huấn Luyện Viên
                               th
                     tbody
                          if teams 
                               for team,i in teams
                                    tr(id=team.id).align-middle
-                                        th(scope='col')= i 
+                                        th(scope='col')= i + 1
                                         td
                                              a(href=`/manager/teams/${team.id}/`)= team.name
-                                        td= team.manager
-                                        td= team.founded.toLocaleDateString()
+                                        td= team.founded.getFullYear()
+                                        td= team.coach
                                         td  
                                              button.btn.btn-danger.delete
                                                   i.bi.bi-trash

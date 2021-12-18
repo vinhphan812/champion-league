@@ -1,4 +1,24 @@
 extend ../layouts/common.pug
 block head
-     title Admin Page
+     title Trang Quản Trị
 block content
+     table.table.table-hover
+          thead
+               tr
+                    th(scope='col') #
+                    th(scope='col') Tên Đăng Nhập
+                    th(scope='col') Tên Người Dùng
+                    th(scope='col') Email
+                    th(scope='col') Số Điện Thoại
+                    th(scope='col') Tạo Lúc
+                    //- th(scope='col') Cập nhật
+          tbody
+               each user, index in users 
+                    tr
+                         th(scope='row')= index + 1
+                         td= user.username
+                         td= user.firstName + ' ' + user.lastName
+                         td= user.email
+                         td= user.phone
+                         td= user.createAt.toLocaleDateString()
+                         //- td= user.updateAt.toLocaleDateString()

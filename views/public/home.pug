@@ -2,9 +2,165 @@ extend ../layouts/common.pug
 
 block head
      title Football League
+     link(rel='stylesheet' href='./public/css/landingpage.css')
+     link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css')
 block content
      .container
           .league
+               // logo
+               .sponsor-slide
+                    .logo-track
+                         each team in teams
+                              a(href="/teams/" + team.id).logo
+                                   img(src=team.logo_path alt= "biểu tượng của đội " + team.name)
+          .cardBox
+               .card
+                    div
+                         .numbersCard= teams.length
+                         .cardName Đội bóng
+                    .iconCard
+                         i.fas.fa-users
+               .card
+                    div
+                         .numbersCard= players.length
+                         .cardName Cầu Thủ
+                    .iconCard
+                         i.fas.fa-walking
+               .card
+                    div
+                         .numbersCard= donors.length
+                         .cardName Nhà Tài Trợ
+                    .iconCard
+                         i.fas.fa-money-bill-wave
+               .card
+                    div
+                         .numbersCard= matchs.length
+                         .cardName trận đấu
+                    .iconCard
+                         i.fas.fa-play
+          .container
+               .row.justify-content-center
+                    .recentMatch.col-md-7.m-2
+                         .cardHeader
+                              .h1 Các Trận Đấu Sắp Diễn Ra
+                              a.btn.btn-secondary(href='#') Xem Thêm
+                         table.table.table-hover
+                              thead
+                                   tr
+                                        td Ng&agrave;y
+                                        td Gi&#x1EDD;
+                                        td S&acirc;n kh&aacute;ch
+                                        td S&acirc;n nh&agrave;
+                                        td S&acirc;n thi &dstrok;&#x1EA5;u
+                              tbody
+                                   tr
+                                        td 12/12/2021
+                                        td 12:00
+                                        td &Dstrok;&#x1ED9;i xanh
+                                        td &Dstrok;&#x1ED9;i &dstrok;&#x1ECF;
+                                        td
+                                             span.stadium S&acirc;n s&#x1ED1; 1
+                                   tr
+                                        td 12/12/2021
+                                        td 12:00
+                                        td &Dstrok;&#x1ED9;i xanh
+                                        td &Dstrok;&#x1ED9;i &dstrok;&#x1ECF;
+                                        td
+                                             span.stadium S&acirc;n s&#x1ED1; 1
+                                   tr
+                                        td 12/12/2021
+                                        td 12:00
+                                        td &Dstrok;&#x1ED9;i xanh
+                                        td &Dstrok;&#x1ED9;i &dstrok;&#x1ECF;
+                                        td
+                                             span.stadium S&acirc;n s&#x1ED1; 1
+                                   tr
+                                        td 12/12/2021
+                                        td 12:00
+                                        td &Dstrok;&#x1ED9;i xanh
+                                        td &Dstrok;&#x1ED9;i &dstrok;&#x1ECF;
+                                        td
+                                             span.stadium S&acirc;n s&#x1ED1; 1
+                    .team.col-md-4.m-2
+                         .d-flex.justify-content-center.flex-column
+                              .d-flex.justify-content-between.align-items-center.mb-2
+                                   .h1 Đội Bóng
+                                   a.btn.btn-secondary(href='/teams') Xem tất cả
+                              .d-flex.flex-column
+                                   each team, index in teams
+                                        if index > 5
+                                             - break
+                                        a.text-black.d-grid.my-2.align-items-center.text-decoration-none(href="/teams/"+team.id style="grid-template-columns: 0.5fr 1fr 3fr;")
+                                             .fs-1.fw-bold.align-middle.text-center= index
+                                             img(src=team.logo_path).w-100
+                                             .d-flex.flex-column.mx-2
+                                                  .h5= team.name
+                                                  .text-muted= team.stadium.name
+
+          .wrapper-timeline
+               .header-timeline
+                    h1 Phương Thức Hoạt Động
+               .center-line
+                    a.scroll-icon(href='#')
+                         i.fas.fa-caret-up
+               .row.row-1
+                    section
+                         i.icon-timeline.fas.fa-sign-in-alt
+                         .details-timeline
+                              span.title-timeline &Dstrok;&abreve;ng nh&#x1EAD;p
+                              span 29 th&aacute;ng 12 n&abreve;m 2021
+                         p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa e, reprehenderit ratione aperiam.
+                         .bottom-timeline
+                              a(href='#') Xem th&ecirc;m
+                              i - Something famous
+               .row.row-2
+                    section
+                         i.icon-timeline.fas.fa-sign-in-alt
+                         .details-timeline
+                              span.title-timeline &Dstrok;&abreve;ng nh&#x1EAD;p
+                              span 29 th&aacute;ng 12 n&abreve;m 2021
+                         p Lorem ipsum dolor sit ameters consectetur adipisicing elit. Sed qui veroes praesentium maiores, sint eos vero sapiente voluptas debitis dicta dolore.
+                         .bottom-timeline
+                              a(href='#') Xem th&ecirc;m
+                              i - Someone famous
+               .row.row-1
+                    section
+                         i.icon-timeline.fas.fa-sign-in-alt
+                         .details-timeline
+                              span.title-timeline &Dstrok;&abreve;ng nh&#x1EAD;p
+                              span 29 th&aacute;ng 12 n&abreve;m 2021
+                         p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa e, reprehenderit ratione aperiam.
+                         .bottom-timeline
+                              a(href='#') Xem th&ecirc;m
+                              i - Something famous
+               .row.row-2
+                    section
+                         i.icon-timeline.fas.fa-sign-in-alt
+                         .details-timeline
+                              span.title-timeline &Dstrok;&abreve;ng nh&#x1EAD;p
+                              span 29 th&aacute;ng 12 n&abreve;m 2021
+                         p Lorem ipsum dolor sit ameters consectetur adipisicing elit. Sed qui veroes praesentium maiores, sint eos vero sapiente voluptas debitis dicta dolore.
+                         .bottom-timeline
+                              a(href='#') Xem th&ecirc;m
+                              i - Someone famous
+          .card-news
+               .services
+                    .info-box.cup
+                         .fas.fa-trophy
+                         h2 Giải Thưởng
+                         p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita ullam aliquid non eligendi, nemo est neque reiciendis error?
+                         a(href='#') Xem Thêm
+                    .info-box.news
+                         .fas.fa-newspaper
+                         h2 Tin Mới
+                         p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita ullam aliquid non eligendi, nemo est neque reiciendis error?
+                         a(href='#') Xem Thêm
+                    .info-box.rules
+                         .fas.fa-gavel
+                         h2 Luật Giải
+                         p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita ullam aliquid non eligendi, nemo est neque reiciendis error?
+                         a(href='#') Xem Thêm
+
 block script
      script.
-          // call api. then render data
+          window.onload = () => onloadPage()

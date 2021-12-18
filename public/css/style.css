@@ -73,3 +73,13 @@ footer.dark a {
 	line-clamp: 3;
 	-webkit-box-orient: vertical;
 }
+
+.menu {
+	position: fixed;
+}
+
+@media only screen and (max-width: 992px) {
+	.menu {
+		position: static;
+	}
+}

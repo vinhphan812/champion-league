@@ -2,15 +2,31 @@ extend ../layouts/common.pug
 block head
      title Trang Quản Trị
 block content
+     .alert.alert-info.w-75.mx-auto
+          .h4
+               i.bi.bi-lightbulb 
+               span Chú Giải
+          
+          table.ms-5
+               tr
+                    td.px-2
+                         .badge.bg-danger.w-100 admin
+                    td : Có quyền cao nhất trong hệ thống. Bao gồm: quản lý tài khoản và các chức năng của quản lý.
+               tr
+                    td.px-2
+                         .badge.bg-success.w-100 manager
+                    td : Có quyền quản lý giải đấu, đội bóng, cầu thủ, sân vận động, trận đấu.
      table.table.table-hover
           thead
                tr
                     th(scope='col') #
                     th(scope='col') Tên Đăng Nhập
                     th(scope='col') Tên Người Dùng
+                    th(scope='col') Quyền Hạn
                     th(scope='col') Email
                     th(scope='col') Số Điện Thoại
                     th(scope='col') Tạo Lúc
+                    
                     //- th(scope='col') Cập nhật
           tbody
                each user, index in users 
@@ -18,6 +34,8 @@ block content
                          th(scope='row')= index + 1
                          td= user.username
                          td= user.firstName + ' ' + user.lastName
+                         td
+                          .badge.w-75.mx-auto(class=user.permission == "admin" ? "bg-danger" : "bg-success")=user.permission
                          td= user.email
                          td= user.phone
                          td= user.createAt.toLocaleDateString()

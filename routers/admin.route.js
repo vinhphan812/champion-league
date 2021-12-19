@@ -8,17 +8,12 @@ const {
 
 const router = express.Router();
 
-// router.use();
+router.use(authMiddleware, decentralization("admin"));
 
-router.get(
-	"/",
-	authMiddleware,
-	decentralization("admin"),
-	async (req, res, next) => {
-		const user = await User.findOne({ _id: req.signedCookies.userId });
+router.get("/", async (req, res, next) => {
+	res.locals.users = await User.find({});
 
-		res.render("admin/home");
-	}
-);
+	res.render("admin/home");
+});
 
 module.exports = router;

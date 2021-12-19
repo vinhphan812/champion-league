@@ -52,16 +52,7 @@ module.exports = {
 	removeLeague: async (req, res, next) => {
 		const { _id, name } = res.locals.league;
 
-		const teamsInLeague = await Team.find({ leagueId: _id });
-
-		// remove all life cycle
-		await Player.remove({ teamId: teamsInLeague });
-
-		await Team.remove({ leagueId: _id });
-
-		await Match.remove({ leagueId: _id });
-
-		await League.remove({ _id });
+		await League.deleteOne({ _id });
 
 		await res.json({
 			success: true,

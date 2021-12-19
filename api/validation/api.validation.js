@@ -129,10 +129,9 @@ module.exports = {
 
 		if (invalidData) return Error(res, ERROR_MSG.invalid + fields.player);
 
-		const playerContain = await Player.find({ name, team });
+		const playerContain = await Player.findOne({ name, team });
 
-		if (playerContain.length)
-			return Error(res, ERROR_MSG.playerContain(name));
+		if (playerContain) return Error(res, ERROR_MSG.playerContain(name));
 
 		res.locals.body = {
 			name,

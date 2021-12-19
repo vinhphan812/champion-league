@@ -10,7 +10,7 @@ block content
      form.px-5.w-50.mx-auto(action="leagues", method="POST" enctype="multipart/form-data")
           .mb-3
                label.form-label(for='league') Tên Giải
-               input.form-control(type='text' placeholder='League Name' name='name' id="league" value= body.name || "")
+               input.form-control(type='text' placeholder='Giải Đấu Bóng Đá' name='name' id="league" value= body.name || "")
           .mb-3
                label.form-label(for='description') Mô Tả
                textarea.form-control(rows='3' id = "description", name='description' value = body.description || "")
@@ -25,7 +25,3 @@ block content
                input.form-control(type='file' name='logo' id="thumnails" accept="image/*")
           .mb-3
                input.btn.btn-primary.form-control(type="submit" value="Create")
-
-block script
-     script.
-          window.onload = ()=>{ onloadPage()};

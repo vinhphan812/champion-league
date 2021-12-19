@@ -16,9 +16,6 @@ block content
                          label.form-label(for='description') Mô Tả
                          textarea.form-control(rows='3' id = "description", name='description' value="" || body.description)
                     .mb-3
-                         label.form-label(for='manager') Người Quản Lý
-                         input.form-control(type='text' placeholder='Tên Người Quản Lý' name='manager' id="manager" value="" || body.manager)
-                    .mb-3
                          label.form-label(for='coach') Huấn Luyện Viên
                          input.form-control(type='text' placeholder='Tên Huấn Luyện Viên' name='coach' id="coach" value="" || body.coach)
                     .mb-3
@@ -45,3 +42,6 @@ block content
                          div.h2 Danh Sách Cầu Thủ
                          button.btn.btn-primary.mb-3(type='button' onclick="playerForm({})") + Thêm Cầu Thủ
                     include ../components/playerTable.pug
+block script
+     script.
+          document.querySelector("tbody").innerHTML = "";

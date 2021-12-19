@@ -27,10 +27,10 @@ const router = express.Router();
 
 router.use(authMiddleware, decentralization("manager"));
 
-// router.use("/leagues", leaguesRoute);
-
 router.get("/", ctrler.getManagerPage);
 
+//TODO LEAGUE
+//? - create
 router
 	.route("/leagues")
 	.get(ctrler.getCreateLeaguePage)
@@ -40,13 +40,37 @@ router
 		ctrler.createLeague
 	);
 
+//? - detail
+router.get("/leagues/:league", ctrler.getLeaguePage);
+
+//TODO TEAM
+// ? - create
 router
 	.route("/teams")
 	.get(ctrler.getCreateTeamPage)
 	.post(upload.single("logo"), validations.createTeam, ctrler.createTeam);
 
+//? - detail
 router.get("/teams/:team", ctrler.getTeamPage);
 
-router.get("/leagues/:league", ctrler.getLeaguePage);
+//TODO DONORS
+// ? - create
+router
+	.route("/donors")
+	.get(ctrler.getCreateDonor)
+	.post(upload.single("logo"), validations.createDonor, ctrler.createDonor);
+
+// ? - detail
+
+router.get("/donors/:donor", ctrler.getDonorsPage);
+
+router
+	.route("/referees")
+	.get(ctrler.getCreateReferee)
+	.post(
+		upload.single("logo"),
+		validations.createReferee,
+		ctrler.createReferee
+	);
 
 module.exports = router;

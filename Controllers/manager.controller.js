@@ -15,6 +15,7 @@ module.exports = {
 		res.render("manager/home", { user });
 	},
 	getCreateLeaguePage: (req, res, next) => {
+		res.locals.body = {};
 		res.render("manager/createLeague");
 	},
 	getCreateTeamPage: (req, res, next) => {
@@ -53,7 +54,6 @@ module.exports = {
 				// write player into MongoDB
 				for (const player of players) {
 					player.team = team.id;
-					console.log(player);
 					await Player.create(player);
 				}
 			}
@@ -90,6 +90,18 @@ module.exports = {
 		res.locals.scripts = ["/public/js/team.manager.js"];
 		res.locals.team = data;
 
-		res.render("manager/team");
+		res.render("team");
 	},
+	getDonorsPage: async (req, res, next) => {},
+	getCreateDonor: async (req, res, next) => {
+		res.locals.body = {};
+		res.render("manager/createDonor");
+	},
+	createDonor: async (req, res, next) => {},
+	getRefereePage: async (req, res, next) => {},
+	getCreateReferee: async (req, res, next) => {
+		res.locals.body = {};
+		res.render("manager/createReferee");
+	},
+	createReferee: async (req, res, next) => {},
 };

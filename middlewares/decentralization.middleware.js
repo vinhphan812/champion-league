@@ -29,6 +29,8 @@ module.exports = {
 
 			res.locals.menu = menus[userPerms];
 
+			res.locals.isManager = userPerms != "user";
+
 			next();
 		};
 	},

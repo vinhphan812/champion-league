@@ -1,5 +1,4 @@
 window.onload = async () => {
-	onloadPage();
 	$(".league .delete").click(deleteLeague);
 	$("#teams .delete").click(deleteTeam);
 };

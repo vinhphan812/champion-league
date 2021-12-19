@@ -10,7 +10,6 @@ const optionsPosition = {
 
 window.onload = () => {
 	$players = $("#players");
-	onloadPage();
 	$("form:nth(1)").submit(checkData);
 };
 

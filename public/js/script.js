@@ -7,6 +7,20 @@ function Alert(title, text, confirmButtonText, icon = "error") {
 		confirmButtonText,
 	});
 }
-function onloadPage() {
-	$(".page-footer").removeClass("page-footer");
+
+function confirmDelete(name = "giải", cb) {
+	Swal.fire({
+		customClass: {
+			confirmButton: "btn btn-success mx-2",
+			cancelButton: "btn btn-danger mx-2",
+		},
+		buttonsStyling: false,
+		title: `Xóa ${name} này`,
+		showCancelButton: true,
+		confirmButtonText: "Xóa",
+		cancelButtonText: "Quay lại",
+		showLoaderOnConfirm: true,
+		preConfirm: cb,
+		reverseButtons: true,
+	});
 }

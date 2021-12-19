@@ -32,12 +32,23 @@ module.exports = {
 		next();
 	},
 	createTeam: async (req, res, next) => {
-		const { name, founded, manager, coach } = req.body;
+		const { name, founded, coach, stadiumName, address, capacity } =
+			req.body;
 
 		const errors = [];
 
 		res.locals.scripts = ["/public/js/createTeam.js"];
-		if (checkNotContain([name, founded, manager, coach]))
+
+		if (
+			checkNotContain([
+				name,
+				founded,
+				coach,
+				stadiumName,
+				address,
+				capacity,
+			])
+		)
 			errors.push(ERROR_MSG.invalid + fields.team);
 
 		const teams = await Team.findOne({ name });
@@ -52,6 +63,12 @@ module.exports = {
 
 		if (errors.length) return res.render("manager/createTeam");
 
+		next();
+	},
+	createDonor: async (req, res, next) => {
+		next();
+	},
+	createReferee: async (req, res, next) => {
 		next();
 	},
 };

@@ -3,7 +3,7 @@ block head
      title= team.name + " - Teams"
 block script 
      script.
-          const id = "#{team.id}";
+          const team = "#{team.id}";
 block content
      .row.justify-content-center.align-items-center.team(id=team.id)
           .col-md-3.border-end.px-2.d-flex.justify-content-center
@@ -14,7 +14,7 @@ block content
                .d-flex.justify-content-between
                     .container.px-0
                          .row.justify-content-start
-                              .col-md-6.d-flex.align-items-center.mb-2
+                              .col-md-6.d-flex.align-items-center.mb-2.stadium
                                    img.image-fluid.w-25.px-2.mx-2(src="/public/images/stadium-64.png")
                                    if team.stadium
                                         .d-flex.flex-column.stadium-info(id=team.stadium.id)
@@ -40,7 +40,7 @@ block content
                h2 Thành Viên
                .d-flex.align-items-center
                     input#search-player.form-control.mx-2(type='text' placeholder='Tìm Kiếm')
-                    if isStaff
+                    if isManager
                          button.btn.btn-primary#btn-add-player Add
           include ./components/playerTable.pug
               

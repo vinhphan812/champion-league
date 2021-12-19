@@ -14,28 +14,28 @@ block content
                               a(href="/teams/" + team.id).logo
                                    img(src=team.logo_path alt= "biểu tượng của đội " + team.name)
           .cardBox
-               .card
+               a.card.text-decoration-none(href="/teams")
                     div
                          .numbersCard= teams.length
                          .cardName Đội bóng
                     .iconCard
                          i.fas.fa-users
-               .card
+               a.card.text-decoration-none(href="/players")
                     div
                          .numbersCard= players.length
                          .cardName Cầu Thủ
                     .iconCard
                          i.fas.fa-walking
-               .card
+               a.card.text-decoration-none(href="/donors")
                     div
                          .numbersCard= donors.length
                          .cardName Nhà Tài Trợ
                     .iconCard
                          i.fas.fa-money-bill-wave
-               .card
+               a.card.text-decoration-none(href="/matchs")
                     div
                          .numbersCard= matchs.length
-                         .cardName trận đấu
+                         .cardName Trận Đấu
                     .iconCard
                          i.fas.fa-play
           .container
@@ -160,7 +160,3 @@ block content
                          h2 Luật Giải
                          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita ullam aliquid non eligendi, nemo est neque reiciendis error?
                          a(href='#') Xem Thêm
-
-block script
-     script.
-          window.onload = () => onloadPage()

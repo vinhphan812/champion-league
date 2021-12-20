@@ -45,7 +45,7 @@ footer.dark a {
 	background-color: #efefef;
 }
 
-.league .delete {
+.delete {
 	position: absolute;
 	top: -1rem;
 	right: -1rem;
@@ -53,7 +53,8 @@ footer.dark a {
 	transition: opacity 300ms ease-in-out;
 }
 
-.league:hover .delete {
+.league:hover .delete,
+.donors:hover .delete {
 	opacity: 1;
 }
 

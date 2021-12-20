@@ -54,7 +54,7 @@ module.exports = {
 		const { team } = res.locals;
 
 		// remove player in team
-		await Player.deleteMany({ teamId: team });
+		await Player.deleteMany({ team: team });
 
 		// remove all match have a team join in.
 		await Match.deleteMany({ teams: team });

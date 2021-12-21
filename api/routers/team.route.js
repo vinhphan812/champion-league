@@ -1,4 +1,5 @@
-const express = require("express");
+const express = require("express"),
+	multer = require("multer");
 
 const ctrler = require("../controllers/team.controller");
 
@@ -10,6 +11,17 @@ const teamRoute = require("./player.route.js"),
 	stadiumRoute = require("./stadium.route");
 
 const router = express.Router({ mergeParams: true });
+
+const storage = multer.diskStorage({
+	destination: function (req, file, cb) {
+		cb(null, "./public/uploads");
+	},
+	filename: function (req, file, cb) {
+		cb(null, file.originalname);
+	},
+});
+
+const upload = multer({ storage });
 
 router.use(authMiddleware);
 
@@ -24,5 +36,12 @@ router
 	.get(ctrler.getTeam)
 	.put(ctrler.updateTeam)
 	.delete(ctrler.removeTeam);
+
+router.post(
+	"/:team/logo",
+	teamMiddleware,
+	upload.single("logo"),
+	ctrler.updateLogo
+);
 
 module.exports = router;

@@ -68,4 +68,18 @@ module.exports = {
 			message: `delete ${team.name} team`,
 		});
 	},
+	updateLogo: async (req, res) => {
+		const { team } = res.locals;
+
+		const logo_path = "/" + req.file.path;
+
+		await Team.updateOne({ _id: team.id }, { $set: { logo_path } });
+
+		res.json({
+			success: true,
+			code: 200,
+			data: logo_path,
+			message: `cập nhật logo cho đội bóng ${team.name} thành công`,
+		});
+	},
 };

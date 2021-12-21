@@ -64,6 +64,19 @@ block content
                               i.bi.bi-plus-lg
                               span &nbsp;Thêm NTT
                     hr
+                    #root.row.d-flex.justify-content-evenly
+                         for donor in donors
+                              .card.donors.my-2.py-2(id=donor.id style='width: 20rem;')
+                                   a.d-flex.flex-column.text-black.text-decoration-none.h-100( href="/manager/donors/"+ donor.id )
+                                        img.card-img-top(src=donor.logo_path alt="hình ảnh tượng trương của " + donor.name)
+                                        .card-body.d-flex.flex-row
+                                             .d-flex.flex-column.w-100.h-100.justify-content-end
+                                                  h5.card-title= donor.name
+                                                  p.card-text= donor.email + " " + donor.phone
+                                                  p.card-text.h4 $#{donor.funding}
+                                                  p.card-text.show-less= donor.description
+                                   button.btn.btn-danger.delete
+                                        i.bi.bi-trash
 
                #referees.pb-5
                     .d-flex.justify-content-between.align-items-center

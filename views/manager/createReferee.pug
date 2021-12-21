@@ -8,13 +8,22 @@ block content
           for err in errors 
                .alert.alert-danger.w-50.mx-auto(role='alert')= err
 
-     form.px-5.w-50.mx-auto(action="leagues", method="POST" enctype="multipart/form-data")
+     form.px-5.w-50.mx-auto(action="referees", method="POST" enctype="multipart/form-data")
           .mb-3
                label.form-label(for='league') Tên Trọng Tài
                input.form-control(type='text' placeholder='Tên Trọng Tài' name='name' id="league" value= body.name || "")
           .mb-3
+               label.form-label(for='address') Địa chỉ
+               input.form-control(type='text' placeholder='Địa chỉ' name='address' id="address" value= body.address || "")
+          .mb-3
+               label.form-label(for='email') Email
+               input.form-control(type='text' placeholder='email' name='email' id="email" value= body.email || "")
+          .mb-3
+               label.form-label(for='phone') Số điện thoại 
+               input.form-control(type='text' placeholder='Số điện thoại' name='phone' id="phone" value= body.phone || "")
+          .mb-3
                label.form-label(for='description') Mô Tả
-               textarea.form-control(rows='3' id = "description", name='description' placeholder='mô tả về trọng tài' value = body.description || "")
+               textarea.form-control(rows='3' id = "description", name='description' placeholder='mô tả về trọng tài')= body.description || ""
           .mb-3
                label.form-label(for='birthday') Ngày Sinh 
                input.form-control(type='date' name='birthday' id="birthday" value= body.birthday)

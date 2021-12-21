@@ -110,5 +110,8 @@ module.exports = {
 		res.locals.body = {};
 		res.render("manager/createReferee");
 	},
-	createReferee: async (req, res, next) => {},
+	createReferee: async (req, res, next) => {
+		const data = await Referee.create(req.body);
+		res.redirect("/manager");
+	},
 };

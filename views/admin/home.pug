@@ -38,5 +38,5 @@ block content
                           .badge.w-75.mx-auto(class=user.permission == "admin" ? "bg-danger" : "bg-success")=user.permission
                          td= user.email
                          td= user.phone
-                         td= user.createAt.toLocaleDateString()
+                         td= moment(user.createAt).format("HH:MM DD/MM/YYYY")
                          //- td= user.updateAt.toLocaleDateString()

@@ -1,30 +1,53 @@
 window.onload = async () => {
 	$(".league .delete").click(deleteLeague);
+	$(".donors .delete").click(deleteDonor);
 	$("#teams .delete").click(deleteTeam);
 };
 
-async function deleteLeague() {
+function deleteLeague() {
 	const parent = this.parentNode;
 	const { id } = parent;
+	const name = parent.querySelector(".card-title").innerText;
 
-	const { success, message } = await (
-		await fetch("/api/leagues/" + id, { method: "DELETE" })
-	).json();
-	if (success) {
-		Alert("Success", message, "OK", "success");
-	}
-	parent.remove();
+	confirmDelete("giải " + name, async () => {
+		const { success, message } = await (
+			await fetch("/api/leagues/" + id, { method: "DELETE" })
+		).json();
+		if (success) {
+			Alert("Success", message, "OK", "success");
+		}
+		parent.remove();
+	});
 }
 
-async function deleteTeam() {
+function deleteTeam() {
 	const parent = this.parentNode.parentNode;
 	const { id } = parent;
+	const name = parent.querySelector(":nth-child(2)").innerText;
 
-	const { success, message } = await (
-		await fetch("/api/teams/" + id, { method: "DELETE" })
-	).json();
-	if (success) {
-		Alert("Success", message, "OK", "success");
-	}
-	parent.remove();
+	confirmDelete("đội " + name, async () => {
+		const { success, message } = await (
+			await fetch("/api/teams/" + id, { method: "DELETE" })
+		).json();
+		if (success) {
+			Alert("Success", message, "OK", "success");
+		}
+		parent.remove();
+	});
+}
+
+function deleteDonor() {
+	const parent = this.parentNode;
+	const { id } = parent;
+	const name = parent.querySelector(".card-title").innerText;
+
+	confirmDelete("Nhà tài trợ " + name, async () => {
+		const { success, message } = await (
+			await fetch("/api/donors/" + id, { method: "DELETE" })
+		).json();
+		if (success) {
+			Alert("Success", message, "OK", "success");
+		}
+		parent.remove();
+	});
 }

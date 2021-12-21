@@ -2,17 +2,20 @@ const User = require("../model/user.model"),
 	League = require("../model/league.model"),
 	Team = require("../model/team.model"),
 	Player = require("../model/player.model"),
-	Stadium = require("../model/stadium.model");
+	Stadium = require("../model/stadium.model"),
+	Donor = require("../model/donor.model"),
+	Referee = require("../model/referee.model");
 
 module.exports = {
 	getManagerPage: async (req, res, next) => {
-		const user = await User.findOne({ _id: req.signedCookies.userId });
-
 		res.locals.leagues = await League.find({});
 		res.locals.teams = await Team.find({});
+		res.locals.donors = await Donor.find({});
+		res.locals.referees = await Referee.find({});
 
 		res.locals.scripts = ["/public/js/manager.js"];
-		res.render("manager/home", { user });
+
+		res.render("manager/home");
 	},
 	getCreateLeaguePage: (req, res, next) => {
 		res.locals.body = {};
@@ -54,6 +57,7 @@ module.exports = {
 				// write player into MongoDB
 				for (const player of players) {
 					player.team = team.id;
+					console.log(player);
 					await Player.create(player);
 				}
 			}
@@ -97,7 +101,10 @@ module.exports = {
 		res.locals.body = {};
 		res.render("manager/createDonor");
 	},
-	createDonor: async (req, res, next) => {},
+	createDonor: async (req, res, next) => {
+		const data = await Donor.create(req.body);
+		res.redirect("/manager");
+	},
 	getRefereePage: async (req, res, next) => {},
 	getCreateReferee: async (req, res, next) => {
 		res.locals.body = {};

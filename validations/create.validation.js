@@ -7,6 +7,7 @@ const fields = {
 	player: "{name, weight, height, numberInTeam, birthday, position}",
 	rule: "{name, description}",
 	donor: "{name, address, email, phone, funding}",
+	referee: "{name, address, email, phone, birthday}",
 };
 
 const ERROR_MSG = {
@@ -16,19 +17,23 @@ const ERROR_MSG = {
 	teamIdErr: "item in teams must a 24 characters.",
 	teamInexist: "id teams invalid.",
 	existTeam: "Team name already exists",
+	funding: "Invalid sponsorship amount",
 };
 module.exports = {
 	createLeague: (req, res, next) => {
 		const { name, startTime, endTime, description } = req.body;
-
-		if (checkNotContain([name, startTime, endTime, description]))
-			return res.render("manager/createLeague", {
-				errors: [ERROR_MSG.invalid + fields.league],
-			});
-
-		if (req.file?.path) req.body.logo_path = "/" + req.file?.path;
+		const errors = [];
 
 		res.locals.body = req.body;
+
+		if (checkNotContain([name, startTime, endTime, description]))
+			errors.push(ERROR_MSG.invalid + fields.league);
+		if (errors.length) {
+			res.locals.errors = errors;
+			return res.render("manager/createLeague");
+		}
+
+		if (req.file?.path) req.body.logo_path = "/" + req.file?.path;
 
 		next();
 	},
@@ -73,6 +78,8 @@ module.exports = {
 		if (checkNotContain([name, address, email, phone, funding]))
 			errors.push(ERROR_MSG.invalid + fields.donor);
 
+		if (funding < 100) errors.push(ERROR_MSG.funding);
+
 		if (req.file) req.body.logo_path = "/" + req.file?.path;
 
 		res.locals.body = req.body;
@@ -84,6 +91,22 @@ module.exports = {
 		next();
 	},
 	createReferee: async (req, res, next) => {
+		const { name, address, email, phone, birthday } = req.body;
+		const errors = [];
+
+		res.locals.body = req.body;
+		console.log(req.body);
+
+		if (checkNotContain([name, address, email, phone, birthday]))
+			errors.push(ERROR_MSG.invalid + fields.referee);
+
+		if (errors.length) {
+			res.locals.errors = errors;
+			return res.render("manager/createReferee");
+		}
+
+		if (req.file) req.body.avatar = "/" + req.file?.path;
+
 		next();
 	},
 };

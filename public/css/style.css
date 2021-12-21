@@ -45,8 +45,13 @@ footer.dark a {
 	background-color: #efefef;
 }
 
+.update {
+	position: relative;
+}
+
 .league .delete,
-.donors .delete {
+.donors .delete,
+.update .edit {
 	position: absolute;
 	top: -1rem;
 	right: -1rem;
@@ -55,7 +60,8 @@ footer.dark a {
 }
 
 .league:hover .delete,
-.donors:hover .delete {
+.donors:hover .delete,
+.update:hover .edit {
 	opacity: 1;
 }
 

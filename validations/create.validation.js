@@ -6,6 +6,7 @@ const fields = {
 	match: "{ name, description, teams, placeIn, startTime }",
 	player: "{name, weight, height, numberInTeam, birthday, position}",
 	rule: "{name, description}",
+	donor: "{name, address, email, phone, funding}",
 };
 
 const ERROR_MSG = {
@@ -55,17 +56,31 @@ module.exports = {
 
 		if (teams) errors.push(ERROR_MSG.existTeam);
 
-		res.locals.errors = errors;
-
 		if (req.file) req.body.logo_path = "/" + req.file?.path;
 
 		res.locals.body = req.body;
+
+		res.locals.errors = errors;
 
 		if (errors.length) return res.render("manager/createTeam");
 
 		next();
 	},
 	createDonor: async (req, res, next) => {
+		const { name, address, email, phone, funding } = req.body,
+			errors = [];
+
+		if (checkNotContain([name, address, email, phone, funding]))
+			errors.push(ERROR_MSG.invalid + fields.donor);
+
+		if (req.file) req.body.logo_path = "/" + req.file?.path;
+
+		res.locals.body = req.body;
+
+		res.locals.errors = errors;
+
+		if (errors.length) return res.render("manager/createDonor");
+
 		next();
 	},
 	createReferee: async (req, res, next) => {

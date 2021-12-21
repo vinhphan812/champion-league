@@ -10,8 +10,6 @@ const validations = require("../validations/create.validation");
 
 const ctrler = require("../controllers/manager.controller");
 
-// const leagueRoute = require("./manager/league.route.js");
-
 const storage = multer.diskStorage({
 	destination: function (req, file, cb) {
 		cb(null, "./public/uploads");
@@ -25,7 +23,10 @@ const upload = multer({ storage });
 
 const router = express.Router();
 
-router.use(authMiddleware, decentralization("manager"));
+router.use(authMiddleware, decentralization("manager"), (req, res, next) => {
+	res.locals.isManager = true;
+	next();
+});
 
 router.get("/", ctrler.getManagerPage);
 

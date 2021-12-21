@@ -4,10 +4,11 @@ const DonorSchema = new Schema(
 	{
 		name: String,
 		address: String,
+		description: String,
 		email: String,
-		phone: { type: Date, maxlength: 10 },
-		funding_costs: Number,
-		logo_path: { type: String, default: "" },
+		phone: { type: String },
+		funding: Number,
+		logo_path: { type: String, default: "/public/images/donate.png" },
 	},
 	{ versionKey: false }
 );

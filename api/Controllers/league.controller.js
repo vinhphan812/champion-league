@@ -54,7 +54,7 @@ module.exports = {
 
 		await League.deleteOne({ _id });
 
-		await res.json({
+		res.json({
 			success: true,
 			message: `Deleted ${name} successfully`,
 			code: 200,

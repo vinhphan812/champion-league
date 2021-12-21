@@ -8,7 +8,8 @@ const { authMiddleware } = require("../middlewares/auth.middleware"),
 
 const leaguesRoute = require("./league.route"),
 	teamRoute = require("./team.route"),
-	ruleRouter = require("./rule.route");
+	ruleRouter = require("./rule.route"),
+	donorRouter = require("./donor.route");
 
 // controller
 const ctrler = require("../controllers/api.controller");
@@ -18,23 +19,11 @@ const router = express.Router();
 router.use("/leagues", leaguesRoute);
 router.use("/teams", teamRoute);
 router.use("/rules", ruleRouter);
+router.use("/donors", donorRouter);
 
 router.use(authMiddleware, decentralization("manager"));
 
 router.get("/", ctrler.infoAPI);
-
-// router
-// 	.route("/teams")
-// 	.get(ctrler.getTeams)
-// 	.post(ctrler.createTeam);
-
-// router.route("/teams/:team").get().put().delete();
-
-// router.route("/teams/:team/player/:id").get().post().put().delete();
-
-// router.route("/leagues/:league/match").get().post();
-
-// router.route("/leagues/:league/match:match").get().put().delete();
 
 router.use(ctrler.notFound);
 

@@ -18,12 +18,12 @@ block content
                               for league in leagues
                                    .card.league.my-2.py-2(id=league.id style='width: 18rem;')
                                         a.d-flex.flex-column.text-black.text-decoration-none.h-100( href="/manager/leagues/"+ league.id )
-                                             img.card-img-top(src=league.logo_path alt="hình ảnh tượng trương của " + league.name)
+                                             img.flex-grow-1.card-img-top(src=league.logo_path alt="hình ảnh tượng trương của " + league.name)
                                              .card-body.d-flex.flex-row
                                                   .d-flex.flex-column.w-100.h-100.justify-content-end
                                                        h5.card-title= league.name
                                                        p.card-text.show-less= league.description
-                                                       p.card-text= league.startTime.toLocaleDateString() + " - " + league.endTime.toLocaleDateString()
+                                                       p.card-text= moment(league.startTime).format("MM/yyyy") + " - " + moment(league.endTime).format("MM/yyyy")
                                         button.btn.btn-danger.delete
                                                   i.bi.bi-trash
                     hr
@@ -68,11 +68,12 @@ block content
                          for donor in donors
                               .card.donors.my-2.py-2(id=donor.id style='width: 20rem;')
                                    a.d-flex.flex-column.text-black.text-decoration-none.h-100( href="/manager/donors/"+ donor.id )
-                                        img.card-img-top(src=donor.logo_path alt="hình ảnh tượng trương của " + donor.name)
+                                        img.flex-grow-1.card-img-top(src=donor.logo_path alt="hình ảnh tượng trương của " + donor.name)
                                         .card-body.d-flex.flex-row
                                              .d-flex.flex-column.w-100.h-100.justify-content-end
                                                   h5.card-title= donor.name
-                                                  p.card-text= donor.email + " " + donor.phone
+                                                  p.card-text= donor.email
+                                                  p.card-text= donor.phone
                                                   p.card-text.h4 $#{donor.funding}
                                                   p.card-text.show-less= donor.description
                                    button.btn.btn-danger.delete
@@ -84,4 +85,22 @@ block content
                          a.d-block.btn.btn-primary(href="/manager/referees")
                               i.bi.bi-plus-lg
                               span &nbsp;Thêm Trọng Tài
+                    hr
+                    #root.row.d-flex.justify-content-evenly
+                         table.table.table-hover
+                              thead
+                                   tr
+                                        th(scope='col')
+                                        th(scope='col') Trọng Tài
+                                        th(scope='col') Số điện thoại
+                                        th(scope='col') email
+                              tbody 
+                                   each referee in referees
+                                        tr.align-middle
+                                             td.text-center
+                                                  img(src=referee.avatar class="avatar" alt="avatar của trọng tài " + referee.name)
+                                             td= referee.name
+                                             td= referee.phone
+                                             td= referee.email
+
                     hr

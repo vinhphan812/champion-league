@@ -3,7 +3,8 @@ const User = require("../model/user.model"),
 	Team = require("../model/team.model"),
 	Match = require("../model/match.model"),
 	Player = require("../model/player.model"),
-	Donor = require("../model/donor.model");
+	Donor = require("../model/donor.model"),
+	Referee = require("../model/referee.model");
 
 const router = express.Router();
 
@@ -18,6 +19,7 @@ router.get("/", async (req, res) => {
 	res.locals.donors = await Donor.find({});
 	res.locals.players = await Player.find({});
 	res.locals.matchs = await Match.find({});
+	res.locals.referees = await Referee.find({});
 
 	res.render("public/home");
 });

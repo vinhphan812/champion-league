@@ -202,7 +202,7 @@ function playerForm(
 			<div>
 				<label for="birthday" class="form-label text-start w-100">Ngày Sinh</label>
 				<input type="date" class="form-control" id="birthday" name="birthday" placeholder="Ngày Sinh" value="${
-					new Date(birthday).toISOString().split("T")[0] || ""
+					moment(birthday).format("YYYY-MM-DD") || ""
 				}">		
 			</div>
 			`,
@@ -348,7 +348,7 @@ function renderPlayers(data) {
 				<td>${player.height}</td>
 				<td>${player.weight}</td>
 				<td>${player.position}</td>
-				<td>${new Date(player.birthday).toLocaleDateString()}</td>
+				<td>${moment(player.birthday).format("DD/MM/YYYY")}</td>
 				<td class="option">
 					<button class="btn py-0 edit">
 						<i class="bi bi-pencil-square"></i>

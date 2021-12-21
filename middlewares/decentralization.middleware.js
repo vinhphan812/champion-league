@@ -1,3 +1,5 @@
+const moment = require("moment");
+
 const User = require("../model/user.model");
 
 const lvlPerms = { admin: 3, manager: 2, user: 1 };
@@ -27,6 +29,7 @@ module.exports = {
 				return res.status(404).render("error/permission");
 			let menu = [];
 
+			res.locals.moment = moment;
 			res.locals.menu = menus[userPerms];
 
 			res.locals.isManager = userPerms != "user";

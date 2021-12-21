@@ -48,7 +48,7 @@ function renderPlayers(data) {
 			<td>${player.height}</td>
 			<td>${player.weight}</td>
 			<td>${player.position}</td>
-			<td>${new Date(player.birthday).toLocaleDateString()}</td>
+			<td>${moment(player.birthday).format("DD/MM/YYYY")}</td>
 		</tr>`;
 	});
 	$("#players-table > tbody").html(html);

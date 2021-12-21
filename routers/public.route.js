@@ -3,7 +3,7 @@ const User = require("../model/user.model"),
 	Team = require("../model/team.model"),
 	Match = require("../model/match.model"),
 	Player = require("../model/player.model"),
-	Donor = require("../model/donors.model");
+	Donor = require("../model/donor.model");
 
 const router = express.Router();
 

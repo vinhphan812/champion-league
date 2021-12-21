@@ -1,0 +1,337 @@
+[{
+  "_id": {
+    "$oid": "61bf7364dbba7b151e247d79"
+  },
+  "name": "SVĐ Kiên Giang",
+  "address": "Phường An Bình, Rạch Giá, tỉnh Kiên Giang",
+  "capacity": 10000,
+  "team": {
+    "$oid": "61bf7364dbba7b151e247d3f"
+  },
+  "createAt": {
+    "$date": "2021-12-19T17:58:32.522Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-19T17:58:32.522Z"
+  }
+},{
+  "_id": {
+    "$oid": "61bf7394dbba7b151e247ded"
+  },
+  "name": "SVĐ Bà Rịa",
+  "address": "Phường An Bình, Rạch Giá, tỉnh Kiên Giang",
+  "capacity": 10000,
+  "team": {
+    "$oid": "61bf7394dbba7b151e247daf"
+  },
+  "createAt": {
+    "$date": "2021-12-19T17:58:32.522Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-19T17:58:32.522Z"
+  }
+},{
+  "_id": {
+    "$oid": "61bf73b8dbba7b151e247e46"
+  },
+  "name": "SVĐ Bình Dương",
+  "address": "Đường 30/4, Đại lộ Bình Dương, TP Thủ Dầu Một, Bình Dương",
+  "capacity": 13035,
+  "team": {
+    "$oid": "61bf73b8dbba7b151e247e0a"
+  },
+  "createAt": {
+    "$date": "2021-12-19T17:58:32.522Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-19T17:58:32.522Z"
+  }
+},{
+  "_id": {
+    "$oid": "61bf73df0021d546bb02a21a"
+  },
+  "name": "SVĐ Quy Nhơn",
+  "address": "TP Quy Nhơn",
+  "capacity": 20000,
+  "team": {
+    "$oid": "61bf73df0021d546bb02a1de"
+  },
+  "createAt": {
+    "$date": "2021-12-19T18:03:07.687Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-19T18:03:07.687Z"
+  }
+},{
+  "_id": {
+    "$oid": "61bf73f94c9d881894838445"
+  },
+  "name": "SVĐ Bình Phước",
+  "address": "Bình Phước",
+  "capacity": 10000,
+  "team": {
+    "$oid": "61bf73f84c9d88189483840f"
+  },
+  "createAt": {
+    "$date": "2021-12-19T18:03:30.758Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-19T18:03:30.758Z"
+  }
+},{
+  "_id": {
+    "$oid": "61bf74824c9d881894838507"
+  },
+  "name": "SVĐ Cần Thơ",
+  "address": "thành phố Cần Thơ",
+  "capacity": 30000,
+  "team": {
+    "$oid": "61bf74824c9d8818948384cf"
+  },
+  "createAt": {
+    "$date": "2021-12-19T18:03:30.758Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-19T18:03:30.758Z"
+  }
+},{
+  "_id": {
+    "$oid": "61bf749b4c9d881894838562"
+  },
+  "name": "SVĐ Pleiku",
+  "address": "Gia Lai",
+  "capacity": 12000,
+  "team": {
+    "$oid": "61bf749b4c9d88189483852c"
+  },
+  "createAt": {
+    "$date": "2021-12-19T18:03:30.758Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-19T18:03:30.758Z"
+  }
+},{
+  "_id": {
+    "$oid": "61bf74b04c9d8818948385ae"
+  },
+  "name": "SVĐ Tự Do",
+  "address": "thành phố Huế",
+  "capacity": 16000,
+  "team": {
+    "$oid": "61bf74af4c9d881894838570"
+  },
+  "createAt": {
+    "$date": "2021-12-19T18:03:30.758Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-19T18:03:30.758Z"
+  }
+},{
+  "_id": {
+    "$oid": "61bf74c50910db56fffaabf0"
+  },
+  "name": "SVĐ Thiên Trường",
+  "address": "Nam Định",
+  "capacity": 20000,
+  "team": {
+    "$oid": "61bf74c50910db56fffaabbc"
+  },
+  "createAt": {
+    "$date": "2021-12-19T18:06:58.607Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-19T18:06:58.607Z"
+  }
+},{
+  "_id": {
+    "$oid": "61bf74d50910db56fffaac34"
+  },
+  "name": "SVĐ Buôn Ma Thuột",
+  "address": "tỉnh Đắk Lắk",
+  "capacity": 25000,
+  "team": {
+    "$oid": "61bf74d40910db56fffaabfe"
+  },
+  "createAt": {
+    "$date": "2021-12-19T18:06:58.607Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-19T18:06:58.607Z"
+  }
+},{
+  "_id": {
+    "$oid": "61bf74ea0910db56fffaac7c"
+  },
+  "name": "SVĐ Đồng Tháp",
+  "address": "tỉnh Đồng Tháp",
+  "capacity": 18000,
+  "team": {
+    "$oid": "61bf74e90910db56fffaac42"
+  },
+  "createAt": {
+    "$date": "2021-12-19T18:06:58.607Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-19T18:06:58.607Z"
+  }
+},{
+  "_id": {
+    "$oid": "61bf751d5a533c1c17f09a9b"
+  },
+  "name": "SVĐ Hàng Đẫy",
+  "address": "thủ đô Hà Nội",
+  "capacity": 22500,
+  "team": {
+    "$oid": "61bf751d5a533c1c17f09a5d"
+  },
+  "createAt": {
+    "$date": "2021-12-19T18:08:19.424Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-19T18:08:19.424Z"
+  }
+},{
+  "_id": {
+    "$oid": "61bf75306e481e4d59659114"
+  },
+  "name": "SVĐ Lạch Tray",
+  "address": "Hải Phòng",
+  "capacity": 25000,
+  "team": {
+    "$oid": "61bf75306e481e4d596590e0"
+  },
+  "createAt": {
+    "$date": "2021-12-19T18:08:41.712Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-19T18:08:41.712Z"
+  }
+},{
+  "_id": {
+    "$oid": "61bf75468ea2aed05d93e9c0"
+  },
+  "name": "SVĐ Pleiku",
+  "address": "Gia Lai",
+  "capacity": 12000,
+  "team": {
+    "$oid": "61bf75468ea2aed05d93e98a"
+  },
+  "createAt": {
+    "$date": "2021-12-19T18:08:51.848Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-19T18:08:51.848Z"
+  }
+},{
+  "_id": {
+    "$oid": "61bf755858496962d824d286"
+  },
+  "name": "SVĐ Hà Tĩnh",
+  "address": "Hà Tĩnh",
+  "capacity": 12000,
+  "team": {
+    "$oid": "61bf755858496962d824d250"
+  },
+  "createAt": {
+    "$date": "2021-12-19T18:09:14.390Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-19T18:09:14.390Z"
+  }
+},{
+  "_id": {
+    "$oid": "61bf756b58496962d824d2d3"
+  },
+  "name": "SVĐ Long An",
+  "address": "Long An",
+  "capacity": 20000,
+  "team": {
+    "$oid": "61bf756a58496962d824d29b"
+  },
+  "createAt": {
+    "$date": "2021-12-19T18:09:14.390Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-19T18:09:14.390Z"
+  }
+},{
+  "_id": {
+    "$oid": "61bf75b8a60e5304d40f8198"
+  },
+  "name": "SVĐ Quảng Nam",
+  "address": "Quảng Nam",
+  "capacity": 15000,
+  "team": {
+    "$oid": "61bf75b8a60e5304d40f815c"
+  },
+  "createAt": {
+    "$date": "2021-12-19T18:10:41.982Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-19T18:10:41.982Z"
+  }
+},{
+  "_id": {
+    "$oid": "61bf76f088a4a2f9f0789cca"
+  },
+  "name": "SVĐ 19/8 Nha Trang",
+  "address": "Khánh Hòa",
+  "capacity": 18000,
+  "team": {
+    "$oid": "61bf76f088a4a2f9f0789c94"
+  },
+  "createAt": {
+    "$date": "2021-12-19T18:16:14.833Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-19T18:16:14.833Z"
+  }
+},{
+  "_id": {
+    "$oid": "61bf7734474cf868af1e003c"
+  },
+  "name": "SVĐ Thống Nhất",
+  "address": "TPHCM",
+  "capacity": 16000,
+  "team": {
+    "$oid": "61bf7734474cf868af1e0006"
+  },
+  "createAt": {
+    "$date": "2021-12-19T18:16:45.543Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-19T18:16:45.543Z"
+  }
+},{
+  "_id": {
+    "$oid": "61bf776c474cf868af1e0096"
+  },
+  "name": "SVĐ Hòa Xuân",
+  "address": "Đà Nẵng",
+  "capacity": 20000,
+  "team": {
+    "$oid": "61bf776b474cf868af1e005a"
+  },
+  "createAt": {
+    "$date": "2021-12-19T18:16:45.543Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-19T18:16:45.543Z"
+  }
+},{
+  "_id": {
+    "$oid": "61bf782a31094d01f81c6c7a"
+  },
+  "name": "SVĐ Vinh",
+  "address": "Nghệ An",
+  "capacity": 18000,
+  "team": {
+    "$oid": "61bf782a31094d01f81c6c3e"
+  },
+  "createAt": {
+    "$date": "2021-12-19T18:20:30.241Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-19T18:20:30.241Z"
+  }
+}]

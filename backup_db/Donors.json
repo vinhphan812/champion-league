@@ -1,0 +1,23 @@
+[{
+  "_id": {
+    "$oid": "61c18b810656b64ed95ca924"
+  },
+  "name": "Bamboo Airways",
+  "address": "Tầng 22, Tòa nhà Bamboo Airways Tower, 265 Cầu Giấy, Phường Dịch Vọng, Quận Cầu Giấy, Thành phố Hà Nội",
+  "description": "Bamboo Airways là một hãng hàng không Việt Nam thuộc Tập đoàn FLC, có trụ sở tại Hà Nội. Công ty có vốn điều lệ ban đầu 700 tỷ đồng, sau đó FLC Group đã tăng vốn điều lệ lên thành 7000 tỷ đồng vào tháng 5 năm 2020 và 10.500 tỷ đồng vào tháng 2/2021. Bamboo Airways phục vụ các tuyến bay nội địa kết nối với các địa phương có các khu nghỉ mát của FLC cũng như các tuyến bay quốc tế. Hãng đặt mục tiêu sẽ trở thành hãng hàng không 5 sao đầu tiên tại Việt Nam theo tiêu chuẩn Skytrax.",
+  "email": "info@bambooairways.com",
+  "phone": "02432333233",
+  "funding": 2000000,
+  "logo_path": "/public\\uploads\\bamboo.jpg"
+},{
+  "_id": {
+    "$oid": "61c18e242e58f4a5a01e9d34"
+  },
+  "name": "King Coffee",
+  "address": "161 Võ Văn Tần, Phường Võ Thị Sáu, Quận 3, Thành phố Hồ Chí Minh, Việt Nam",
+  "description": "Cà phê King Coffee là sản phẩm cà phê thương hiệu Việt Nam được phát triển bởi Công ty TNHH MTV TNI ra mắt vào 10/2016 tại Hoa Kỳ sau đó tiếp tục phát triển ở hơn 60 quốc gia và vùng lãnh thổ, trong đó có các thị trường lớn như Trung Quốc, Mỹ, Nhật Bản, Nga, Singapore, Hàn Quốc… trước khi về lại Việt Nam vào tháng 8/2017.",
+  "email": "hello@tnicorporation.com",
+  "phone": "(028) 3526 0196",
+  "funding": 100000,
+  "logo_path": "/public\\uploads\\logo-KC.jpg"
+}]

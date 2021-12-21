@@ -3,8 +3,12 @@ const { Schema, model } = require("mongoose");
 const RefereeSchema = new Schema(
 	{
 		name: String,
+		address: String,
+		email: String,
+		phone: String,
+		description: String,
 		birthday: { type: Date, default: new Date() },
-		phone: { type: String, maxLength: 10 },
+		avatar: { type: String, default: "/public/images/referee.png" },
 	},
 	{ versionKey: false }
 );

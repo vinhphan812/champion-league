@@ -214,26 +214,8 @@ body {
 	font-weight: 500;
 }
 /* news */
-.card-news {
-	max-width: 1100px;
-	margin: 100px auto;
-	text-align: center;
-	padding: 30px;
-}
-.card-news h2.header {
-	font-size: 40px;
-	margin: 0 0 30px 0;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-}
-.services {
-	display: flex;
-	align-items: center;
-}
+
 .info-box {
-	display: flex;
-	flex-wrap: wrap;
-	flex: 1;
 	margin: 20px;
 	padding: 20px;
 	border: 2px solid black;
@@ -244,14 +226,12 @@ body {
 	font-size: 70px;
 	margin: 16px 0;
 }
-.info-box > * {
-	flex: 1 1 100%;
-}
+
 .info-box:hover {
 	color: white;
 }
 .info-box:hover a {
-	border-color: white;
+	border-color: white !important;
 	background: white;
 }
 .cup:hover {
@@ -281,18 +261,15 @@ body {
 	letter-spacing: 1px;
 	text-transform: uppercase;
 }
-.info-box p {
-	font-size: 17px;
-	font-family: "Poppins", sans-serif;
-}
+
 .info-box a {
-	margin: 22px 0;
+	width: 50%;
 	background: black;
 	color: white;
 	text-decoration: none;
 	text-transform: uppercase;
 	border: 1px solid black;
-	padding: 15px 0;
+	padding: 0.5rem 1rem;
 	border-radius: 25px;
 	transition: 0.3s ease;
 }

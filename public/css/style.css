@@ -45,7 +45,8 @@ footer.dark a {
 	background-color: #efefef;
 }
 
-.delete {
+.league .delete,
+.donors .delete {
 	position: absolute;
 	top: -1rem;
 	right: -1rem;

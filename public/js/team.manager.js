@@ -152,8 +152,8 @@ function renderOptionStadium() {
 }
 
 function addEventOptionStadium() {
-	$(".stadium .bi-pencil-square").click(editStadium);
-	$("stadium .bi-trash").click(deleteStadium);
+	$(".stadium .edit").click(editStadium);
+	$(".stadium .delete").click(deleteStadium);
 }
 
 function playerForm(
@@ -202,7 +202,7 @@ function playerForm(
 			<div>
 				<label for="birthday" class="form-label text-start w-100">Ngày Sinh</label>
 				<input type="date" class="form-control" id="birthday" name="birthday" placeholder="Ngày Sinh" value="${
-					birthday || ""
+					new Date(birthday).toISOString().split("T")[0] || ""
 				}">		
 			</div>
 			`,
@@ -220,53 +220,74 @@ function addPlayer() {
 }
 
 function editPlayer(e) {
-	console.log(e);
-	playerForm({}, "Chỉnh Sửa", "Lưu", FetchPlayer("PUT"));
+	let $player = e.target.parentNode.parentNode;
+
+	if ($player.className == "option") $player = $player.parentNode;
+
+	const { id } = $player;
+
+	const player = players.find((e) => e._id == id);
+
+	playerForm(player, "Chỉnh Sửa", "Lưu", FetchPlayer("PUT"));
 }
 
-async function FetchPlayer(method = "POST") {
-	const name = $("#name").val(),
-		height = +$("#height").val(),
-		weight = +$("#weight").val(),
-		numberInTeam = +$("#number").val(),
-		position = $("#position").val(),
-		birthday = new Date($("#birthday").val());
+function FetchPlayer(method = "POST") {
+	return async () => {
+		const name = $("#name").val(),
+			height = +$("#height").val(),
+			weight = +$("#weight").val(),
+			numberInTeam = +$("#number").val(),
+			position = $("#position").val(),
+			birthday = new Date($("#birthday").val());
 
-	const currentDate = new Date();
+		const currentDate = new Date();
 
-	if (numberInTeam == NaN)
-		return Swal.showValidationMessage("Số áo phải là số!");
+		if (
+			!name ||
+			!height ||
+			!weight ||
+			!numberInTeam ||
+			!position ||
+			!birthday
+		)
+			return Swal.showValidationMessage(
+				"Vui lòng điền đầy đủ các trường"
+			);
 
-	if (weight == NaN)
-		return Swal.showValidationMessage("Cân nặng phải là số!");
+		if (numberInTeam == NaN)
+			return Swal.showValidationMessage("Số áo phải là số!");
 
-	if (height == NaN)
-		return Swal.showValidationMessage("Chiều cao phải là số!");
+		if (weight == NaN)
+			return Swal.showValidationMessage("Cân nặng phải là số!");
 
-	if (currentDate.getYear() - birthdate.getYear() < 16)
-		return Swal.showValidationMessage(
-			"Thành viên chưa đủ tuổi tham gia thi đấu"
-		);
+		if (height == NaN)
+			return Swal.showValidationMessage("Chiều cao phải là số!");
 
-	const player = {
-		name,
-		height,
-		weight,
-		numberInTeam,
-		position: positionPlayer[position],
-		birthday,
+		if (currentDate.getYear() - birthday.getYear() < 16)
+			return Swal.showValidationMessage(
+				"Thành viên chưa đủ tuổi tham gia thi đấu"
+			);
+
+		const player = {
+			name,
+			height,
+			weight,
+			numberInTeam,
+			position: positionPlayer[position],
+			birthday,
+		};
+
+		const { success, message, data } = await (
+			await fetch(`/api/teams/${team}/players/`, {
+				method,
+				headers: { "Content-Txype": "application/json" },
+				body: JSON.stringify(player),
+			})
+		).json();
+		if (!success) return Swal.showValidationMessage(message);
+		players.push(player);
+		Alert("Success", "Thêm Thành Viên Thành Công", "OK", "success");
 	};
-
-	const { success, message, data } = await (
-		await fetch(`/api/teams/${team}/players/`, {
-			method,
-			headers: { "Content-Txype": "application/json" },
-			body: JSON.stringify(player),
-		})
-	).json();
-	if (!success) return Swal.showValidationMessage(message);
-	players.push(player);
-	Alert("Success", "Thêm Thành Viên Thành Công", "OK", "success");
 }
 
 function deletePlayer(e) {

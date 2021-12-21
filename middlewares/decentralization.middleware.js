@@ -32,8 +32,6 @@ module.exports = {
 			res.locals.moment = moment;
 			res.locals.menu = menus[userPerms];
 
-			res.locals.isManager = userPerms != "user";
-
 			next();
 		};
 	},

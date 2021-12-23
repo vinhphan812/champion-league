@@ -91,13 +91,13 @@ module.exports = {
 		next();
 	},
 	createReferee: async (req, res, next) => {
-		const { name, address, email, phone, birthday } = req.body;
+		const { name, email, phone, birthday } = req.body;
 		const errors = [];
 
 		res.locals.body = req.body;
 		console.log(req.body);
 
-		if (checkNotContain([name, address, email, phone, birthday]))
+		if (checkNotContain([name, email, phone, birthday]))
 			errors.push(ERROR_MSG.invalid + fields.referee);
 
 		if (errors.length) {

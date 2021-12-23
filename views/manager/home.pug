@@ -3,7 +3,7 @@ block head
      title Manager Page
 block content
      .row
-          .col-md-3
+          .col-md-3.my-2
                include ../components/menuManager.pug
           .col-md-9
                #leagues.pb-5
@@ -27,6 +27,7 @@ block content
                                         button.btn.btn-danger.delete
                                                   i.bi.bi-trash
                     hr
+        
                #teams.pb-5
                     .d-flex.justify-content-between.align-items-center
                          h1#title Đội Bóng
@@ -92,15 +93,19 @@ block content
                                    tr
                                         th(scope='col')
                                         th(scope='col') Trọng Tài
-                                        th(scope='col') Số điện thoại
-                                        th(scope='col') email
+                                        th.d-none.d-lg-table-cell(scope='col') Số điện thoại
+                                        th.d-none.d-lg-table-cell(scope='col') email
+                                        th
                               tbody 
                                    each referee in referees
-                                        tr.align-middle
+                                        tr.align-middle(id=referee.id)
                                              td.text-center
                                                   img(src=referee.avatar class="avatar" alt="avatar của trọng tài " + referee.name)
-                                             td= referee.name
-                                             td= referee.phone
-                                             td= referee.email
-
+                                             td
+                                                  a(href=`/manager/referees/${referee.id}`)= referee.name
+                                             td.d-none.d-lg-table-cell= referee.phone
+                                             td.d-none.d-lg-table-cell= referee.email
+                                             td
+                                                  button.btn.btn-danger.delete
+                                                       i.bi.bi-trash
                     hr

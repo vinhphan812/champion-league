@@ -39,7 +39,7 @@ async function getPlayerInTeam() {
 
 function renderPlayers(data) {
 	const html = data.map((player, index) => {
-		return `<tr id="${player._id}">
+		return `<tr id="${player._id}" class="align-middle">
 			<td>${index + 1}</td>
 			<td>
 				<a href="players/${player._id}">${player.name}</a>
@@ -48,7 +48,9 @@ function renderPlayers(data) {
 			<td>${player.height}</td>
 			<td>${player.weight}</td>
 			<td>${player.position}</td>
-			<td>${moment(player.birthday).format("DD/MM/YYYY")}</td>
+			<td class="d-none d-lg-table-cell">${moment(player.birthday).format(
+				"DD/MM/YYYY"
+			)}</td>
 		</tr>`;
 	});
 	$("#players-table > tbody").html(html);

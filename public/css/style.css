@@ -52,6 +52,7 @@ footer.dark a {
 .league .delete,
 .donors .delete,
 .update .edit {
+	z-index: 100;
 	position: absolute;
 	top: -1rem;
 	right: -1rem;

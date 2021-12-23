@@ -4,6 +4,8 @@ const positionPlayer = ["Thủ môn", "Hậu vệ", "Tiền vệ", "Tiền đạ
 window.onload = () => {
 	addEventOptionStadium();
 	getPlayerInTeam();
+	$(".logo .edit").click(editImageTeam);
+	$(".team-editor").click(editTeam);
 	$("#btn-add-player").click(addPlayer);
 };
 
@@ -339,7 +341,7 @@ async function getPlayerInTeam() {
 
 function renderPlayers(data) {
 	const html = data.map((player, index) => {
-		return `<tr id="${player._id}">
+		return `<tr id="${player._id}" class="align-middle">
 				<td>${index + 1}</td>
 				<td>
 					<a href="players/${player._id}">${player.name}</a>
@@ -348,7 +350,9 @@ function renderPlayers(data) {
 				<td>${player.height}</td>
 				<td>${player.weight}</td>
 				<td>${player.position}</td>
-				<td>${moment(player.birthday).format("DD/MM/YYYY")}</td>
+				<td class="d-md-none d-lg-table-cell">${moment(player.birthday).format(
+					"DD/MM/YYYY"
+				)}</td>
 				<td class="option">
 					<button class="btn py-0 edit">
 						<i class="bi bi-pencil-square"></i>
@@ -366,4 +370,116 @@ function renderPlayers(data) {
 function addEventOptionPlayer() {
 	$("tr > .option > .edit").click(editPlayer);
 	$("tr > .option > .delete").click(deletePlayer);
+}
+
+function editImageTeam() {
+	Swal.fire({
+		title: "Logo " + $(".h2").text(),
+		html: `
+			<img id="logo-editor" class="w-75 image-fluid" src="${$(".logo img").attr(
+				"src"
+			)}"/>
+			<div>
+                    <label for="logo" class="form-label text-start w-100">Logo Đội Bóng</label>
+                    <input type="file" class="form-control" id="logo" name="logo" onchange="handleChange(event)" accept="image/*">
+               </div>
+			`,
+		showCancelButton: true,
+		confirmButtonText: "Lưu",
+		showLoaderOnConfirm: true,
+		reverseButtons: true,
+		preConfirm: async () => {
+			var input = $("#logo")[0];
+			var body = new FormData();
+
+			body.append("logo", input.files[0]);
+
+			const { success, data, message } = await (
+				await fetch(`/api/teams/${team}/logo`, {
+					method: "POST",
+					body: body,
+				})
+			).json();
+
+			if (!success)
+				return Alert("Error", "Không xác định", "OK", "error");
+
+			$(".logo img")[0].src = data;
+			Alert("Success", message, "OK", "success");
+		},
+		allowOutsideClick: () => !Swal.isLoading(),
+	});
+}
+
+function handleChange(e) {
+	const image = $("#logo-editor")[0];
+	image.src = URL.createObjectURL(e.target.files[0]);
+}
+
+function editTeam() {
+	const name = $(".team-name"),
+		founded = $(".founded"),
+		description = $(".description p"),
+		coach = $(".coach");
+
+	Swal.fire({
+		title: "Chỉnh sửa thông tin đội bóng" + $(".h2").text(),
+		html: `
+			<div class="my-2">
+                    <label for="name" class="form-label text-start w-100">Tên đội bóng</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Tên đội bóng" value="${name.text()}">
+               </div>
+
+			<div class="my-2">
+				<label for="founded" class="form-label text-start w-100">Ngày thành lập</label>
+				<input type="date" class="form-control" id="founded" name="founded" value="${moment(
+					founded.text()
+				).format("yyyy-MM-DD")}">
+			</div>
+			
+			<div class="my-2">
+				<label class="form-label text-start w-100" for="description-editor">Thông tin đội bóng</label>
+				<textarea class="form-control" placeholder="Nhập thông tin mô tả đội bóng" id="description-editor">${description.text()}</textarea>
+			</div>
+			<div>
+                    <label for="coach" class="form-label text-start w-100">Huấn luyện viên</label>
+                    <input type="text" class="form-control" id="coach" name="coach" placeholder="Huấn luyện viên" value="${coach.text()}">
+               </div>
+		`,
+		showCancelButton: true,
+		confirmButtonText: "Lưu",
+		showLoaderOnConfirm: true,
+		reverseButtons: true,
+		preConfirm: async () => {
+			const nameEditor = $("#name").val(),
+				descriptionEditor = $("#description-editor").val(),
+				foundedEditor = $("#founded").val(),
+				coachEditor = $("#coach").val();
+
+			const body = JSON.stringify({
+				description: descriptionEditor,
+				name: nameEditor,
+				founded: foundedEditor,
+				coach: coachEditor,
+			});
+
+			const { success, message } = await (
+				await fetch(`/api/teams/${team}`, {
+					method: "PUT",
+					headers: { "Content-Type": "application/json" },
+					body,
+				})
+			).json();
+
+			if (!success) return Alert("Error", message, "OK", "error");
+
+			Alert("Success", message, "OK", "success");
+
+			name.text(nameEditor);
+			founded.text(foundedEditor);
+			description.text(descriptionEditor);
+			coach.text(coachEditor);
+		},
+		allowOutsideClick: () => !Swal.isLoading(),
+	});
 }

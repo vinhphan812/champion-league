@@ -4,10 +4,7 @@ const Team = require("../../model/team.model.js"),
 
 module.exports = {
 	getTeams: async (req, res) => {
-		const teams = await Team.find(
-			{},
-			{ _id: 1, name: 1, manager: 1, logo_path: 1 }
-		);
+		const teams = await Team.find({}, { _id: 1, name: 1, logo_path: 1 });
 
 		res.status(200).json({
 			success: true,
@@ -28,19 +25,26 @@ module.exports = {
 		});
 	},
 	updateTeam: async (req, res) => {
-		const { body } = req,
-			{ _id, createAt } = res.locals.team;
+		try {
+			const { body } = req,
+				{ team } = res.locals;
 
-		body.updateAt = new Date();
-		body.createAt = createAt;
+			body.updateAt = new Date();
 
-		await Team.updateOne({ _id }, body);
+			await Team.updateOne({ _id: team }, body);
 
-		res.json({
-			success: true,
-			code: 200,
-			message: `update team ${req.locals.team.name}`,
-		});
+			res.json({
+				success: true,
+				code: 200,
+				message: `cập nhật đội bóng ${team.name} thành công!`,
+			});
+		} catch (error) {
+			res.json({
+				success: false,
+				code: 403,
+				message: error.message,
+			});
+		}
 	},
 	getTeam: (req, res) => {
 		res.json({

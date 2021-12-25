@@ -6,6 +6,8 @@ const User = require("../model/user.model"),
 	Donor = require("../model/donor.model"),
 	Referee = require("../model/referee.model");
 
+const ctrler = require("../controllers/public.controller");
+
 const router = express.Router();
 
 router.use(async (req, res, next) => {
@@ -14,44 +16,15 @@ router.use(async (req, res, next) => {
 	next();
 });
 
-router.get("/", async (req, res) => {
-	res.locals.teams = await Team.find({});
-	res.locals.donors = await Donor.find({});
-	res.locals.players = await Player.find({});
-	res.locals.matchs = await Match.find({});
-	res.locals.referees = await Referee.find({});
+router.get("/", ctrler.getHome);
 
-	res.render("public/home");
-});
-
-router.get("/search", async (req, res) => {
-	res.render("public/search");
-});
+router.get("/search", ctrler.searchPage);
 
 // players
 router.get("/players");
 
 // teams
-router.get("/teams", async (req, res) => {
-	res.locals.teams = await Team.find({});
-	res.render("public/teams");
-});
-router.get("/teams/:team", async (req, res, next) => {
-	const { team } = req.params;
-
-	if (team.length !== 24) return next();
-
-	const data = await Team.findOne({ _id: team }).populate("stadium");
-
-	if (!data) return next();
-
-	res.locals = {
-		...res.locals,
-		team: data,
-		scripts: ["/public/js/team.js"],
-	};
-
-	res.render("team");
-});
+router.get("/teams", ctrler.getAllTeamPage);
+router.get("/teams/:team", ctrler.getTeamPage);
 
 module.exports = router;

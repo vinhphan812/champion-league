@@ -21,9 +21,11 @@ html(lang="en")
                                    for item in menu 
                                         li.nav-item
                                              a.nav-link.active(aria-current='page' href=item.url)= item.title
-                         form.d-flex.p-2(action="/search")
-                              input.form-control.me-2(type='search' placeholder='Tìm Kiếm' name="q" aria-label='Search')
-                              button.btn.btn-outline-light.w-50(type='submit') Tìm Kiếm
+                         if !isSearch
+                              form.d-flex.p-2(action="/search")
+                                   input.form-control.me-2(type='search' placeholder='Tìm Kiếm' name="q" aria-label='Search')
+                                   input(type="hidden" name="type" value="all")
+                                   button.btn.btn-outline-light.w-50(type='submit') Tìm Kiếm
 
                          if !isLogin
                               if user

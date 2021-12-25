@@ -74,12 +74,21 @@ footer.dark a {
 	color: #ffc107;
 }
 
-.show-less {
+.show-less-3 {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	display: -webkit-box;
 	-webkit-line-clamp: 3; /* number of lines to show */
 	line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+.show-less-1 {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 1; /* number of lines to show */
+	line-clamp: 1;
 	-webkit-box-orient: vertical;
 }
 

@@ -29,8 +29,9 @@ module.exports = {
 	createLeague: async (req, res, next) => {
 		const league = await League.create(res.locals.body);
 
-		if (league) return res.redirect("/manager");
-		next();
+		if (!league) return next();
+
+		return res.redirect("/manager");
 	},
 	getLeaguePage: async (req, res, next) => {
 		const { league } = req.params;
@@ -96,7 +97,9 @@ module.exports = {
 
 		res.render("team");
 	},
-	getDonorsPage: async (req, res, next) => {},
+	getDonorsPage: async (req, res, next) => {
+		next();
+	},
 	getCreateDonor: async (req, res, next) => {
 		res.locals.body = {};
 		res.render("manager/createDonor");
@@ -105,7 +108,9 @@ module.exports = {
 		const data = await Donor.create(req.body);
 		res.redirect("/manager");
 	},
-	getRefereePage: async (req, res, next) => {},
+	getRefereePage: async (req, res, next) => {
+		next();
+	},
 	getCreateReferee: async (req, res, next) => {
 		res.locals.body = {};
 		res.render("manager/createReferee");

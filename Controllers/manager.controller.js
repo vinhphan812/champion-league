@@ -1,6 +1,8 @@
-const User = require("../model/user.model"),
-	League = require("../model/league.model"),
+const { initMatchs } = require("../modules/schedule");
+
+const League = require("../model/league.model"),
 	Team = require("../model/team.model"),
+	Match = require("../model/match.model"),
 	Player = require("../model/player.model"),
 	Stadium = require("../model/stadium.model"),
 	Donor = require("../model/donor.model"),
@@ -27,22 +29,42 @@ module.exports = {
 		res.render("manager/createTeam");
 	},
 	createLeague: async (req, res, next) => {
-		const league = await League.create(res.locals.body);
+		// get body. then validation data
+		const { body } = res.locals;
 
-		if (!league) return next();
+		// create league
+		const league = await League.create(body);
 
-		return res.redirect("/manager");
-	},
-	getLeaguePage: async (req, res, next) => {
-		const { league } = req.params;
+		// find all team and referee
+		const teams = await Team.find({});
+		const referees = await Referee.find({});
 
-		if (league.length != 24) next();
+		// init matchs => {go: [...], back: [...]}
+		const matchs = initMatchs(teams, new Date(body.startTime));
 
-		const data = await League.findOne({ _id: league });
+		// init match list is a Array (convert match)
+		const matchList = [];
 
-		if (!data) next();
-		res.locals.league = data;
-		res.render("manager/league");
+		// create matchs Object
+		//TODO convert match => match Object
+		for (const round in matchs)
+			matchs[round].forEach(({ teamA, teamB, date }) => {
+				matchList.push({
+					name: teamA.name + " - " + teamB.name,
+					teams: [teamA.id, teamB.id],
+					date: date,
+					round,
+					stadium: teamA.stadium.toString(),
+					league: league.id,
+					referees: randomReferee(referees),
+				});
+			});
+
+		// add matchs into db
+		await Match.insertMany(matchList);
+
+		// go to league page
+		return res.redirect("/manager/leagues/" + league._id);
 	},
 	createTeam: async (req, res, next) => {
 		const { stadiumName, address, capacity } = req.body;
@@ -120,3 +142,17 @@ module.exports = {
 		res.redirect("/manager");
 	},
 };
+
+function random(min = 0, max) {
+	return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function randomReferee(referees) {
+	const length = referees.length - 1;
+	const refereeList = [];
+	while (refereeList.length < 4) {
+		const referee = referees[random(0, length)];
+		if (!refereeList.includes(referee)) refereeList.push(referee);
+	}
+	return refereeList;
+}

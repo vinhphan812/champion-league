@@ -18,7 +18,6 @@ const apiRoute = require("./api/routers/api.route");
 
 // app routers
 const {
-	userRoute,
 	authRoute,
 	publicRoute,
 	adminRoute,

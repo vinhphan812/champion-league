@@ -5,6 +5,8 @@ function Alert(title, text, confirmButtonText, icon = "error") {
 		text,
 		icon,
 		confirmButtonText,
+		timer: 1000,
+		timerProgressBar: true,
 	});
 }
 

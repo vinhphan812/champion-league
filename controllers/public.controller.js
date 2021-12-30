@@ -15,6 +15,20 @@ module.exports = {
 
 		res.render("public/home");
 	},
+	getLeague: async (req, res) => {
+		const { league } = req.params;
+		if (league.length !== 24) return next();
+
+		const data = await League.findOne({ _id: league });
+
+		if (!data) return next();
+		res.locals = {
+			...res.locals,
+			league: data,
+			scripts: ["/public/js/league.js"],
+		};
+		res.render("league");
+	},
 	getAllTeamPage: async (req, res) => {
 		res.locals.teams = await Team.find({});
 		res.render("public/teams");

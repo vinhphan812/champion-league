@@ -54,6 +54,8 @@ module.exports = {
 
 		await League.deleteOne({ _id });
 
+		await Match.deleteMany({ league: _id });
+
 		res.json({
 			success: true,
 			message: `Deleted ${name} successfully`,

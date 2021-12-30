@@ -1,17 +1,19 @@
+const { DEFAULT_IGNORE_FIELD } = require("../utils");
+
 const Match = require("../../model/match.model");
 
 module.exports = {
 	getMatchs: async (req, res, next) => {
 		const match = await Match.find(
-			{ leagueId: req.params.league },
+			{ league: req.params.league },
 			{
 				description: 0,
-				updateAt: 0,
-				placeIn: 0,
-				leagueId: 0,
-				teams: 0,
+				referees: 0,
+				...DEFAULT_IGNORE_FIELD,
 			}
-		);
+		)
+			.populate("stadium", DEFAULT_IGNORE_FIELD)
+			.populate("teams", DEFAULT_IGNORE_FIELD);
 		res.json({ code: 200, data: match, success: true });
 	},
 	// CURD for match

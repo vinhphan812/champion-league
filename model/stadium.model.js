@@ -5,7 +5,7 @@ const StadiumSchema = new Schema(
 		name: String,
 		address: String,
 		capacity: Number,
-		team: { type: Schema.Types.ObjectId, ref: "Teams" },
+		team: { type: Schema.Types.ObjectId, ref: "Team" },
 		createAt: { type: Date, default: new Date() },
 		updateAt: { type: Date, default: new Date() },
 	},

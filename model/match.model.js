@@ -3,11 +3,13 @@ const { Schema, model } = require("mongoose");
 const MatchSchema = new Schema(
 	{
 		name: String,
-		description: String,
 		teams: [{ type: Schema.Types.ObjectId, ref: "Team" }],
-		startTime: Date,
-		placeIn: String,
-		leagueId: { type: Schema.Types.ObjectId, ref: "Leagues" },
+		date: Date,
+		round: { enum: ["go", "back"], type: String },
+		score: { type: String, default: "x - x" },
+		stadium: { type: Schema.Types.ObjectId, ref: "Stadium" },
+		league: { type: Schema.Types.ObjectId, ref: "League" },
+		referees: [{ type: Schema.Types.ObjectId, ref: "Referee" }],
 		createAt: { type: Date, default: new Date() },
 		updateAt: { type: Date, default: new Date() },
 	},

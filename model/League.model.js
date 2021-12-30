@@ -5,7 +5,6 @@ const LeagueSchema = new Schema(
 		name: String,
 		description: String,
 		startTime: Date,
-		endTime: Date,
 		logo_path: { type: String, default: "/public/images/league.png" },
 		createAt: { type: Date, default: new Date() },
 		updateAt: { type: Date, default: new Date() },

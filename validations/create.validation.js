@@ -21,12 +21,12 @@ const ERROR_MSG = {
 };
 module.exports = {
 	createLeague: (req, res, next) => {
-		const { name, startTime, endTime, description } = req.body;
+		const { name, startTime } = req.body;
 		const errors = [];
 
 		res.locals.body = req.body;
 
-		if (checkNotContain([name, startTime, endTime, description]))
+		if (checkNotContain([name, startTime]))
 			errors.push(ERROR_MSG.invalid + fields.league);
 		if (errors.length) {
 			res.locals.errors = errors;

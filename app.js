@@ -44,7 +44,6 @@ app.use(decentralization("user"));
 
 // config routers
 app.use("/api", apiRoute);
-app.use("/user", userRoute);
 app.use("/", authRoute);
 app.use("/", publicRoute);
 app.use("/admin", adminRoute);

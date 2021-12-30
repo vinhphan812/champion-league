@@ -23,6 +23,8 @@ const upload = multer({ storage });
 
 const router = express.Router();
 
+const leagueRoute = require("./league.route");
+
 router.use(authMiddleware, decentralization("manager"), (req, res, next) => {
 	res.locals.isManager = true;
 	next();
@@ -42,7 +44,7 @@ router
 	);
 
 //? - detail
-router.get("/leagues/:league", ctrler.getLeaguePage);
+router.use("/leagues/:league", leagueRoute);
 
 //TODO TEAM
 // ? - create

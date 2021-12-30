@@ -347,10 +347,10 @@ function renderPlayers(data) {
 					<a href="players/${player._id}">${player.name}</a>
 				</td>
 				<td>${player.numberInTeam}</td>
-				<td>${player.height}</td>
-				<td>${player.weight}</td>
+				<td class="d-none d-sm-table-cell">${player.height}</td>
+				<td class="d-none d-sm-table-cell">${player.weight}</td>
 				<td>${player.position}</td>
-				<td class="d-md-none d-lg-table-cell">${moment(player.birthday).format(
+				<td class="d-none d-lg-table-cell">${moment(player.birthday).format(
 					"DD/MM/YYYY"
 				)}</td>
 				<td class="option">

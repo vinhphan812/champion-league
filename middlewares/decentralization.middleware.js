@@ -18,6 +18,8 @@ module.exports = {
 			const userId = req.signedCookies.userId;
 			let userPerms = "user";
 
+			res.locals.moment = moment;
+
 			if (userId)
 				userPerms = (
 					await User.findOne({
@@ -27,9 +29,7 @@ module.exports = {
 
 			if (lvlPerms[userPerms] < lvlPerms[perms])
 				return res.status(404).render("error/permission");
-			let menu = [];
 
-			res.locals.moment = moment;
 			res.locals.menu = menus[userPerms];
 
 			next();

@@ -23,6 +23,8 @@ router.get("/search", ctrler.searchPage);
 // players
 router.get("/players");
 
+router.get("/leagues/:league", ctrler.getLeague);
+
 // teams
 router.get("/teams", ctrler.getAllTeamPage);
 router.get("/teams/:team", ctrler.getTeamPage);

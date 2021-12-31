@@ -8,7 +8,6 @@ const userSchema = new Schema(
 		password: String,
 		avatar: { type: String, default: "/public/images/user_48px.png" },
 		email: String,
-		isVerifyEmail: Boolean,
 		phone: String,
 		permission: { type: String, enum: ["admin", "manager", "user"] },
 		createAt: { type: Date, default: new Date() },

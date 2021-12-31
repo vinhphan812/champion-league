@@ -1,0 +1,302 @@
+[{
+  "_id": {
+    "$oid": "61c1b1b101e4556bf8bd6d65"
+  },
+  "name": "Phan thanh vinh",
+  "address": "Tháp Mười",
+  "email": "vinhphan812@gmail.com",
+  "phone": "+841882148533",
+  "description": "trọng tài này rất thích haha ",
+  "birthday": {
+    "$date": "2001-10-24T00:00:00Z"
+  },
+  "avatar": "/public\\uploads\\248241106_2988348398110952_3767515554451314177_n.jpg"
+},{
+  "_id": {
+    "$oid": "61c46fb63ed0d40ed6640ba7"
+  },
+  "name": "Võ Minh Trí",
+  "email": "trivo@referee.com",
+  "phone": "0907648951",
+  "description": "Võ Minh Trí sinh ngày 3 tháng 4 năm 1972 tại Cần Giuộc, Long An) là trọng tài cấp FIFA đã giải nghệ. Ông đoạt \"Chiếc còi vàng\" 2010 và 2017.",
+  "birthday": {
+    "$date": "1972-04-03T00:00:00Z"
+  },
+  "avatar": "/public\\uploads\\tri-1504012247888.jpg"
+},{
+  "_id": {
+    "$oid": "61c4a93a7353f8d661b4cfe5"
+  },
+  "name": "Ryūji Satō",
+  "email": "sato@vpf.com",
+  "phone": "09864581728",
+  "description": "là trọng tài bóng đá người Nhật Bản. Ông điều khiển nhiều trận bóng tại AFC Champions League và vòng loại FIFA World Cup. Ông cũng là trọng tài chuyên nghiệp và xuất sắc của J. League Division 1 tại Nhật Bản. Ông là một vị trọng tài rất nghiêm khắc và có tinh thần trách nhiệm cao trong công việc. Ông từng là một giảng viên trường trung học tại địa phương Nagoya, Nhật trước khi đăng ký làm trọng tài bóng đá. Ông cũng là vị trọng tài người Nhật duy nhất được đề cử bắt chính tại World Cup 2018 và đang tiếp tục được đề cử ở World Cup 2022.",
+  "birthday": {
+    "$date": "1984-10-27T00:00:00Z"
+  },
+  "avatar": "/public\\uploads\\images1542525_trong_tai_u23_viet_nam_vs_u23_jordan.jpg",
+  "createAt": {
+    "$date": "2021-12-23T16:31:35.177Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-23T16:31:35.177Z"
+  }
+},{
+  "_id": {
+    "$oid": "61c6c04d3f405d6413dc699b"
+  },
+  "name": "Ngô Duy Lân",
+  "email": "lanngo@referee.com",
+  "phone": "0903748291",
+  "description": "là một trọng tài chuyên nghiệp người Việt Nam, hiện đang cầm còi tại V.League 1. Ngô Duy Lân là trọng tài FIFA duy nhất của Việt Nam đạt đẳng cấp Elite. Ông từng bắt chính các trận đấu: V.League 2, V.League 1, Siêu Cúp Quốc gia, Cúp AFC.",
+  "birthday": {
+    "$date": "1984-10-27T00:00:00Z"
+  },
+  "avatar": "/public\\uploads\\1111-1852.png",
+  "createAt": {
+    "$date": "2021-12-25T06:36:30.903Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-25T06:36:30.903Z"
+  }
+},{
+  "_id": {
+    "$oid": "61c6c0963f405d6413dc69b3"
+  },
+  "name": "Frank De Bleeckere",
+  "email": "Frank@referee.com",
+  "phone": "0987636784",
+  "description": "Frank de Bleeckere đã mất đến 14 năm mới có thể góp mặt vào danh sách các trọng tài xuất sắc của FIFA. Ông là trọng tài người Bỉ duy nhất cầm còi cho 7 trận đấu trong ngày hội bóng đá lớn nhất hành tinh. Hiện Bleeckere đang làm cố vấn kỹ thuật của FIFA tại các trận đấu trong mùa giải.",
+  "birthday": {
+    "$date": {
+      "$numberLong": "-110592000000"
+    }
+  },
+  "avatar": "/public\\uploads\\tải xuống.jfif",
+  "createAt": {
+    "$date": "2021-12-25T06:36:30.903Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-25T06:36:30.903Z"
+  }
+},{
+  "_id": {
+    "$oid": "61c6c0df3f405d6413dc69cb"
+  },
+  "name": "Kim Milton Nielsen",
+  "email": "kim@referee.com",
+  "phone": "0907481921",
+  "description": "Kim Milton Nielsen cũng là một nhà cầm còi xuất sắc mang quốc tịch Đan Mạch. Ông đã từng bắt chính cho trận bán kết World Cup 2002 giữa Brazil và Thổ Nhĩ Kỳ. Trong suốt sự nghiệp của mình, ông đã điều hành 154 trận đấu quốc tế và 53 trận thuộc giải Champions League.",
+  "birthday": {
+    "$date": {
+      "$numberLong": "-297043200000"
+    }
+  },
+  "avatar": "/public\\uploads\\Kim-milton-nielsen.jpg",
+  "createAt": {
+    "$date": "2021-12-25T06:36:30.903Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-25T06:36:30.903Z"
+  }
+},{
+  "_id": {
+    "$oid": "61cc86db05e4429c9b9f35d3"
+  },
+  "name": "Phạm Đăng Khoa",
+  "email": "khoapham123@gmail.com",
+  "phone": "0908748192191",
+  "description": "Khoa phạm là một trọng tài xếp hạng 20 của FIFA",
+  "birthday": {
+    "$date": "1990-03-12T00:00:00Z"
+  },
+  "avatar": "/public\\uploads\\143563660_2850885375188316_6870476513738945365_n.jpg",
+  "createAt": {
+    "$date": "2021-12-29T16:03:07.609Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-29T16:03:07.609Z"
+  }
+},{
+  "_id": {
+    "$oid": "61cc874fa14ac8f4f02e167e"
+  },
+  "name": "Phạm Quốc Trung",
+  "email": "trungshoes@gmail.com",
+  "phone": "0907481892",
+  "description": "Trung là trọng tài gốc Đồng Tháp , từng bắt chính cho worl dcup 2014",
+  "birthday": {
+    "$date": "1990-12-12T00:00:00Z"
+  },
+  "avatar": "/public\\uploads\\69954371_211479666515770_5523857159936278528_n.jpg",
+  "createAt": {
+    "$date": "2021-12-29T16:05:01.997Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-29T16:05:01.997Z"
+  }
+},{
+  "_id": {
+    "$oid": "61cc879dc22d589aaa25ef93"
+  },
+  "name": "Mohammed Abdulla Hassan Mohamed",
+  "email": "Mohammed@gmail.com",
+  "phone": "0901872819181",
+  "description": "Mohammed Abdulla Mohamed Hassan là trọng tài bóng đá người UAE. Ông là trọng tài quốc tế chính thức cho FIFA từ năm 2010. Mohammed Abdulla Mohamed Hassan làm trọng tài tại giải AFC Asian Cup 2015.",
+  "birthday": {
+    "$date": "1978-12-02T00:00:00Z"
+  },
+  "avatar": "/public\\uploads\\photo1633479099930-16334791000161632327067.jpg",
+  "createAt": {
+    "$date": "2021-12-29T16:06:23.188Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-29T16:06:23.188Z"
+  }
+},{
+  "_id": {
+    "$oid": "61cc87f0c22d589aaa25efab"
+  },
+  "name": "Mike Riley",
+  "email": "Mike@yahoo.com",
+  "phone": "0901748291",
+  "description": "Mike Riley là một cựu trọng tài bóng đá chuyên nghiệp người Anh, từng làm trọng tài cho các trận đấu ở Giải bóng đá Anh, Ngoại hạng Anh và FIFA. Riley hiện đang là tổng giám đốc của Công ty TNHH các quan chức trận đấu chuyên nghiệp. ",
+  "birthday": {
+    "$date": {
+      "$numberLong": "-285292800000"
+    }
+  },
+  "avatar": "/public\\uploads\\tải xuống.jfif",
+  "createAt": {
+    "$date": "2021-12-29T16:06:23.188Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-29T16:06:23.188Z"
+  }
+},{
+  "_id": {
+    "$oid": "61cc8836989f672cfc9eb2be"
+  },
+  "name": "Ricardo Montero",
+  "email": "Ricardo@gmail.com",
+  "phone": "0987178192",
+  "description": "Ricardo Montero là một trọng tài bóng đá người Costa Rica. Montero trở thành trọng tài FIFA vào năm 2011 và Vào ngày 29 tháng 3 năm 2018, FIFA thông báo rằng ông sẽ làm chính thức tại FIFA World Cup 2018.",
+  "birthday": {
+    "$date": "1986-03-06T00:00:00Z"
+  },
+  "avatar": "/public\\uploads\\tải xuống.jfif",
+  "createAt": {
+    "$date": "2021-12-29T16:09:01.694Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-29T16:09:01.694Z"
+  }
+},{
+  "_id": {
+    "$oid": "61cc886b1963b933631266c3"
+  },
+  "name": "Fahad Al-Mirdasi",
+  "email": "Fahad@yahoo.com",
+  "phone": "0984918291",
+  "description": "Fahad Al-Mirdasi là một trọng tài bóng đá Ả Rập Saudi, từng là một cầu thủ quốc tế đầy đủ cho FIFA từ 2011 đến 2018, khi anh bị cấm cả đời vì sửa lỗi trận đấu.",
+  "birthday": {
+    "$date": "1985-08-16T00:00:00Z"
+  },
+  "avatar": "/public\\uploads\\fahad_almirdasi_31.jpg",
+  "createAt": {
+    "$date": "2021-12-29T16:10:13.054Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-29T16:10:13.054Z"
+  }
+},{
+  "_id": {
+    "$oid": "61cc88b29d45559e6ee4678c"
+  },
+  "name": "Mehdi Abid Charef",
+  "email": "Charef@yahoo.com",
+  "phone": "0989991891",
+  "description": "Mehdi Abid Charef là một trọng tài bóng đá hiệp hội Algeria. Anh cũng tham gia World Cup FIFA U-17 2015 ở Chile và FIFA U-17 World Cup 2017 tại Ấn Độ ",
+  "birthday": {
+    "$date": "1980-12-14T00:00:00Z"
+  },
+  "avatar": "/public\\uploads\\tải xuống (1).jfif",
+  "createAt": {
+    "$date": "2021-12-29T16:10:22.286Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-29T16:10:22.286Z"
+  }
+},{
+  "_id": {
+    "$oid": "61cc88e59d45559e6ee467a4"
+  },
+  "name": "Mauro Vigliano",
+  "email": "Mauro@yahoo.com",
+  "phone": "0908475829",
+  "description": "Mauro Vigliano là một trọng tài bóng đá chuyên nghiệp người Argentina. Anh ấy đã trở thành một cầu thủ quốc tế đầy đủ cho FIFA từ năm 2013. Anh ấy đã tham gia một số trận đấu ở Copa Libertadores và một trận đấu giữa Ecuador và Peru trong Vòng loại World Cup 2018 của Nga.",
+  "birthday": {
+    "$date": "1975-08-05T00:00:00Z"
+  },
+  "avatar": "/public\\uploads\\tải xuống (2).jfif",
+  "createAt": {
+    "$date": "2021-12-29T16:10:22.286Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-29T16:10:22.286Z"
+  }
+},{
+  "_id": {
+    "$oid": "61cc891be34728777073b05f"
+  },
+  "name": "John Pitti",
+  "email": "john123123@yahoo.com",
+  "phone": "0901829182",
+  "description": "John Francis Pitti Hernández là một trọng tài bóng đá chuyên nghiệp người Panama. Anh ấy là cầu thủ quốc tế chính thức cho FIFA từ năm 2012. Anh ấy đã làm trọng tài cho một số trận đấu ở CONCACAF Champions League.",
+  "birthday": {
+    "$date": "1978-08-02T00:00:00Z"
+  },
+  "avatar": "/public\\uploads\\tải xuống (3).jfif",
+  "createAt": {
+    "$date": "2021-12-29T16:13:07.909Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-29T16:13:07.909Z"
+  }
+},{
+  "_id": {
+    "$oid": "61cc8a89be55aecc0aeb509d"
+  },
+  "name": "César Ramos Palazuelos",
+  "email": "Palazuelos9123@gmail.com",
+  "phone": "0908162781",
+  "description": "César Arturo Ramos Palazuelos là một trọng tài bóng đá chuyên nghiệp người Mexico. Anh ấy là cầu thủ quốc tế chính thức cho FIFA từ năm 2014. Anh ấy đã làm trọng tài một số trận đấu ở CONCACAF Champions League, FIFA World Cup 2018 và AFC Asian Cup 2019.",
+  "birthday": {
+    "$date": "1983-12-15T00:00:00Z"
+  },
+  "avatar": "/public\\uploads\\tải xuống (4).jfif",
+  "createAt": {
+    "$date": "2021-12-29T16:19:11.444Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-29T16:19:11.444Z"
+  }
+},{
+  "_id": {
+    "$oid": "61cc8d97ddc235289d64994d"
+  },
+  "name": "Joel Aguilar",
+  "email": "joel123@gmail.com",
+  "phone": "0907847161",
+  "description": "Joel Antonio Aguilar Chicas là một trọng tài bóng đá đã nghỉ hưu ở Salvador. Ông là một trọng tài quốc tế được FIFA liệt kê từ năm 2002.",
+  "birthday": {
+    "$date": "1975-07-02T00:00:00Z"
+  },
+  "avatar": "/public\\uploads\\tải xuống (5).jfif",
+  "createAt": {
+    "$date": "2021-12-29T16:32:13.952Z"
+  },
+  "updateAt": {
+    "$date": "2021-12-29T16:32:13.952Z"
+  }
+}]

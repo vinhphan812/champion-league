@@ -1,0 +1,73 @@
+[{
+  "_id": {
+    "$oid": "61a50c846ba9c328b5c72105"
+  },
+  "name": "Đối tượng của trò chơi",
+  "description": "Mục tiêu của bóng đá là ghi nhiều bàn thắng hơn đối thủ của bạn trong một khung thời gian thi đấu 90 phút. Trận đấu được chia thành hai hiệp trong 45 phút. Sau 45 phút đầu tiên, các cầu thủ sẽ được nghỉ 15 phút gọi là thời gian nghỉ giữa hiệp. 45 phút thứ hai sẽ tiếp tục và bất kỳ thời gian nào được trọng tài cho là phù hợp (thời gian bù giờ) sẽ được áp dụng.",
+  "createAt": {
+    "$date": "2021-11-29T17:23:11.659Z"
+  },
+  "updateAt": {
+    "$date": "2021-11-29T17:23:11.659Z"
+  }
+},{
+  "_id": {
+    "$oid": "61a50d2a6ba9c328b5c7210b"
+  },
+  "name": "Chấm điểm",
+  "description": "Để ghi bàn, bóng phải đi vào khung thành đối phương của bạn. Toàn bộ quả bóng cần phải vượt qua vạch vôi để nó trở thành một mục tiêu chính đáng. Bàn thắng có thể được ghi bằng bất kỳ bộ phận nào của cơ thể ngoài bàn tay hoặc cánh tay cho đến vai. Bản thân mục tiêu bao gồm một khung cao 8 mét và rộng 8 mét.",
+  "createAt": {
+    "$date": "2021-11-29T17:23:11.659Z"
+  },
+  "updateAt": {
+    "$date": "2021-11-29T17:23:11.659Z"
+  }
+},{
+  "_id": {
+    "$oid": "61a50d376ba9c328b5c7210d"
+  },
+  "name": "Chiến thắng trò chơi",
+  "description": "Để giành chiến thắng, bạn phải ghi nhiều bàn thắng hơn đối thủ. Nếu tỷ số hòa sau 90 phút thì trận đấu sẽ kết thúc với tỷ số hòa ngoài các trận đấu cúp mà trận đấu có thể đi đến hiệp phụ và thậm chí là đá luân lưu để phân định thắng thua. Cầu thủ phải dùng chân để sút bóng và bị cấm dùng tay ngoài thủ môn có thể sử dụng bất kỳ bộ phận nào trên cơ thể trong phạm vi 18 yard (có thể tìm hiểu thêm ở phần tiếp theo).",
+  "createAt": {
+    "$date": "2021-11-29T17:23:11.659Z"
+  },
+  "updateAt": {
+    "$date": "2021-11-29T17:23:11.659Z"
+  }
+},{
+  "_id": {
+    "$oid": "61a50d446ba9c328b5c7210f"
+  },
+  "name": "Luật bóng đá (Bóng đá)",
+  "description": "Một trận đấu bao gồm hai hiệp 45 phút với thời gian nghỉ giữa hiệp là 15 phút.\nMỗi đội có thể có tối thiểu 11 cầu thủ (bao gồm 1 thủ môn là cầu thủ duy nhất được phép xử lý bóng trong phạm vi 18 yard) và cần có tối thiểu 7 cầu thủ để tạo thành một trận đấu.\nSân phải được làm bằng cỏ nhân tạo hoặc cỏ tự nhiên. Kích thước của sân được phép thay đổi nhưng phải dài trong khoảng 100-130 thước Anh và rộng 50-100 thước Anh. Sân cũng phải được đánh dấu bằng hình chữ nhật xung quanh bên ngoài có giới hạn, hai ô sáu yard, hai ô 18 yard và một hình tròn ở giữa. Một điểm cho quả phạt đền cách cả khung thành và vòng tròn trung tâm 12 thước cũng phải hiển thị.\nQuả bóng phải có chu vi từ 58-61cm và có dạng hình tròn.\nMỗi đội có thể chọn tối đa 7 cầu thủ dự bị. Thay người có thể được thực hiện bất kỳ lúc nào của trận đấu với mỗi đội có thể thay người tối đa 3 lần cho mỗi bên. Trong trường hợp có cả ba cầu thủ thay thế được thực hiện và một cầu thủ phải rời sân vì chấn thương, đội sẽ buộc phải thi đấu mà không có cầu thủ thay thế.\nMỗi trận đấu phải có một trọng tài chính và hai trợ lý trọng tài (trọng tài biên). Công việc của trọng tài là đóng vai trò là người canh thời gian và đưa ra bất kỳ quyết định nào có thể cần thực hiện như phạm lỗi, đá phạt, ném biên, phạt đền và bổ sung đúng giờ vào cuối mỗi hiệp. Trọng tài có thể tham khảo ý kiến ​​của các trợ lý trọng tài bất cứ lúc nào trong trận đấu về một quyết định. Công việc của trợ lý trọng tài là phát hiện lỗi việt vị trong trận đấu (xem bên dưới), ném biên cho một trong hai đội và cũng hỗ trợ trọng tài trong tất cả các quá trình đưa ra quyết định nếu thích hợp.\nNếu trận đấu cần tiến đến hiệp phụ do cả hai đội ngang bằng nhau thì 30 phút sẽ được cộng thêm dưới hình thức hai hiệp 15 phút sau 90 phút đã định.\nNếu các đội vẫn hòa sau hiệp phụ thì phải đá luân lưu.\nToàn bộ quả bóng phải vượt qua đường biên ngang để nó tạo thành một bàn thắng.\nĐối với các pha phạm lỗi, cầu thủ có thể nhận thẻ vàng hoặc thẻ đỏ tùy thuộc vào mức độ nghiêm trọng của hành vi phạm lỗi; điều này phụ thuộc vào quyết định của trọng tài. Màu vàng là cảnh cáo và thẻ đỏ là đuổi cầu thủ. Hai thẻ vàng sẽ bằng một thẻ đỏ. Sau khi một cầu thủ bị đuổi khỏi sân thì họ không thể bị thay thế.\nNếu một quả bóng vượt ra khỏi vòng đấu với đối phương ở một trong hai đường biên thì quả bóng đó được ném biên. Nếu nó đến từ một cầu thủ phòng ngự thì đó là một quả phạt góc.",
+  "createAt": {
+    "$date": "2021-11-29T17:23:11.659Z"
+  },
+  "updateAt": {
+    "$date": "2021-11-29T17:23:11.659Z"
+  }
+},{
+  "_id": {
+    "$oid": "61a50d6a6ba9c328b5c72111"
+  },
+  "name": "Người chơi & Thiết bị",
+  "description": "Mỗi đội gồm 11 người chơi. Chúng bao gồm một thủ môn và mười cầu thủ ngoài sân. Kích thước sân khác nhau ở mỗi mặt sân nhưng dài khoảng 120 thước và rộng 75 thước. Trên mỗi đường ném bóng, bạn sẽ có một ô 6 yard bên cạnh miệng cầu môn, một ô 18 yard bao quanh ô 6 yard và một vòng tròn ở giữa. Mỗi nửa sân phải là hình ảnh phản chiếu của nửa sân còn lại về kích thước.\n\nVề cơ bản thiết bị cần có cho một trận bóng là sân và quả bóng đá. Ngoài ra, các cầu thủ có thể được tìm thấy đi giày bóng đá có đính đá, miếng đệm ống chân và các dải phù hợp. Các thủ môn sẽ phải đeo thêm găng tay có đệm vì họ là những cầu thủ duy nhất được phép xử lý bóng. Mỗi đội sẽ có một đội trưởng được chỉ định.",
+  "createAt": {
+    "$date": "2021-11-29T17:23:11.659Z"
+  },
+  "updateAt": {
+    "$date": "2021-11-29T17:23:11.659Z"
+  }
+},{
+  "_id": {
+    "$oid": "61a50d886ba9c328b5c72113"
+  },
+  "name": "Luật việt vị trong bóng đá",
+  "description": "Lỗi việt vị có thể được gọi là khi một cầu thủ tấn công đứng trước hậu vệ cuối cùng khi đường chuyền được thực hiện cho họ. Khu vực việt vị được thiết kế để không khuyến khích các cầu thủ chỉ quanh quẩn bên khung thành đối phương chờ đường chuyền. Để ở bên trong, họ phải được đặt sau hậu vệ cuối cùng khi bóng được chơi với họ. Nếu cầu thủ đứng trước hậu vệ cuối cùng đó thì anh ta bị coi là việt vị và quả phạt trực tiếp cho đội phòng thủ sẽ được gọi.\n\nMột cầu thủ không thể bị việt vị trong hiệp của họ. Thủ môn không được tính là hậu vệ. Nếu bóng được phát về phía sau và cầu thủ này ở phía trước của hậu vệ cuối cùng thì anh ta được coi là không việt vị.",
+  "createAt": {
+    "$date": "2021-11-29T17:23:11.659Z"
+  },
+  "updateAt": {
+    "$date": "2021-11-29T17:23:11.659Z"
+  }
+}]

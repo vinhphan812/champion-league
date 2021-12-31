@@ -20,4 +20,48 @@
   "phone": "(028) 3526 0196",
   "funding": 100000,
   "logo_path": "/public\\uploads\\logo-KC.jpg"
+},{
+  "_id": {
+    "$oid": "61c1f15d98dc6a20e0a76c00"
+  },
+  "name": "Tổng Công ty Cổ phần Bảo hiểm Bưu điện - PTI",
+  "address": "Tầng 8 - toà nhà số 4A Láng Hạ - Ba Đình - Hà Nội",
+  "description": "Tổng công ty Cổ phần Bảo hiểm Bưu điện (PTI) được thành lập ngày 01/08/1998. Hiện nay 3 cổ đông chính là Công ty Bảo hiểm DB - Hàn Quốc (chiếm 37,32%), Tổng Công ty Bưu điện Việt Nam (chiếm 22,67%) và công ty cp Chứng khoán Vndirect (chiếm 16,44%)",
+  "email": "info@pti.com.vn",
+  "phone": "8424-37724466",
+  "funding": 1000000,
+  "logo_path": "/public\\uploads\\logo_pti_15082018_fix.png"
+},{
+  "_id": {
+    "$oid": "61c1f1c5b8ac944782d30876"
+  },
+  "name": "Nextmedia",
+  "address": "18th Floor, VTC Online Building, 18 Tam Trinh, Hai Ba Trung District, Ha Noi",
+  "description": "Được dịch từ tiếng Anh-nextmedia Pty Limited là một công ty truyền thông của Úc phát hành các tạp chí quan tâm đặc biệt về thể thao, hài hước và sở thích. Công ty có trụ sở tại Sydney và thuộc sở hữu của The Forum Media Group, nhà xuất bản B2B và B2C có trụ sở tại Đức.",
+  "email": " info@nextmedia.vn",
+  "phone": "+84 466.802.233",
+  "funding": 500000,
+  "logo_path": "/public\\uploads\\LOGO-OK-FULL-HD-ALFA-e1564559013190.png"
+},{
+  "_id": {
+    "$oid": "61c1f2165043f0ccc6684c32"
+  },
+  "name": "CÔNG TY CP ĐỘNG LỰC",
+  "address": "130 phố Hạ Đình, quận Thanh Xuân, Hà Nộ",
+  "description": "Công ty cổ phần Động Lực tiền thân là một hợp tác xã nhỏ được thành lập năm 1989. Ban đầu, hợp tác xã chỉ có 7 thành viên trong tổ sản xuất thủ công và sản phẩm chính là bóng đá khâu tay. Đến năm 1993 chính thức đổi tên là Công ty TNHH Động Lực.",
+  "email": "donglucshopvn@gmail.com",
+  "phone": "(+84) 168 738 8888",
+  "funding": 200000,
+  "logo_path": "/public\\uploads\\photo.png"
+},{
+  "_id": {
+    "$oid": "61c1f338fe618f83e86961f1"
+  },
+  "name": "Tập đoàn LS",
+  "address": "122 - 124 Đường D.1, Khu đô thị mới Him Lam, P. Tân Hưng, Q. 7, TP. Hồ Chí Minh, Việt Nam.",
+  "description": "Năm 2003, để có sức cạnh tranh toàn cầu thông qua việc chuyên môn hóa ngành nghề, tập đoàn LG được chia tách thành 3 tập đoàn kinh doanh độc lập là LG, LS và GS.",
+  "email": " tsn@thaisonnam.vn",
+  "phone": "08.62638485",
+  "funding": 300000,
+  "logo_path": "/public\\uploads\\logo_ls.png"
 }]

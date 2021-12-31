@@ -4,8 +4,16 @@ const express = require("express"),
 	path = require("path"),
 	mongoose = require("mongoose");
 
+const { DB_NAME, USER_DB, PASS_DB, URL_DB } = process.env;
+
 // connect db
-mongoose.connect(process.env.URL_DB);
+mongoose.connect(URL_DB, {
+	dbName: DB_NAME,
+	user: USER_DB,
+	pass: PASS_DB,
+	useNewUrlParser: true,
+	useUnifiedTopology: true,
+});
 
 // config port
 const PORT = process.env.PORT || 5000;

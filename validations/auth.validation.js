@@ -31,7 +31,11 @@ module.exports = {
 		const { username, pass } = req.body;
 
 		if (!username || !pass)
-			return res.render("auth/login", { username, pass });
+			return res.render("auth/login", {
+				username,
+				pass,
+				errors: ["Vui lòng điền tên đăng nhập hoặc mật khẩu!!!"],
+			});
 
 		next();
 	},

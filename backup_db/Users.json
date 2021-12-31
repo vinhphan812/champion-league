@@ -1,0 +1,23 @@
+[{
+  "_id": {
+    "$oid": "61925e5d6a73a2bb3fa52280"
+  },
+  "firstName": "Phan",
+  "lastName": "vinh",
+  "username": "vinhphan812",
+  "password": "25d55ad283aa400af464c76d713c07ad",
+  "email": "vinhphan812@gmail.com",
+  "phone": "+841882148533",
+  "permission": "manager"
+},{
+  "_id": {
+    "$oid": "61928638a1b07e52e201000c"
+  },
+  "firstName": "Phan Thanh",
+  "lastName": "Vinh",
+  "username": "admin",
+  "password": "25d55ad283aa400af464c76d713c07ad",
+  "email": "phanvinh637@gmail.com",
+  "phone": "+841882148533",
+  "permission": "admin"
+}]

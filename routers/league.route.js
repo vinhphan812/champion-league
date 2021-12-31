@@ -13,6 +13,9 @@ router.get("/", ctrler.getLeaguePage);
 router.use("/matchs/:match", ctrler.matchMiddleware);
 
 router.get("/matchs/:match", ctrler.getMatch);
-router.post("/matchs/:match/update", ctrler.updateMatch);
+router
+	.route("/matchs/:match/update")
+	.get(ctrler.updateMatchPage)
+	.post(ctrler.postUpdateMatch);
 
 module.exports = router;

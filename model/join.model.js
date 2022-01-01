@@ -2,8 +2,9 @@ const { Schema, model } = require("mongoose");
 
 const JoinSchema = new Schema(
 	{
-		team: { type: Schema.Type.ObjectId, ref: "Teams" },
-		league: { type: Schema.Type.ObjectId, ref: "Leagues" },
+		team: { type: Schema.Types.ObjectId, ref: "Team" },
+		league: { type: Schema.Types.ObjectId, ref: "League" },
+		score: { type: Number, default: 0 },
 		createAt: { type: Date, default: new Date() },
 		updateAt: { type: Date, default: new Date() },
 	},

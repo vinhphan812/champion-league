@@ -15,6 +15,8 @@ router.use(authMiddleware);
 
 router.use("/:league/matchs", leagueMiddleware, matchRoute);
 
+router.use("/:league/joins", leagueMiddleware, ctrler.getTeamsJoinLeague);
+
 router
 	.route("/")
 	.get(ctrler.getLeagues)

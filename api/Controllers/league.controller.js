@@ -1,7 +1,8 @@
+const { DEFAULT_IGNORE_FIELD } = require("../../utils");
+
 const League = require("../../model/league.model"),
-	Team = require("../../model/team.model"),
-	Player = require("../../model/player.model"),
-	Match = require("../../model/match.model");
+	Match = require("../../model/match.model"),
+	Join = require("../../model/join.model");
 
 module.exports = {
 	// get all Leagues
@@ -61,5 +62,17 @@ module.exports = {
 			message: `Deleted ${name} successfully`,
 			code: 200,
 		});
+	},
+	getTeamsJoinLeague: async (req, res, next) => {
+		const { league } = res.locals;
+
+		const data = await Join.find(
+			{ league },
+			{ ...DEFAULT_IGNORE_FIELD, league: 0 }
+		)
+			.populate("team")
+			.sort({ score: -1 });
+
+		res.json({ success: true, data });
 	},
 };

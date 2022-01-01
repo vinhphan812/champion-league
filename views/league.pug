@@ -58,7 +58,7 @@ block content
                                    th
                          tbody.align-middle
                               - var i=0
-                              while i++ < 10
+                              while i++ < 14
                                    tr.placeholder-glow
                                         td 
                                              span.placeholder.w-100
@@ -79,14 +79,25 @@ block content
                          .h3 Bảng Thống Kê
                          ul.list-group.list-group-flush.ms-4
                               li.list-group-item
-                                   span.total-matchs.fw-bold Trận đấu:&nbsp;
-                                   span 420
+                                   span.fw-bold Trận đấu:&nbsp;
+                                   span.total-matchs 0
                               li.list-group-item
-                                   span.total-matchs.fw-bold Đã đá:&nbsp;
-                                   span 12
+                                   span.fw-bold Đã đá:&nbsp;
+                                   span.total-done 0
                               li.list-group-item
-                                   span.total-matchs.fw-bold Đã cập nhật:&nbsp;
-                                   span 10
+                                   span.fw-bold Đã cập nhật:&nbsp;
+                                   span.total-updated 0
                     hr
                     div 
                          .h3 Bảng Xếp Hạng
+                         table.table.table-hover.align-middle.text-center.rank
+                              tbody
+                                   - var i=0
+                                        while i++ < 10
+                                             tr.placeholder-glow
+                                                  td 
+                                                       span.placeholder.w-100
+                                                  td 
+                                                       span.placeholder.w-100
+                                                  td 
+                                                       span.placeholder.w-100

@@ -6,7 +6,8 @@ const League = require("../model/league.model"),
 	Player = require("../model/player.model"),
 	Stadium = require("../model/stadium.model"),
 	Donor = require("../model/donor.model"),
-	Referee = require("../model/referee.model");
+	Referee = require("../model/referee.model"),
+	Join = require("../model/join.model");
 
 module.exports = {
 	getManagerPage: async (req, res, next) => {
@@ -39,6 +40,9 @@ module.exports = {
 		const teams = await Team.find({});
 		const referees = await Referee.find({});
 
+		//TODO create join data in Joins collection
+		for (const { id } of teams) Join.create({ team: id, league: league });
+
 		// init matchs => {go: [...], back: [...]}
 		const matchs = initMatchs(teams, new Date(body.startTime));
 
@@ -49,13 +53,14 @@ module.exports = {
 		//TODO convert match => match Object
 		for (const round in matchs)
 			matchs[round].forEach(({ teamA, teamB, date }) => {
+				console.log(teamA);
 				matchList.push({
 					name: teamA.name + " - " + teamB.name,
-					teams: [teamA.id, teamB.id],
-					date: date,
+					teams: [teamA, teamB],
+					date,
 					round,
-					stadium: teamA.stadium.toString(),
-					league: league.id,
+					stadium: teamA.stadium,
+					league,
 					referees: randomReferee(referees),
 				});
 			});

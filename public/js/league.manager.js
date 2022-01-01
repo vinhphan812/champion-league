@@ -2,21 +2,34 @@ let matchs = [];
 
 window.onload = () => {
 	getMatchInLeague();
+	getRankInLeague();
 	$("#filter-matchs").change(searchChange);
 	$("input#search-match").keyup(searchChange);
 };
+
+function renderStatistics() {
+	const canUpdate = $("tr.alert-danger").length;
+	const totalDone = matchs.reduce((total, { date }) => {
+		return total + checkDate(date);
+	}, 0);
+
+	$(".total-matchs").text(matchs.length);
+	$(".total-done").text(totalDone);
+	$(".total-updated").text(totalDone - canUpdate);
+}
 
 async function getMatchInLeague() {
 	// create fetch and parse to json
 	const res = await (await fetch(`/api/leagues/${league}/matchs/`)).json();
 
-	// check get success data player from api
+	// check get success data matchs from api
 	if (!res.success) Alert("Error", res.message, "OK", "error");
 
-	// set global player list
+	// set global matchs list
 	matchs = res.data;
 
 	renderMatchs(matchs);
+	renderStatistics();
 }
 
 function renderMatchs(data) {
@@ -32,7 +45,7 @@ function renderMatchs(data) {
 		return `<tr id="${_id}" class="${
 			scores.length
 				? "alert alert-success"
-				: checkDate()
+				: checkDate(date)
 				? "alert alert-danger"
 				: ""
 		} ${round}">
@@ -64,15 +77,11 @@ function renderMatchs(data) {
 		}</a>
 		</td>
 		<td>${
-			checkDate() && !scores.length
-				? `<a href="/manager/leagues/${league}/matchs/${_id}/update">Cập nhật</a>`
+			checkDate(date) && !scores.length
+				? `<a href="/manager/leagues/${league}/matchs/${_id}/update" style="white-space: pre">Cập nhật</a>`
 				: ""
 		}</td>
 	</tr>`;
-		function checkDate() {
-			const currentDate = new Date();
-			return new Date(date) - currentDate.getTime() < 0;
-		}
 	}
 }
 
@@ -96,4 +105,47 @@ function searchChange(e) {
 	});
 
 	renderMatchs(data);
+}
+
+function checkDate(date) {
+	const currentDate = new Date();
+	return new Date(date) - currentDate.getTime() < 0;
+}
+
+async function getRankInLeague() {
+	const { success, message, data } = await (
+		await fetch(`/api/leagues/${league}/joins`)
+	).json();
+
+	// check get success data JOINS from api
+	if (!success) Alert("Error", message, "OK", "error");
+
+	renderRank(data);
+}
+
+async function renderRank(joins) {
+	const html = joins.map(
+		({ score, team }, index) => `<tr class="${onTop(index, score)}">
+		<td>
+			<div class=" mb-0 fw-bold">${index + 1}</div>
+		</td>
+		<td>
+			<a href="/manager/teams/${team.id}">${team.name}</a>
+		</td>
+		<td>${score}</td>
+	</tr>`
+	);
+	$(".rank tbody").html(html);
+
+	function onTop(index, score) {
+		if (score)
+			return index == 0
+				? "table-warning top-1st"
+				: index == 1
+				? "table-info top-2nd"
+				: index == 2
+				? "table-primary top-3rd"
+				: "h5";
+		return "h5";
+	}
 }

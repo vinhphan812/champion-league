@@ -6,7 +6,7 @@ const MatchSchema = new Schema(
 		teams: [{ type: Schema.Types.ObjectId, ref: "Team" }],
 		date: Date,
 		round: { enum: ["go", "back"], type: String },
-		score: { type: String, default: "x - x" },
+		scores: [Number],
 		stadium: { type: Schema.Types.ObjectId, ref: "Stadium" },
 		league: { type: Schema.Types.ObjectId, ref: "League" },
 		referees: [{ type: Schema.Types.ObjectId, ref: "Referee" }],

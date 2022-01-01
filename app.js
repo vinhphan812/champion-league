@@ -4,7 +4,7 @@ const express = require("express"),
 	path = require("path"),
 	mongoose = require("mongoose");
 
-const { DB_NAME, USER_DB, PASS_DB, URL_DB } = process.env;
+const { DB_NAME, URL_DB } = process.env;
 
 // connect db
 mongoose.connect(URL_DB, {

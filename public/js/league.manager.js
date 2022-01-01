@@ -28,9 +28,9 @@ function renderMatchs(data) {
 
 	$(".matchs > table > tbody").html(html);
 
-	function matchItem({ _id, score, date, round, stadium, teams }) {
+	function matchItem({ _id, scores, date, round, stadium, teams }) {
 		return `<tr id="${_id}" class="${
-			score != "x - x"
+			scores.length
 				? "alert alert-success"
 				: checkDate()
 				? "alert alert-danger"
@@ -50,7 +50,7 @@ function renderMatchs(data) {
 		</td>
 		<td>
 			<a href="/manager/leagues/${league}/matchs/${_id}" class="text-decoration-none">
-				<pre class="my-0">${score}</pre>
+				<pre class="my-0">${scores.join(" - ") || "x - x"}</pre>
 			</a>
 		</td>
 		<td>
@@ -64,7 +64,7 @@ function renderMatchs(data) {
 		}</a>
 		</td>
 		<td>${
-			checkDate() && score == "x - x"
+			checkDate() && !scores.length
 				? `<a href="/manager/leagues/${league}/matchs/${_id}/update">Cập nhật</a>`
 				: ""
 		}</td>

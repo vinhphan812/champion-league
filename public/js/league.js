@@ -28,7 +28,7 @@ function renderMatchs(data) {
 
 	$(".matchs > table > tbody").html(html);
 
-	function matchItem({ _id, score, date, round, stadium, teams }) {
+	function matchItem({ _id, scores, date, round, stadium, teams }) {
 		return `<tr id="${_id}" class="${round}">
 		<td>${moment(date).format("HH:mm DD/MM/YYYY")}</td>
 		<td>${stadium.name}</td>
@@ -44,7 +44,7 @@ function renderMatchs(data) {
 		</td>
 		<td>
 			<a href="/leagues/${league}/matchs/${_id}" class="text-decoration-none">
-				<pre class="my-0">${score}</pre>
+				<pre class="my-0">${scores.join(" - ") || "x - x"}</pre>
 			</a>
 		</td>
 		<td>

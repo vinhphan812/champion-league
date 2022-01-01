@@ -1,3 +1,5 @@
+const { DEFAULT_IGNORE_FIELD } = require("../utils");
+
 const League = require("../model/league.model"),
 	Match = require("../model/match.model");
 
@@ -10,8 +12,10 @@ module.exports = {
 		const data = await League.findOne({ _id: league });
 
 		if (!data) next();
+
 		res.locals.league = data;
 		res.locals.scripts = ["/public/js/league.manager.js"];
+
 		res.render("league");
 	},
 	leagueMiddleware: async (req, res, next) => {
@@ -41,9 +45,18 @@ module.exports = {
 
 	getMatch: async (req, res, next) => {
 		const { match } = res.locals;
+
+		await match.populate("stadium", { ...DEFAULT_IGNORE_FIELD, team: 0 });
+		await match.populate("teams", { _id: 1, name: 1, logo_path: 1 });
+		await match.populate("referees", { _id: 1, name: 1, avatar: 1 });
+
+		res.locals.match = match;
+
 		res.render("match");
 	},
-	updateMatch: async (req, res, next) => {
+	updateMatchPage: async (req, res, next) => {
 		const { match } = res.locals;
+		console.log(match);
 	},
+	postUpdateMatch: async (req, res, next) => {},
 };

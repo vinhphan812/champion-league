@@ -1,4 +1,4 @@
-const { DEFAULT_IGNORE_FIELD } = require("../utils");
+const { DEFAULT_IGNORE_FIELD } = require("../../utils");
 
 const Match = require("../../model/match.model");
 

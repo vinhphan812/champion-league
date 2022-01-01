@@ -1,6 +1,6 @@
 const express = require("express");
 
-const ctrler = require("../controllers/league.controller");
+const ctrler = require("../../controllers/league.controller");
 
 const router = express.Router({ mergeParams: true });
 

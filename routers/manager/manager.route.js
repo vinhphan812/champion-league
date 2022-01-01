@@ -3,12 +3,12 @@ const express = require("express"),
 
 const {
 		decentralization,
-	} = require("../middlewares/decentralization.middleware"),
-	{ authMiddleware } = require("../middlewares/auth.middleware");
+	} = require("../../middlewares/decentralization.middleware"),
+	{ authMiddleware } = require("../../middlewares/auth.middleware");
 
-const validations = require("../validations/create.validation");
+const validations = require("../../validations/create.validation");
 
-const ctrler = require("../controllers/manager.controller");
+const ctrler = require("../../controllers/manager.controller");
 
 const storage = multer.diskStorage({
 	destination: function (req, file, cb) {

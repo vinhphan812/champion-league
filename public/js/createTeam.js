@@ -2,10 +2,10 @@ const players = [];
 let $players;
 
 const optionsPosition = {
-	1: "Tiền Đạo",
-	2: "Tiền Vệ",
-	3: "Hậu Vệ",
-	4: "Thủ Môn",
+	1: "Tiền đạo",
+	2: "Tiền vệ",
+	3: "Hậu vệ",
+	4: "Thủ môn",
 };
 
 window.onload = () => {

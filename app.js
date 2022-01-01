@@ -9,8 +9,6 @@ const { DB_NAME, USER_DB, PASS_DB, URL_DB } = process.env;
 // connect db
 mongoose.connect(URL_DB, {
 	dbName: DB_NAME,
-	user: USER_DB,
-	pass: PASS_DB,
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 });

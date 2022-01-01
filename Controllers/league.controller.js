@@ -1,8 +1,8 @@
 const { DEFAULT_IGNORE_FIELD } = require("../utils");
 
 const League = require("../model/league.model"),
-	Match = require("../model/match.model");
-
+	Match = require("../model/match.model"),
+	MatchDetails = require("../model/matchDetail.model");
 module.exports = {
 	getLeaguePage: async (req, res, next) => {
 		const { league } = req.params;
@@ -55,8 +55,15 @@ module.exports = {
 		res.render("match");
 	},
 	updateMatchPage: async (req, res, next) => {
-		const { match } = res.locals;
-		console.log(match);
+		const params = req.params.match;
+		const match = await Match.findById(params).populate("teams");
+		res.locals.match = match;
+		res.render("manager/updateMatch");
 	},
-	postUpdateMatch: async (req, res, next) => {},
+	postUpdateMatch: async (req, res, next) => {
+		const { league, match } = req.params;
+		const response = JSON.parse(req.body.details);
+		await MatchDetails.insertMany(response);
+		res.redirect(`/manager/leagues/${league}/matchs/${match}`);
+	},
 };

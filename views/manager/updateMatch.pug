@@ -1,6 +1,6 @@
 extend ../layouts/common.pug
 block head
-     title cập nhật dữ liệu trận đấu 
+     title Update Match
      script(src="/public/js/updateMatch.js") 
 block content
      -const team1Id = match.teams[0]._id
@@ -43,10 +43,13 @@ block content
                     th Thẻ vàng 
                     th Thẻ đỏ
                     th Thời điểm
+                    th Options
           tbody#match-info 
                - var i=0
                while i++ < 10
                     tr.placeholder-glow
+                         td 
+                              span.placeholder.w-100
                          td 
                               span.placeholder.w-100
                          td 

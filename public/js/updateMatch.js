@@ -2,7 +2,6 @@ const details = [];
 const detailsId = [];
 let url = `http://localhost:5000/api/teams/`;
 let $playerSelected;
-
 let reUseData;
 
 window.onload = () => {
@@ -67,6 +66,7 @@ function addData() {
 	detailsId.push(objId);
 
 	render();
+
 	console.log(detailsId);
 	refreshInputs.call(this);
 }
@@ -82,6 +82,13 @@ function sendData() {
 	$("#form").submit();
 }
 
+function onDelete(event) {
+	const i = event.target.id;
+	details.splice(i, 1);
+	detailsId.splice(i, 1);
+	render();
+}
+
 function render() {
 	const table = details.map((detail, index) => {
 		if (detail.type === "goal")
@@ -94,6 +101,9 @@ function render() {
 							<td></td>
 							<td></td>
 							<td>${detail.time}</td>
+							<td>
+								<i class="bi bi-trash" id="${index}"></i>
+							</td>
 						</tr>
 			`;
 		else if (detail.type === "yellow")
@@ -106,6 +116,9 @@ function render() {
 							<td>X</td>
 							<td></td>
 							<td>${detail.time}</td>
+							<td>
+								<i class="bi bi-trash  id="${index}"></i>
+							</td>
 						</tr>
 			`;
 		else
@@ -118,8 +131,12 @@ function render() {
 						<td></td>
 						<td>X</td>
 						<td>${detail.time}</td>
+						<td>
+						 	<i class="bi bi-trash" id="${index}"></i>
+						</td>
 					</tr>
 		`;
 	});
 	$("#table-info > tbody").html(table);
+	$("#table-info i").click(onDelete);
 }

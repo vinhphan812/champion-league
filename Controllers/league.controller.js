@@ -57,6 +57,10 @@ module.exports = {
 	updateMatchPage: async (req, res, next) => {
 		const params = req.params.match;
 		const match = await Match.findById(params).populate("teams");
+		res.locals.scripts = ["/public/js/updateMatch.js"];
+		res.locals.links = [
+			"https://pro.fontawesome.com/releases/v5.10.0/css/all.css",
+		];
 		res.locals.match = match;
 		res.render("manager/updateMatch");
 	},

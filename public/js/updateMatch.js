@@ -81,6 +81,13 @@ function sendData() {
 	$("#form").submit();
 }
 
+function onDelete(event) {
+	const i = event.target.id;
+	details.splice(i, 1);
+	detailsId.splice(i, 1);
+	render();
+}
+
 function render() {
 	const table = details.map((detail, index) => {
 		return `

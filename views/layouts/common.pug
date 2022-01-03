@@ -24,6 +24,8 @@ html(lang="en")
                                    for item in menu 
                                         li.nav-item
                                              a.nav-link.active(aria-current='page' href=item.url)= item.title
+                              li.nav-item
+                                   a.nav-link.active(aria-current='page' href='/rules') Quy Định
                          if !isSearch
                               form.d-flex.p-2(action="/search")
                                    input.form-control.me-2(type='search' placeholder='Tìm Kiếm' name="q" aria-label='Search')

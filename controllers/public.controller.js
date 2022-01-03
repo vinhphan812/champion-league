@@ -15,7 +15,7 @@ module.exports = {
 
 		res.render("public/home");
 	},
-	getLeague: async (req, res) => {
+	getLeague: async (req, res, next) => {
 		const { league } = req.params;
 		if (league.length !== 24) return next();
 

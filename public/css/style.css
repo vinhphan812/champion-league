@@ -111,9 +111,23 @@ footer.dark a {
 	height: 64px;
 	border-radius: 50%;
 	background-color: #999;
+	object-fit: cover;
 }
 
-@media only screen and (max-width: 992px) {
+.top-1st > td:nth-child(1) {
+	color: var(--bs-yellow);
+	font-size: 1.7rem !important;
+}
+.top-2nd > td:nth-child(1) {
+	color: var(--bs-cyan);
+	font-size: 1.7rem !important;
+}
+.top-3rd > td:nth-child(1) {
+	color: var(--bs-blue);
+	font-size: 1.7rem !important;
+}
+
+@media only screen and (max-width: 820px) {
 	.menu {
 		position: static;
 	}

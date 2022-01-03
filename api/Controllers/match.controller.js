@@ -1,6 +1,7 @@
 const { DEFAULT_IGNORE_FIELD } = require("../../utils");
 
-const Match = require("../../model/match.model");
+const Match = require("../../model/match.model"),
+	MatchDetail = require("../../model/matchDetail.model");
 
 module.exports = {
 	getMatchs: async (req, res, next) => {
@@ -75,5 +76,13 @@ module.exports = {
 			message: `deleted Match "${name}" successfully`,
 			code: 200,
 		});
+	},
+	getMatchDetails: async (req, res, next) => {
+		const { league, match } = res.locals;
+		const data = await MatchDetail.find({ league, match })
+			.populate("team")
+			.populate("player");
+
+		res.json({ success: true, data });
 	},
 };

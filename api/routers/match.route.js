@@ -13,11 +13,14 @@ router.use(authMiddleware);
 
 router.route("/").get(ctrler.getMatchs).post(createMatch, ctrler.createMatch);
 
+router.use("/:match", matchMiddleware);
+
 router
 	.route("/:match")
-	.all(matchMiddleware)
 	.get(ctrler.getMatch)
 	.put(updateMatch, ctrler.updateMatch)
 	.delete(ctrler.removeMatch);
+
+router.get("/:match/details", ctrler.getMatchDetails);
 
 module.exports = router;

@@ -45,6 +45,9 @@ module.exports = {
 
 		res.locals.scripts = ["/public/js/createTeam.js"];
 
+		if (!parseInt(capacity))
+			errors.push("sức chứa của sân vận động phải là số.");
+
 		if (
 			checkNotContain([
 				name,

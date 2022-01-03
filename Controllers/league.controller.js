@@ -51,17 +51,19 @@ module.exports = {
 		await match.populate("referees", { _id: 1, name: 1, avatar: 1 });
 
 		res.locals.match = match;
+		res.locals.scripts = ["/public/js/match.manager.js"];
 
 		res.render("match");
 	},
 	updateMatchPage: async (req, res, next) => {
 		const { match } = req.params;
-		const match = await Match.findById(params).populate("teams");
+
+		const data = await Match.findById(match).populate("teams");
 		res.locals.scripts = ["/public/js/updateMatch.js"];
 		res.locals.links = [
 			"https://pro.fontawesome.com/releases/v5.10.0/css/all.css",
 		];
-		res.locals.match = match;
+		res.locals.match = data;
 		res.render("manager/updateMatch");
 	},
 	postUpdateMatch: async (req, res, next) => {

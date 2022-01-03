@@ -1,8 +1,6 @@
 const details = [];
 const detailsId = [];
-let url = `http://localhost:5000/api/teams/`;
 let $playerSelected;
-
 let reUseData;
 
 window.onload = () => {
@@ -11,7 +9,7 @@ window.onload = () => {
 	$playerSelected = $("#playerSelected");
 };
 async function getValTeam(sel) {
-	const response = await fetch(`${url}${sel.value}/players`);
+	const response = await fetch(`/api/teams/${sel.value}/players`);
 	const data = await response.json();
 	reUseData = data;
 	if (data.data) {
@@ -67,7 +65,7 @@ function addData() {
 	detailsId.push(objId);
 
 	render();
-	console.log(detailsId);
+
 	refreshInputs.call(this);
 }
 
@@ -84,42 +82,36 @@ function sendData() {
 
 function render() {
 	const table = details.map((detail, index) => {
-		if (detail.type === "goal")
-			return `
+		return `
 						<tr>
 							<td>${index}</td>
 							<td>${detail.team}</td>
 							<td>${detail.player}</td>
-							<td>X</td>
-							<td></td>
-							<td></td>
+							<td>${typeCheck(detail.type)}</td>
 							<td>${detail.time}</td>
+							<td>
+								<i class="bi bi-trash" id="${index}"></i>
+							</td>
 						</tr>
 			`;
-		else if (detail.type === "yellow")
-			return `
-				<tr>
-							<td>${index}</td>
-							<td>${detail.team}</td>
-							<td>${detail.player}</td>
-							<td></td>
-							<td>X</td>
-							<td></td>
-							<td>${detail.time}</td>
-						</tr>
-			`;
-		else
-			return `
-			<tr>
-						<td>${index}</td>
-						<td>${detail.team}</td>
-						<td>${detail.player}</td>
-						<td></td>
-						<td></td>
-						<td>X</td>
-						<td>${detail.time}</td>
-					</tr>
-		`;
 	});
 	$("#table-info > tbody").html(table);
+	$("#table-info i").click(onDelete);
+}
+
+function onDelete(event) {
+	const i = event.target.id;
+	details.splice(i, 1);
+	detailsId.splice(i, 1);
+	render();
+}
+
+function typeCheck(detail) {
+	if (detail === "goal") {
+		return `<i class="bi bi-dribbble text-success fs-3"></i>`;
+	} else if (detail === "yellow") {
+		return `<i class="bi bi-file-fill text-warning fs-3"></i>`;
+	} else {
+		return `<i class="bi bi-file-fill text-danger fs-3"></i>`;
+	}
 }

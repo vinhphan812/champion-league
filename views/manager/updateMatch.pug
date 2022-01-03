@@ -1,14 +1,14 @@
 extend ../layouts/common.pug
-block head
-     title cập nhật dữ liệu trận đấu 
-     script(src="/public/js/updateMatch.js") 
+block head 
+     title=match.name
 block content
      -const team1Id = match.teams[0]._id
      -const team2Id = match.teams[1]._id
      -const team1 = match.teams[0].name
      -const team2 = match.teams[1].name
-     h1 Cập nhật kết quả trận đấu
-     button.btn.btn-primary(type='button', data-bs-toggle='modal', data-bs-target='#exampleModal') Update
+     .d-flex.justify-content-between.align-items-center
+          h1.text-center Kết quả trận đấu
+          button.btn.btn-primary(type='button', data-bs-toggle='modal', data-bs-target='#exampleModal') Thêm kết quả
 
      #exampleModal.modal.fade(tabindex='-1', aria-labelledby='exampleModalLabel', aria-hidden='true')
           .modal-dialog
@@ -31,34 +31,14 @@ block content
                          button.btn.btn-secondary(type='button', data-bs-dismiss='modal') Đóng
                          button.btn.btn-primary(type='button' id="addBtn") Gửi
 
-
-
-     table.table.table-responsive#table-info
+     table.table.table-responsive.align-middle#table-info
           thead 
                tr
                     th STT
                     th Đội
                     th Cầu thủ
-                    th Bàn thắng 
-                    th Thẻ vàng 
-                    th Thẻ đỏ
+                    th Loại
                     th Thời điểm
+                    th Tùy chọn
           tbody#match-info 
-               - var i=0
-               while i++ < 10
-                    tr.placeholder-glow
-                         td 
-                              span.placeholder.w-100
-                         td 
-                              span.placeholder.w-100
-                         td 
-                              span.placeholder.w-100
-                         td 
-                              span.placeholder.w-100
-                         td 
-                              span.placeholder.w-100
-                         td 
-                              span.placeholder.w-100
-                         td 
-                              span.placeholder.w-100
      button.btn.btn-primary.d-flex.m-auto(type="button" id="sendBtn")  Lưu

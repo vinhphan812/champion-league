@@ -11,6 +11,6 @@ const matchDetailSchema = new Schema(
 	{ versionKey: false }
 );
 
-const Donor = model("Donor", matchDetailSchema, "Donors");
+const MatchDetail = model("MatchDetail", matchDetailSchema, "MatchDetails");
 
-module.exports = Donor;
+module.exports = MatchDetail;

@@ -109,3 +109,24 @@ block content
                                                   button.btn.btn-danger.delete
                                                        i.bi.bi-trash
                     hr
+               #rules
+                    .d-flex.justify-content-between.align-items-center
+                         h1#title Quy Định
+                         a.d-block.btn.btn-primary#add-rule Thêm quy định
+                    hr
+                    table.table.table-hover.table-responsive.rules
+                         thead
+                              tr
+                                   th.d-none.d-lg-table-cell(scope='col' style='width: 10rem;') Quy Định
+                                   th.d-none.d-lg-table-cell(scope='col') Nội Dung
+                                   th
+                         tbody
+                              each rule in rules 
+                                   tr(id=rule.id)
+                                        td= rule.name
+                                        td= rule.description
+                                        td
+                                             button.btn.btn-danger.delete.m-1
+                                                  i.bi.bi-trash
+                                             button.btn.btn-warning.edit.m-1
+                                                  i.bi.bi-pencil-square

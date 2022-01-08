@@ -7,7 +7,9 @@ const League = require("../model/league.model"),
 	Stadium = require("../model/stadium.model"),
 	Donor = require("../model/donor.model"),
 	Referee = require("../model/referee.model"),
-	Join = require("../model/join.model");
+	Join = require("../model/join.model"),
+	MatchDetail = require("../model/matchDetail.model"),
+	Rule = require("../model/rule.model");
 
 module.exports = {
 	getManagerPage: async (req, res, next) => {
@@ -15,6 +17,7 @@ module.exports = {
 		res.locals.teams = await Team.find({});
 		res.locals.donors = await Donor.find({});
 		res.locals.referees = await Referee.find({});
+		res.locals.rules = await Rule.find({});
 
 		res.locals.scripts = ["/public/js/manager.js"];
 
@@ -53,7 +56,6 @@ module.exports = {
 		//TODO convert match => match Object
 		for (const round in matchs)
 			matchs[round].forEach(({ teamA, teamB, date }) => {
-				console.log(teamA);
 				matchList.push({
 					name: teamA.name + " - " + teamB.name,
 					teams: [teamA, teamB],
@@ -115,7 +117,10 @@ module.exports = {
 
 		if (team.length != 24) return next();
 
-		const data = await Team.findOne({ _id: team }).populate("stadium");
+		const data = await Team.findOne({ _id: team }).populate([
+			"stadium",
+			"titles",
+		]);
 
 		if (!data) return next();
 
@@ -125,7 +130,16 @@ module.exports = {
 		res.render("team");
 	},
 	getDonorsPage: async (req, res, next) => {
-		next();
+		const { donor } = req.params;
+		if (donor.length !== 24) return next();
+
+		const data = await Donor.findOne({ _id: donor });
+
+		if (!data) return next();
+
+		res.locals.donor = data;
+
+		res.render("donor");
 	},
 	getCreateDonor: async (req, res, next) => {
 		res.locals.body = {};
@@ -135,9 +149,6 @@ module.exports = {
 		const data = await Donor.create(req.body);
 		res.redirect("/manager");
 	},
-	getRefereePage: async (req, res, next) => {
-		next();
-	},
 	getCreateReferee: async (req, res, next) => {
 		res.locals.body = {};
 		res.render("manager/createReferee");
@@ -145,6 +156,57 @@ module.exports = {
 	createReferee: async (req, res, next) => {
 		const data = await Referee.create(req.body);
 		res.redirect("/manager");
+	},
+	getPlayer: async (req, res, next) => {
+		const { team, player } = req.params;
+
+		if (team.length !== 24 || player.length !== 24) return next();
+
+		const data = await Player.findOne({ _id: player, team }).populate(
+			"team"
+		);
+
+		if (!data) return next();
+
+		data.type = "player";
+
+		const goals = await MatchDetail.find({
+			player,
+			type: "goal",
+		})
+			.populate("league")
+			.populate("match");
+
+		const mistakes = await MatchDetail.find({
+			player,
+			type: { $in: ["red", "yellow"] },
+		});
+
+		console.log(data);
+
+		res.locals.person = data;
+		res.locals.mistakes = mistakes;
+		res.locals.goals = goals;
+
+		res.render("person");
+	},
+	getReferee: async (req, res) => {
+		const { referee } = req.params;
+
+		if (referee.length !== 24) return next();
+
+		const data = await Referee.findOne({ _id: referee });
+
+		const matchs = await Match.find({ referees: referee });
+
+		data.type = "referee";
+
+		if (!data) return next();
+
+		res.locals.person = data;
+		res.locals.matchs = matchs;
+
+		res.render("person");
 	},
 };
 

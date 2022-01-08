@@ -3,7 +3,7 @@
     "$oid": "61bf7364dbba7b151e247d79"
   },
   "name": "SVĐ Kiên Giang",
-  "address": "Phường An Bình, Rạch Giá, tỉnh Kiên Giang",
+  "address": "X479+C7H, Phường An Bình, Rạch Giá, Kiên Giang",
   "capacity": 10000,
   "team": {
     "$oid": "61bf7364dbba7b151e247d3f"
@@ -19,7 +19,7 @@
     "$oid": "61bf7394dbba7b151e247ded"
   },
   "name": "SVĐ Bà Rịa",
-  "address": "Phường An Bình, Rạch Giá, tỉnh Kiên Giang",
+  "address": "Số 308 27 Tháng 4, Phước Hưng, Bà Rịa, Bà Rịa - Vũng Tàu 90000",
   "capacity": 10000,
   "team": {
     "$oid": "61bf7394dbba7b151e247daf"
@@ -35,7 +35,7 @@
     "$oid": "61bf73b8dbba7b151e247e46"
   },
   "name": "SVĐ Bình Dương",
-  "address": "Đường 30/4, Đại lộ Bình Dương, TP Thủ Dầu Một, Bình Dương",
+  "address": "Đ. 30 Tháng 4, Phú Thọ, Thủ Dầu Một, Bình Dương",
   "capacity": 13035,
   "team": {
     "$oid": "61bf73b8dbba7b151e247e0a"
@@ -51,7 +51,7 @@
     "$oid": "61bf73df0021d546bb02a21a"
   },
   "name": "SVĐ Quy Nhơn",
-  "address": "TP Quy Nhơn",
+  "address": "194 Lê Hồng Phong, Trần Hưng Đạo, Thành phố Qui Nhơn, Bình Định",
   "capacity": 20000,
   "team": {
     "$oid": "61bf73df0021d546bb02a1de"
@@ -67,7 +67,7 @@
     "$oid": "61bf73f94c9d881894838445"
   },
   "name": "SVĐ Bình Phước",
-  "address": "Bình Phước",
+  "address": "Quốc lộ 14, phường Tân Bình, thành phố Đồng Xoài, Bình Phước, Việt Nam",
   "capacity": 10000,
   "team": {
     "$oid": "61bf73f84c9d88189483840f"
@@ -83,7 +83,7 @@
     "$oid": "61bf74824c9d881894838507"
   },
   "name": "SVĐ Cần Thơ",
-  "address": "thành phố Cần Thơ",
+  "address": "2QXQ+HHW, Cái Khế, Ninh Kiều, Cần Thơ",
   "capacity": 30000,
   "team": {
     "$oid": "61bf74824c9d8818948384cf"
@@ -99,7 +99,7 @@
     "$oid": "61bf749b4c9d881894838562"
   },
   "name": "SVĐ Pleiku",
-  "address": "Gia Lai",
+  "address": "Quang Trung, P.Tây Sơn, Thành phố Pleiku, Gia Lai",
   "capacity": 12000,
   "team": {
     "$oid": "61bf749b4c9d88189483852c"
@@ -115,7 +115,7 @@
     "$oid": "61bf74b04c9d8818948385ae"
   },
   "name": "SVĐ Tự Do",
-  "address": "thành phố Huế",
+  "address": "Nguyễn Thái Học, Phú Hội, Thành phố Huế, Thừa Thiên Huế",
   "capacity": 16000,
   "team": {
     "$oid": "61bf74af4c9d881894838570"
@@ -131,7 +131,7 @@
     "$oid": "61bf74c50910db56fffaabf0"
   },
   "name": "SVĐ Thiên Trường",
-  "address": "Nam Định",
+  "address": "5 Đặng Xuân Thiều, Vị Hoàng, TP. Nam Định, Nam Định",
   "capacity": 20000,
   "team": {
     "$oid": "61bf74c50910db56fffaabbc"
@@ -147,7 +147,7 @@
     "$oid": "61bf74d50910db56fffaac34"
   },
   "name": "SVĐ Buôn Ma Thuột",
-  "address": "tỉnh Đắk Lắk",
+  "address": "M2HV+32W, Tân tiến, Thành phố Buôn Ma Thuột, Đắk Lắk",
   "capacity": 25000,
   "team": {
     "$oid": "61bf74d40910db56fffaabfe"
@@ -163,7 +163,7 @@
     "$oid": "61bf74ea0910db56fffaac7c"
   },
   "name": "SVĐ Đồng Tháp",
-  "address": "tỉnh Đồng Tháp",
+  "address": "83 Đ. Nguyễn Huệ, Phường Mỹ Phú, TP. Cao Lãnh, Đồng Tháp 870000",
   "capacity": 18000,
   "team": {
     "$oid": "61bf74e90910db56fffaac42"
@@ -179,7 +179,7 @@
     "$oid": "61bf751d5a533c1c17f09a9b"
   },
   "name": "SVĐ Hàng Đẫy",
-  "address": "thủ đô Hà Nội",
+  "address": "9 Trịnh Hoài Đức, Cát Linh, Đống Đa, Hà Nội",
   "capacity": 22500,
   "team": {
     "$oid": "61bf751d5a533c1c17f09a5d"
@@ -195,7 +195,7 @@
     "$oid": "61bf75306e481e4d59659114"
   },
   "name": "SVĐ Lạch Tray",
-  "address": "Hải Phòng",
+  "address": "15 Lạch Tray, Ngô Quyền, Hải Phòng",
   "capacity": 25000,
   "team": {
     "$oid": "61bf75306e481e4d596590e0"
@@ -211,7 +211,7 @@
     "$oid": "61bf75468ea2aed05d93e9c0"
   },
   "name": "SVĐ Pleiku",
-  "address": "Gia Lai",
+  "address": "Quang Trung, P.Tây Sơn, Thành phố Pleiku, Gia Lai",
   "capacity": 12000,
   "team": {
     "$oid": "61bf75468ea2aed05d93e98a"
@@ -227,7 +227,7 @@
     "$oid": "61bf755858496962d824d286"
   },
   "name": "SVĐ Hà Tĩnh",
-  "address": "Hà Tĩnh",
+  "address": "Nguyễn Biểu, Nam Hà, Hà Tĩnh",
   "capacity": 12000,
   "team": {
     "$oid": "61bf755858496962d824d250"
@@ -243,7 +243,7 @@
     "$oid": "61bf756b58496962d824d2d3"
   },
   "name": "SVĐ Long An",
-  "address": "Long An",
+  "address": "44B Trương Định, Phường 2, Tân An, Long An",
   "capacity": 20000,
   "team": {
     "$oid": "61bf756a58496962d824d29b"
@@ -259,7 +259,7 @@
     "$oid": "61bf75b8a60e5304d40f8198"
   },
   "name": "SVĐ Quảng Nam",
-  "address": "Quảng Nam",
+  "address": "Phan Châu Trinh, Phường Hoà Hương, Tam Kỳ, Quảng Nam",
   "capacity": 15000,
   "team": {
     "$oid": "61bf75b8a60e5304d40f815c"
@@ -275,7 +275,7 @@
     "$oid": "61bf76f088a4a2f9f0789cca"
   },
   "name": "SVĐ 19/8 Nha Trang",
-  "address": "Khánh Hòa",
+  "address": "Yersin, Vạn Thạnh, Thành phố Nha Trang, Khánh Hòa",
   "capacity": 18000,
   "team": {
     "$oid": "61bf76f088a4a2f9f0789c94"
@@ -291,7 +291,7 @@
     "$oid": "61bf7734474cf868af1e003c"
   },
   "name": "SVĐ Thống Nhất",
-  "address": "TPHCM",
+  "address": "138 Đào Duy Từ, Phường 6, Quận 10, Thành phố Hồ Chí Minh",
   "capacity": 16000,
   "team": {
     "$oid": "61bf7734474cf868af1e0006"
@@ -307,7 +307,7 @@
     "$oid": "61bf776c474cf868af1e0096"
   },
   "name": "SVĐ Hòa Xuân",
-  "address": "Đà Nẵng",
+  "address": "Dương Loan, Hoà Xuân, Cẩm Lệ, Đà Nẵng",
   "capacity": 20000,
   "team": {
     "$oid": "61bf776b474cf868af1e005a"
@@ -323,7 +323,7 @@
     "$oid": "61bf782a31094d01f81c6c7a"
   },
   "name": "SVĐ Vinh",
-  "address": "Nghệ An",
+  "address": "Đào Tấn, Cửa Nam, Thành phố Vinh, Nghệ An",
   "capacity": 18000,
   "team": {
     "$oid": "61bf782a31094d01f81c6c3e"

@@ -10,7 +10,7 @@
   "birthday": {
     "$date": "2001-10-24T00:00:00Z"
   },
-  "avatar": "/public\\uploads\\248241106_2988348398110952_3767515554451314177_n.jpg"
+  "avatar": "/public\\images\\referee.png"
 },{
   "_id": {
     "$oid": "61c46fb63ed0d40ed6640ba7"
@@ -22,19 +22,19 @@
   "birthday": {
     "$date": "1972-04-03T00:00:00Z"
   },
-  "avatar": "/public\\uploads\\tri-1504012247888.jpg"
+  "avatar": "/public\\uploads\\vo-minh-tri.jpg"
 },{
   "_id": {
     "$oid": "61c4a93a7353f8d661b4cfe5"
   },
-  "name": "Ryūji Satō",
+  "name": "Ryuji Sato",
   "email": "sato@vpf.com",
   "phone": "09864581728",
   "description": "là trọng tài bóng đá người Nhật Bản. Ông điều khiển nhiều trận bóng tại AFC Champions League và vòng loại FIFA World Cup. Ông cũng là trọng tài chuyên nghiệp và xuất sắc của J. League Division 1 tại Nhật Bản. Ông là một vị trọng tài rất nghiêm khắc và có tinh thần trách nhiệm cao trong công việc. Ông từng là một giảng viên trường trung học tại địa phương Nagoya, Nhật trước khi đăng ký làm trọng tài bóng đá. Ông cũng là vị trọng tài người Nhật duy nhất được đề cử bắt chính tại World Cup 2018 và đang tiếp tục được đề cử ở World Cup 2022.",
   "birthday": {
     "$date": "1984-10-27T00:00:00Z"
   },
-  "avatar": "/public\\uploads\\images1542525_trong_tai_u23_viet_nam_vs_u23_jordan.jpg",
+  "avatar": "/public\\uploads\\ryuji-sato.jpg",
   "createAt": {
     "$date": "2021-12-23T16:31:35.177Z"
   },
@@ -52,7 +52,7 @@
   "birthday": {
     "$date": "1984-10-27T00:00:00Z"
   },
-  "avatar": "/public\\uploads\\1111-1852.png",
+  "avatar": "/public\\uploads\\ngo-duy-lam.png",
   "createAt": {
     "$date": "2021-12-25T06:36:30.903Z"
   },
@@ -72,7 +72,7 @@
       "$numberLong": "-110592000000"
     }
   },
-  "avatar": "/public\\uploads\\tải xuống.jfif",
+  "avatar": "/public\\uploads\\frank-de-bleeckere.jpg",
   "createAt": {
     "$date": "2021-12-25T06:36:30.903Z"
   },
@@ -110,7 +110,7 @@
   "birthday": {
     "$date": "1990-03-12T00:00:00Z"
   },
-  "avatar": "/public\\uploads\\143563660_2850885375188316_6870476513738945365_n.jpg",
+  "avatar": "/public\\uploads\\pham-dang-khoa.jpg",
   "createAt": {
     "$date": "2021-12-29T16:03:07.609Z"
   },
@@ -128,7 +128,7 @@
   "birthday": {
     "$date": "1990-12-12T00:00:00Z"
   },
-  "avatar": "/public\\uploads\\69954371_211479666515770_5523857159936278528_n.jpg",
+  "avatar": "/public\\uploads\\pham-quoc-trung.jpg",
   "createAt": {
     "$date": "2021-12-29T16:05:01.997Z"
   },
@@ -146,7 +146,7 @@
   "birthday": {
     "$date": "1978-12-02T00:00:00Z"
   },
-  "avatar": "/public\\uploads\\photo1633479099930-16334791000161632327067.jpg",
+  "avatar": "/public\\uploads\\mohammed-abdulla-hassan-mohamed.jpg",
   "createAt": {
     "$date": "2021-12-29T16:06:23.188Z"
   },
@@ -166,7 +166,7 @@
       "$numberLong": "-285292800000"
     }
   },
-  "avatar": "/public\\uploads\\tải xuống.jfif",
+  "avatar": "/public\\uploads\\mike-riley.png",
   "createAt": {
     "$date": "2021-12-29T16:06:23.188Z"
   },
@@ -184,7 +184,7 @@
   "birthday": {
     "$date": "1986-03-06T00:00:00Z"
   },
-  "avatar": "/public\\uploads\\tải xuống.jfif",
+  "avatar": "/public\\uploads\\ricardo-montero.png",
   "createAt": {
     "$date": "2021-12-29T16:09:01.694Z"
   },
@@ -202,7 +202,7 @@
   "birthday": {
     "$date": "1985-08-16T00:00:00Z"
   },
-  "avatar": "/public\\uploads\\fahad_almirdasi_31.jpg",
+  "avatar": "/public\\uploads\\fahad_almirdasi.jpg",
   "createAt": {
     "$date": "2021-12-29T16:10:13.054Z"
   },
@@ -220,7 +220,7 @@
   "birthday": {
     "$date": "1980-12-14T00:00:00Z"
   },
-  "avatar": "/public\\uploads\\tải xuống (1).jfif",
+  "avatar": "/public\\uploads\\mehdi-Abid-Charef.png",
   "createAt": {
     "$date": "2021-12-29T16:10:22.286Z"
   },
@@ -238,7 +238,7 @@
   "birthday": {
     "$date": "1975-08-05T00:00:00Z"
   },
-  "avatar": "/public\\uploads\\tải xuống (2).jfif",
+  "avatar": "/public\\uploads\\mauro-vigliano.png",
   "createAt": {
     "$date": "2021-12-29T16:10:22.286Z"
   },
@@ -256,7 +256,7 @@
   "birthday": {
     "$date": "1978-08-02T00:00:00Z"
   },
-  "avatar": "/public\\uploads\\tải xuống (3).jfif",
+  "avatar": "/public\\uploads\\john-pitti.png",
   "createAt": {
     "$date": "2021-12-29T16:13:07.909Z"
   },
@@ -267,14 +267,14 @@
   "_id": {
     "$oid": "61cc8a89be55aecc0aeb509d"
   },
-  "name": "César Ramos Palazuelos",
+  "name": "Cesar Ramos Palazuelos",
   "email": "Palazuelos9123@gmail.com",
   "phone": "0908162781",
   "description": "César Arturo Ramos Palazuelos là một trọng tài bóng đá chuyên nghiệp người Mexico. Anh ấy là cầu thủ quốc tế chính thức cho FIFA từ năm 2014. Anh ấy đã làm trọng tài một số trận đấu ở CONCACAF Champions League, FIFA World Cup 2018 và AFC Asian Cup 2019.",
   "birthday": {
     "$date": "1983-12-15T00:00:00Z"
   },
-  "avatar": "/public\\uploads\\tải xuống (4).jfif",
+  "avatar": "/public\\uploads\\cesar-ramos-palazuelos.png",
   "createAt": {
     "$date": "2021-12-29T16:19:11.444Z"
   },
@@ -292,7 +292,7 @@
   "birthday": {
     "$date": "1975-07-02T00:00:00Z"
   },
-  "avatar": "/public\\uploads\\tải xuống (5).jfif",
+  "avatar": "/public\\uploads\\joel-aguilar.png",
   "createAt": {
     "$date": "2021-12-29T16:32:13.952Z"
   },

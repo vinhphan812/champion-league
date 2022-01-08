@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "61d7e1cedd2bf0a6f4b2991d"
+  },
+  "name": "giải đấu 2021",
+  "description": "Giải đấu 2021....",
+  "startTime": {
+    "$date": "2021-01-01T00:00:00Z"
+  },
+  "logo_path": "/public/images/league.png",
+  "createAt": {
+    "$date": "2022-01-07T06:41:22.025Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T06:41:22.025Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d80953fd4000122784e1cd"
+  },
+  "name": "Giải Bóng Đá 2022",
+  "description": "Bóng đá 2022",
+  "startTime": {
+    "$date": "2022-01-01T00:00:00Z"
+  },
+  "logo_path": "/public/images/league.png",
+  "createAt": {
+    "$date": "2022-01-07T08:14:46.036Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-08T08:54:00.680Z"
+  }
+}]

@@ -1,0 +1,715 @@
+[{
+  "_id": {
+    "$oid": "61d7e1cedd2bf0a6f4b29921"
+  },
+  "team": {
+    "$oid": "61bf7364dbba7b151e247d3f"
+  },
+  "league": {
+    "$oid": "61d7e1cedd2bf0a6f4b2991d"
+  },
+  "score": 42,
+  "createAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d7e1cedd2bf0a6f4b29922"
+  },
+  "team": {
+    "$oid": "61bf7394dbba7b151e247daf"
+  },
+  "league": {
+    "$oid": "61d7e1cedd2bf0a6f4b2991d"
+  },
+  "score": 55,
+  "createAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d7e1cedd2bf0a6f4b29923"
+  },
+  "team": {
+    "$oid": "61bf73b8dbba7b151e247e0a"
+  },
+  "league": {
+    "$oid": "61d7e1cedd2bf0a6f4b2991d"
+  },
+  "score": 39,
+  "createAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d7e1cedd2bf0a6f4b29924"
+  },
+  "team": {
+    "$oid": "61bf73df0021d546bb02a1de"
+  },
+  "league": {
+    "$oid": "61d7e1cedd2bf0a6f4b2991d"
+  },
+  "score": 45,
+  "createAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d7e1cedd2bf0a6f4b29925"
+  },
+  "team": {
+    "$oid": "61bf73f84c9d88189483840f"
+  },
+  "league": {
+    "$oid": "61d7e1cedd2bf0a6f4b2991d"
+  },
+  "score": 67,
+  "createAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d7e1cedd2bf0a6f4b29926"
+  },
+  "team": {
+    "$oid": "61bf74824c9d8818948384cf"
+  },
+  "league": {
+    "$oid": "61d7e1cedd2bf0a6f4b2991d"
+  },
+  "score": 59,
+  "createAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d7e1cedd2bf0a6f4b29927"
+  },
+  "team": {
+    "$oid": "61bf749b4c9d88189483852c"
+  },
+  "league": {
+    "$oid": "61d7e1cedd2bf0a6f4b2991d"
+  },
+  "score": 59,
+  "createAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d7e1cedd2bf0a6f4b29928"
+  },
+  "team": {
+    "$oid": "61bf74af4c9d881894838570"
+  },
+  "league": {
+    "$oid": "61d7e1cedd2bf0a6f4b2991d"
+  },
+  "score": 57,
+  "createAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d7e1cedd2bf0a6f4b29929"
+  },
+  "team": {
+    "$oid": "61bf74c50910db56fffaabbc"
+  },
+  "league": {
+    "$oid": "61d7e1cedd2bf0a6f4b2991d"
+  },
+  "score": 48,
+  "createAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d7e1cedd2bf0a6f4b2992a"
+  },
+  "team": {
+    "$oid": "61bf74d40910db56fffaabfe"
+  },
+  "league": {
+    "$oid": "61d7e1cedd2bf0a6f4b2991d"
+  },
+  "score": 57,
+  "createAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d7e1cedd2bf0a6f4b2992b"
+  },
+  "team": {
+    "$oid": "61bf74e90910db56fffaac42"
+  },
+  "league": {
+    "$oid": "61d7e1cedd2bf0a6f4b2991d"
+  },
+  "score": 48,
+  "createAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d7e1cedd2bf0a6f4b2992c"
+  },
+  "team": {
+    "$oid": "61bf751d5a533c1c17f09a5d"
+  },
+  "league": {
+    "$oid": "61d7e1cedd2bf0a6f4b2991d"
+  },
+  "score": 51,
+  "createAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d7e1cedd2bf0a6f4b2992d"
+  },
+  "team": {
+    "$oid": "61bf75306e481e4d596590e0"
+  },
+  "league": {
+    "$oid": "61d7e1cedd2bf0a6f4b2991d"
+  },
+  "score": 55,
+  "createAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d7e1cedd2bf0a6f4b2992e"
+  },
+  "team": {
+    "$oid": "61bf75468ea2aed05d93e98a"
+  },
+  "league": {
+    "$oid": "61d7e1cedd2bf0a6f4b2991d"
+  },
+  "score": 70,
+  "createAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d7e1cedd2bf0a6f4b2992f"
+  },
+  "team": {
+    "$oid": "61bf755858496962d824d250"
+  },
+  "league": {
+    "$oid": "61d7e1cedd2bf0a6f4b2991d"
+  },
+  "score": 65,
+  "createAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d7e1cedd2bf0a6f4b29930"
+  },
+  "team": {
+    "$oid": "61bf756a58496962d824d29b"
+  },
+  "league": {
+    "$oid": "61d7e1cedd2bf0a6f4b2991d"
+  },
+  "score": 62,
+  "createAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d7e1cedd2bf0a6f4b29931"
+  },
+  "team": {
+    "$oid": "61bf75b8a60e5304d40f815c"
+  },
+  "league": {
+    "$oid": "61d7e1cedd2bf0a6f4b2991d"
+  },
+  "score": 77,
+  "createAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d7e1cedd2bf0a6f4b29932"
+  },
+  "team": {
+    "$oid": "61bf76f088a4a2f9f0789c94"
+  },
+  "league": {
+    "$oid": "61d7e1cedd2bf0a6f4b2991d"
+  },
+  "score": 58,
+  "createAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d7e1cedd2bf0a6f4b29933"
+  },
+  "team": {
+    "$oid": "61bf7734474cf868af1e0006"
+  },
+  "league": {
+    "$oid": "61d7e1cedd2bf0a6f4b2991d"
+  },
+  "score": 38,
+  "createAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d7e1cedd2bf0a6f4b29934"
+  },
+  "team": {
+    "$oid": "61bf776b474cf868af1e005a"
+  },
+  "league": {
+    "$oid": "61d7e1cedd2bf0a6f4b2991d"
+  },
+  "score": 45,
+  "createAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d7e1cedd2bf0a6f4b29935"
+  },
+  "team": {
+    "$oid": "61bf782a31094d01f81c6c3e"
+  },
+  "league": {
+    "$oid": "61d7e1cedd2bf0a6f4b2991d"
+  },
+  "score": 48,
+  "createAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T06:41:22.032Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d80953fd4000122784e1d1"
+  },
+  "team": {
+    "$oid": "61bf7364dbba7b151e247d3f"
+  },
+  "league": {
+    "$oid": "61d80953fd4000122784e1cd"
+  },
+  "score": 0,
+  "createAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d80953fd4000122784e1d2"
+  },
+  "team": {
+    "$oid": "61bf7394dbba7b151e247daf"
+  },
+  "league": {
+    "$oid": "61d80953fd4000122784e1cd"
+  },
+  "score": 0,
+  "createAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d80953fd4000122784e1d3"
+  },
+  "team": {
+    "$oid": "61bf73b8dbba7b151e247e0a"
+  },
+  "league": {
+    "$oid": "61d80953fd4000122784e1cd"
+  },
+  "score": 0,
+  "createAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d80953fd4000122784e1d4"
+  },
+  "team": {
+    "$oid": "61bf73df0021d546bb02a1de"
+  },
+  "league": {
+    "$oid": "61d80953fd4000122784e1cd"
+  },
+  "score": 0,
+  "createAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d80953fd4000122784e1d5"
+  },
+  "team": {
+    "$oid": "61bf73f84c9d88189483840f"
+  },
+  "league": {
+    "$oid": "61d80953fd4000122784e1cd"
+  },
+  "score": 0,
+  "createAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d80953fd4000122784e1d6"
+  },
+  "team": {
+    "$oid": "61bf74824c9d8818948384cf"
+  },
+  "league": {
+    "$oid": "61d80953fd4000122784e1cd"
+  },
+  "score": 0,
+  "createAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d80953fd4000122784e1d7"
+  },
+  "team": {
+    "$oid": "61bf749b4c9d88189483852c"
+  },
+  "league": {
+    "$oid": "61d80953fd4000122784e1cd"
+  },
+  "score": 0,
+  "createAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d80953fd4000122784e1d8"
+  },
+  "team": {
+    "$oid": "61bf74af4c9d881894838570"
+  },
+  "league": {
+    "$oid": "61d80953fd4000122784e1cd"
+  },
+  "score": 0,
+  "createAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d80953fd4000122784e1d9"
+  },
+  "team": {
+    "$oid": "61bf74c50910db56fffaabbc"
+  },
+  "league": {
+    "$oid": "61d80953fd4000122784e1cd"
+  },
+  "score": 0,
+  "createAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d80953fd4000122784e1da"
+  },
+  "team": {
+    "$oid": "61bf74d40910db56fffaabfe"
+  },
+  "league": {
+    "$oid": "61d80953fd4000122784e1cd"
+  },
+  "score": 0,
+  "createAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d80953fd4000122784e1db"
+  },
+  "team": {
+    "$oid": "61bf74e90910db56fffaac42"
+  },
+  "league": {
+    "$oid": "61d80953fd4000122784e1cd"
+  },
+  "score": 0,
+  "createAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d80953fd4000122784e1dc"
+  },
+  "team": {
+    "$oid": "61bf751d5a533c1c17f09a5d"
+  },
+  "league": {
+    "$oid": "61d80953fd4000122784e1cd"
+  },
+  "score": 0,
+  "createAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d80953fd4000122784e1dd"
+  },
+  "team": {
+    "$oid": "61bf75306e481e4d596590e0"
+  },
+  "league": {
+    "$oid": "61d80953fd4000122784e1cd"
+  },
+  "score": 0,
+  "createAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d80953fd4000122784e1df"
+  },
+  "team": {
+    "$oid": "61bf755858496962d824d250"
+  },
+  "league": {
+    "$oid": "61d80953fd4000122784e1cd"
+  },
+  "score": 0,
+  "createAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d80953fd4000122784e1de"
+  },
+  "team": {
+    "$oid": "61bf75468ea2aed05d93e98a"
+  },
+  "league": {
+    "$oid": "61d80953fd4000122784e1cd"
+  },
+  "score": 0,
+  "createAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d80953fd4000122784e1e0"
+  },
+  "team": {
+    "$oid": "61bf756a58496962d824d29b"
+  },
+  "league": {
+    "$oid": "61d80953fd4000122784e1cd"
+  },
+  "score": 0,
+  "createAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d80953fd4000122784e1e1"
+  },
+  "team": {
+    "$oid": "61bf75b8a60e5304d40f815c"
+  },
+  "league": {
+    "$oid": "61d80953fd4000122784e1cd"
+  },
+  "score": 0,
+  "createAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d80953fd4000122784e1e2"
+  },
+  "team": {
+    "$oid": "61bf76f088a4a2f9f0789c94"
+  },
+  "league": {
+    "$oid": "61d80953fd4000122784e1cd"
+  },
+  "score": 0,
+  "createAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d80953fd4000122784e1e3"
+  },
+  "team": {
+    "$oid": "61bf7734474cf868af1e0006"
+  },
+  "league": {
+    "$oid": "61d80953fd4000122784e1cd"
+  },
+  "score": 0,
+  "createAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d80953fd4000122784e1e4"
+  },
+  "team": {
+    "$oid": "61bf776b474cf868af1e005a"
+  },
+  "league": {
+    "$oid": "61d80953fd4000122784e1cd"
+  },
+  "score": 0,
+  "createAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  }
+},{
+  "_id": {
+    "$oid": "61d80953fd4000122784e1e5"
+  },
+  "team": {
+    "$oid": "61bf782a31094d01f81c6c3e"
+  },
+  "league": {
+    "$oid": "61d80953fd4000122784e1cd"
+  },
+  "score": 0,
+  "createAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  },
+  "updateAt": {
+    "$date": "2022-01-07T08:14:46.041Z"
+  }
+}]

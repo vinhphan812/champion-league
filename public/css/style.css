@@ -102,6 +102,14 @@ footer.dark a {
 	object-fit: cover;
 }
 
+.avatar-lg {
+	width: 192px;
+	height: 192px;
+	object-fit: cover;
+	border-radius: 50%;
+	margin: 1rem 0;
+}
+
 .card-img-top {
 	object-fit: cover;
 }
@@ -112,6 +120,10 @@ footer.dark a {
 	border-radius: 50%;
 	background-color: #999;
 	object-fit: cover;
+}
+
+.min-3 {
+	min-height: 300px;
 }
 
 .top-1st > td:nth-child(1) {

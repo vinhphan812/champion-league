@@ -17,17 +17,17 @@ async function getStatistics() {
 
 function renderMatchDetail() {
 	const $table = $(".details tbody");
-	const html =
+	let html =
 		"<tr class='text-center h1 text-muted'><td colspan='9'>Hiện tại chưa có dữ liệu cho trận đấu này!!!</td></tr>";
 	if (matchDetails.length)
 		html = matchDetails.map(
 			({ team, time, player, type }) => `
 		<tr>
-			<td colspan="3">${renderPlayer(teamA, team.id)}</td>
-			<td colspan="1">${renderType(teamA, team.id, type)}</td>
+			<td colspan="3">${renderPlayer(teamA, team._id, player)}</td>
+			<td colspan="1">${renderType(teamA, team._id, type)}</td>
 			<td colspan="1" class="text-center fw-bold">${time}</td>
-			<td colspan="1">${renderType(teamB, team.id, type)}</td>
-			<td colspan="3">${renderPlayer(teamB, team.id, player)}</td>
+			<td colspan="1">${renderType(teamB, team._id, type)}</td>
+			<td colspan="3">${renderPlayer(teamB, team._id, player)}</td>
 		</tr>`
 		);
 
@@ -36,7 +36,7 @@ function renderMatchDetail() {
 
 function renderPlayer(colID, curID, player) {
 	return colID == curID
-		? `<a href='/'>[${player.numberInTeam}] ${player.name}</a>`
+		? `<a href='/manager/teams/${player.team}/players/${player._id}'>[${player.numberInTeam}] ${player.name}</a>`
 		: "";
 }
 

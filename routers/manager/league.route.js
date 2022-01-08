@@ -8,6 +8,8 @@ router.use(ctrler.leagueMiddleware);
 
 router.get("/", ctrler.getLeaguePage);
 
+router.route("/report").get(ctrler.getReportPage).post(ctrler.postReportPage);
+
 // matchs
 // matchs middleware
 router.use("/matchs/:match", ctrler.matchMiddleware);

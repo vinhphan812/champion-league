@@ -15,7 +15,11 @@ block content
           .col-md-9.flex-grow-1.ps-5
                .d-flex.justify-content-between.align-items-start
                     .d-flex.flex-column
-                         .h1.team-name.fw-bold= team.name
+                         .d-flex
+                              .h1.team-name.fw-bold= team.name
+                              #titles
+                                   each title in team.titles
+                                        span.badge.rounded-pill.bg-warning.mx-1= title.name
                          .h6.text-muted.founded= moment(team.founded).format("DD/MM/yyyy")
                     if isManager
                          .d-flex.flex-column.justify-content-center

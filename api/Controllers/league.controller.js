@@ -2,7 +2,8 @@ const { DEFAULT_IGNORE_FIELD } = require("../../utils");
 
 const League = require("../../model/league.model"),
 	Match = require("../../model/match.model"),
-	Join = require("../../model/join.model");
+	Join = require("../../model/join.model"),
+	MatchDetails = require("../../model/matchDetail.model");
 
 module.exports = {
 	// get all Leagues
@@ -56,6 +57,10 @@ module.exports = {
 		await League.deleteOne({ _id });
 
 		await Match.deleteMany({ league: _id });
+
+		await Join.deleteMany({ league: _id });
+
+		await MatchDetails.deleteMany({ league: _id });
 
 		res.json({
 			success: true,

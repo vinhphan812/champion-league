@@ -42,7 +42,7 @@ function renderPlayers(data) {
 		return `<tr id="${player._id}" class="align-middle">
 			<td>${index + 1}</td>
 			<td>
-				<a href="players/${player._id}">${player.name}</a>
+				<a href="/teams/${team}/players/${player._id}">${player.name}</a>
 			</td>
 			<td>${player.numberInTeam}</td>
 			<td>${player.height}</td>

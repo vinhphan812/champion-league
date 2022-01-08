@@ -7,6 +7,7 @@ const PlayerSchema = new Schema(
 			type: Schema.Types.ObjectId,
 			ref: "Team",
 		},
+		titles: [{ type: Schema.Types.ObjectId, ref: "Title" }],
 		weight: Number,
 		height: Number,
 		avatar: { type: String, default: "/public/images/player_st.png" },

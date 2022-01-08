@@ -6,6 +6,7 @@ const LeagueSchema = new Schema(
 		description: String,
 		startTime: Date,
 		logo_path: { type: String, default: "/public/images/league.png" },
+		isReport: { type: Boolean, default: false },
 		createAt: { type: Date, default: new Date() },
 		updateAt: { type: Date, default: new Date() },
 	},

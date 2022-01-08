@@ -7,6 +7,7 @@ window.onload = () => {
 	$(".logo .edit").click(editImageTeam);
 	$(".team-editor").click(editTeam);
 	$("#btn-add-player").click(addPlayer);
+	$(".team-delete").click(deleteTeam);
 };
 
 function addStadium(team) {
@@ -89,19 +90,19 @@ function stadiumForm({ name, address, capacity }, title, btnTitle, cb) {
 	Swal.fire({
 		title: title + " Sân Vận Động ",
 		html: `<div>
-                    <label for="name" class="form-label text-start w-100">Stadium Name</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Stadium name" value="${
+                    <label for="name" class="form-label text-start w-100">Sân Vận Động</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Tên sân vận động" value="${
 					name || ""
 				}">
                </div>
                <div>
-                    <label for="address" class="form-label text-start w-100">Address</label>
-                    <input type="text" class="form-control" id="address" name="address" placeholder="address" value="${
+                    <label for="address" class="form-label text-start w-100">Địa Chỉ</label>
+                    <input type="text" class="form-control" id="address" name="address" placeholder="địa chỉ" value="${
 					address || ""
 				}" >
                </div><div>
-                    <label for="capacity" class="form-label text-start w-100">Capactity</label>
-                    <input type="text" class="form-control" id="capacity" name="capacity" placeholder="Capacity" value="${
+                    <label for="capacity" class="form-label text-start w-100">Sức Chứa</label>
+                    <input type="text" class="form-control" id="capacity" name="capacity" placeholder="sức chứa" value="${
 					capacity || ""
 				}">
                </div>`,
@@ -122,21 +123,6 @@ function renderStadium({ name, address, capacity }) {
 	<div class="fw-bold fs-5 capacity">Sức Chứa: ${capacity} người</div>
 	</div>`);
 	renderOptionStadium();
-}
-
-function deleteStadium() {
-	const stadium = $(".stadium-info").attr("id");
-	confirmDelete("Sân Vận Động", async () => {
-		const res = await (
-			await fetch(`/api/teams/${team}/stadiums/${stadium}`, {
-				method: "DELETE",
-			})
-		).json();
-		if (!res.success) return Alert("Error", res.message, "OK", "error");
-
-		renderAddStadium(team);
-		Alert("Success", res.message, "OK", "success");
-	});
 }
 
 function renderAddStadium(team) {
@@ -290,20 +276,6 @@ function FetchPlayer(method = "POST") {
 		players.push(player);
 		Alert("Success", "Thêm Thành Viên Thành Công", "OK", "success");
 	};
-}
-
-function deletePlayer(e) {
-	const { id } = e.target.parentNode.parentNode.parentNode;
-	confirmDelete("cầu thủ", async () => {
-		const { success, data, message } = await await fetch(
-			`/api/teams/${team}/players/${id}`,
-			{ method: "DELETE" }
-		);
-
-		if (!success) return Swal.showValidationMessage(message);
-
-		Alert("Success", "Xóa Cầu Thủ Thành Công", "OK", "success");
-	});
 }
 
 async function getPlayerInTeam() {
@@ -481,5 +453,46 @@ function editTeam() {
 			coach.text(coachEditor);
 		},
 		allowOutsideClick: () => !Swal.isLoading(),
+	});
+}
+
+function deleteTeam() {
+	confirmDelete("đội", async () => {
+		const { success, message } = await (
+			await fetch("/api/teams/" + team, { method: "DELETE" })
+		).json();
+		if (success) {
+			Alert("Success", message, "OK", "success");
+		}
+		parent.remove();
+	});
+}
+
+function deletePlayer(e) {
+	const { id } = e.target.parentNode.parentNode.parentNode;
+	confirmDelete("cầu thủ", async () => {
+		const { success, data, message } = await await fetch(
+			`/api/teams/${team}/players/${id}`,
+			{ method: "DELETE" }
+		);
+
+		if (!success) return Swal.showValidationMessage(message);
+
+		Alert("Success", "Xóa Cầu Thủ Thành Công", "OK", "success");
+	});
+}
+
+function deleteStadium() {
+	const stadium = $(".stadium-info").attr("id");
+	confirmDelete("Sân Vận Động", async () => {
+		const res = await (
+			await fetch(`/api/teams/${team}/stadiums/${stadium}`, {
+				method: "DELETE",
+			})
+		).json();
+		if (!res.success) return Alert("Error", res.message, "OK", "error");
+
+		renderAddStadium(team);
+		Alert("Success", res.message, "OK", "success");
 	});
 }

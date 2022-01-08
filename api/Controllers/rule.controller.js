@@ -2,7 +2,7 @@ const Rule = require("../../model/rule.model");
 
 module.exports = {
 	getRules: async (req, res) => {
-		const rules = await Rule.find({}, { name: 1 });
+		const rules = await Rule.find({});
 		res.status(200).json({
 			succes: true,
 			code: 200,
@@ -24,6 +24,8 @@ module.exports = {
 
 		body.createAt = createAt;
 		body.updateAt = new Date();
+
+		console.log(body);
 
 		await Rule.updateOne({ _id }, body);
 

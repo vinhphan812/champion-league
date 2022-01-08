@@ -4,13 +4,14 @@ const express = require("express");
 const { authMiddleware } = require("../middlewares/auth.middleware"),
 	{
 		decentralization,
-	} = require("../../middlewares/decentralization.middleware");
+	} = require("../middlewares/decentralization.middleware");
 
 const leaguesRoute = require("./league.route"),
 	teamRoute = require("./team.route"),
 	ruleRoute = require("./rule.route"),
 	donorRoute = require("./donor.route"),
-	refereeRoute = require("./referee.route");
+	refereeRoute = require("./referee.route"),
+	titleRoute = require("./title.route");
 
 // controller
 const ctrler = require("../controllers/api.controller");
@@ -22,10 +23,13 @@ router.use("/teams", teamRoute);
 router.use("/rules", ruleRoute);
 router.use("/donors", donorRoute);
 router.use("/referees", refereeRoute);
+router.use("/titles", titleRoute);
 
 router.use(authMiddleware, decentralization("manager"));
 
 router.get("/", ctrler.infoAPI);
+
+router.get("/matchInWeek", ctrler.getMatchInWeek);
 
 router.use(ctrler.notFound);
 

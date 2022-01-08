@@ -16,19 +16,19 @@ block content
                .col-md
                     .d-flex.justify-content-between
                          div
-                              .h1.fw-bold= league.name
+                              .h1.fw-bold.league-name= league.name
                               div
                                    span.fw-bold Thời gian bắt đầu: 
-                                   span.text-muted= moment(league.startTime).format("DD/MM/yyyy") 
+                                   span.text-muted.start-league= moment(league.startTime).format("DD/MM/yyyy") 
                          if isManager
                               .d-flex.flex-column.justify-content-center
-                                   button.btn.btn-warning.team-editor.my-2
+                                   button.btn.btn-warning.league-editor.my-2
                                         i.bi.bi-pencil-square
                                         span &nbsp;Chỉnh sửa giải đấu
-                                   button.btn.btn-danger.team-delete
+                                   button.btn.btn-danger.league-delete
                                         i.bi.bi-pencil-square
                                         span &nbsp;Xóa giải đấu
-                    div.alert.alert-info.my-3
+                    div.alert.alert-info.my-3.description
                          .h3 Thông tin giải đấu
                          p= league.description || "Hiện chưa có thông tin mô tả nào cho giải đấu!"
           hr
@@ -52,7 +52,7 @@ block content
                                    th Sân Vận Động
                                    th Đội Nhà
                                    th.d-none.d-lg-table-cell
-                                   th Tỉ Số 
+                                   th Tỷ Số 
                                    th.d-none.d-lg-table-cell
                                    th Đội Khách
                                    th
@@ -87,6 +87,8 @@ block content
                               li.list-group-item
                                    span.fw-bold Đã cập nhật:&nbsp;
                                    span.total-updated 0
+                         if isManager
+                              a(href=`/manager/leagues/${league._id}/report`).btn.btn-dark.w-100.my-2 Tổng kết giải
                     hr
                     div 
                          .h3 Bảng Xếp Hạng

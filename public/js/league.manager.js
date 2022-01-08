@@ -5,6 +5,8 @@ window.onload = () => {
 	getRankInLeague();
 	$("#filter-matchs").change(searchChange);
 	$("input#search-match").keyup(searchChange);
+	$(".league-delete").click(deleteLeague);
+	$(".league-editor").click(editLeague);
 };
 
 function renderStatistics() {
@@ -130,7 +132,7 @@ async function renderRank(joins) {
 			<div class=" mb-0 fw-bold">${index + 1}</div>
 		</td>
 		<td>
-			<a href="/manager/teams/${team.id}">${team.name}</a>
+			<a href="/manager/teams/${team._id}">${team.name}</a>
 		</td>
 		<td>${score}</td>
 	</tr>`
@@ -145,7 +147,84 @@ async function renderRank(joins) {
 				? "table-info top-2nd"
 				: index == 2
 				? "table-primary top-3rd"
-				: "h5";
-		return "h5";
+				: "";
+		return "";
 	}
+}
+
+function deleteLeague() {
+	confirmDelete("giải ", async () => {
+		const { success, message } = await (
+			await fetch("/api/leagues/" + id, { method: "DELETE" })
+		).json();
+		if (success) {
+			Alert("Success", message, "OK", "success");
+		}
+		parent.remove();
+	});
+}
+
+function editLeague() {
+	const name = $(".league-name"),
+		startTime = $(".start-league"),
+		description = $(".description p");
+
+	Swal.fire({
+		title: "Chỉnh sửa " + name.text(),
+		html: `
+			<div class="my-2">
+                    <label for="name" class="form-label text-start w-100">Tên Giải</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Tên giải đấu" value="${name.text()}">
+               </div>
+
+			<div class="my-2">
+				<label for="startTime" class="form-label text-start w-100">Ngày Bắt Đầu</label>
+				<input type="date" class="form-control" id="startTime" name="startTime" value="${moment(
+					startTime.text()
+				).format("yyyy-MM-DD")}">
+			</div>
+			
+			<div class="my-2">
+				<label class="form-label text-start w-100" for="description-editor">Thông tin đội bóng</label>
+				<textarea class="form-control" placeholder="Nhập thông tin mô tả đội bóng" id="description-editor">${
+					description.text() ==
+					"Hiện chưa có thông tin mô tả nào cho giải đấu!"
+						? ""
+						: description.text()
+				}</textarea>
+			</div>
+		`,
+		showCancelButton: true,
+		confirmButtonText: "Lưu",
+		showLoaderOnConfirm: true,
+		reverseButtons: true,
+		preConfirm: async () => {
+			const nameEditor = $("#name").val(),
+				descriptionEditor = $("#description-editor").val(),
+				statTimeEditor = $("#startTime").val();
+
+			const body = JSON.stringify({
+				description: descriptionEditor,
+				name: nameEditor,
+				startTime: statTimeEditor,
+			});
+
+			const { success, message } = await (
+				await fetch(`/api/leagues/${league}`, {
+					method: "PUT",
+					headers: { "Content-Type": "application/json" },
+					body,
+				})
+			).json();
+
+			if (!success) return Alert("Error", message, "OK", "error");
+
+			Alert("Success", message, "OK", "success");
+
+			name.text(nameEditor);
+			startTime.text(statTimeEditor);
+			description.text(descriptionEditor);
+		},
+		allowOutsideClick: () => !Swal.isLoading(),
+	});
 }

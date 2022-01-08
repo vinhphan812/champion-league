@@ -55,6 +55,7 @@ router
 
 //? - detail
 router.get("/teams/:team", ctrler.getTeamPage);
+router.get("/teams/:team/players/:player", ctrler.getPlayer);
 
 //TODO DONORS
 // ? - create
@@ -75,5 +76,7 @@ router
 		validations.createReferee,
 		ctrler.createReferee
 	);
+
+router.get("/referees/:referee", ctrler.getReferee);
 
 module.exports = router;

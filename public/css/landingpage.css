@@ -152,7 +152,7 @@ body {
 	content: "";
 	height: 15px;
 	width: 15px;
-	background: white;
+	background: #eee;
 	top: 28px;
 	transform: rotate(45deg);
 	z-index: -1;
@@ -221,6 +221,8 @@ body {
 	border: 2px solid black;
 	border-radius: 4px;
 	transition: all 0.3s ease;
+	color: #333;
+	text-decoration: none;
 }
 .info-box .fas {
 	font-size: 70px;

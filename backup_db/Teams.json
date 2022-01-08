@@ -8,7 +8,7 @@
   },
   "description": "Là đội bóng trực thuộc của Sở Văn hóa-Thể thao-Du lịch tỉnh từng thi đấu ở giải đấu cao nhất Việt Nam ở thập niên 80, 90. Sau 16 năm thi đấu ở Giải hạng Nhất (1997 – 2013), mùa giải năm 2013 đội bóng đá An Giang đã thi đấu thành công đạt thứ hạng ba, chính thức lên hạng thi đấu ở Giải bóng đá Vô địch quốc gia mùa bóng năm 2014. Tuy nhiên tại mùa giải 2014 đội đã xuống hạng. Sau 4 năm xuống chơi tại Giải Hạng Nhì, mùa giải 2018 An Giang đã giành suất thăng hạng tại Giải HNQG 2019.",
   "coach": "Nguyễn Hồ Nhật Tiến",
-  "logo_path": "/public\\uploads\\An-Giang-1.jpg",
+  "logo_path": "/public\\uploads\\An-Giang.jpg",
   "createAt": {
     "$date": "2021-12-19T17:58:32.510Z"
   },
@@ -17,7 +17,8 @@
   },
   "stadium": {
     "$oid": "61bf7364dbba7b151e247d79"
-  }
+  },
+  "titles": []
 },{
   "_id": {
     "$oid": "61bf7394dbba7b151e247daf"
@@ -37,7 +38,8 @@
   },
   "stadium": {
     "$oid": "61bf7394dbba7b151e247ded"
-  }
+  },
+  "titles": []
 },{
   "_id": {
     "$oid": "61bf73b8dbba7b151e247e0a"
@@ -48,7 +50,7 @@
   },
   "description": "CLB Becamex Bình Dương là một CLB bóng đá chuyên nghiệp tại Việt Nam, có trụ sở tại TP Thủ Dầu Một, Bình Dương, thuộc quyền sở hữu của Công ty Cổ phần CLB Bóng đá Becamex Bình Dương. CLB từng 4 lần giành chức vô địch quốc gia (2007, 2008, 2014, 2015). Tiền thân CLB bóng đá Becamex Bình Dương là CLB bóng đá cao su Bình Phước. Năm 1997, sau khi chia tách tỉnh đội bóng được chuyển về cho tỉnh Bình Dương, do Sở VHTT tỉnh Bình Dương quản lý. Năm 2002 là năm đánh dấu bước ngoặt khi tập đoàn Becamex phối hợp với Đài Truyền hình và Sở TDTT tỉnh tiếp quản, thành lập Công ty Cổ phần Bóng đá Bình Dương, đổi tên thành Câu lạc bộ Becamex Bình Dương cho đến nay.",
   "coach": "Nguyễn Thanh Sơn",
-  "logo_path": "/public\\uploads\\binh-duong-2021.png",
+  "logo_path": "/public\\uploads\\binh-duong.png",
   "createAt": {
     "$date": "2021-12-19T17:58:32.510Z"
   },
@@ -57,7 +59,8 @@
   },
   "stadium": {
     "$oid": "61bf73b8dbba7b151e247e46"
-  }
+  },
+  "titles": []
 },{
   "_id": {
     "$oid": "61bf73df0021d546bb02a1de"
@@ -68,7 +71,7 @@
   },
   "description": "",
   "coach": "Nguyễn Đức Thắng",
-  "logo_path": "/public\\uploads\\Binh-Dinh-300x300.png",
+  "logo_path": "/public\\uploads\\Binh-Dinh.png",
   "createAt": {
     "$date": "2021-12-19T18:03:07.675Z"
   },
@@ -77,7 +80,8 @@
   },
   "stadium": {
     "$oid": "61bf73df0021d546bb02a21a"
-  }
+  },
+  "titles": []
 },{
   "_id": {
     "$oid": "61bf73f84c9d88189483840f"
@@ -97,7 +101,8 @@
   },
   "stadium": {
     "$oid": "61bf73f94c9d881894838445"
-  }
+  },
+  "titles": []
 },{
   "_id": {
     "$oid": "61bf74824c9d8818948384cf"
@@ -108,7 +113,7 @@
   },
   "description": "CLB Bóng đá Cần Thơ được thành lập vào năm 2004 trực thuộc Sở Văn hóa, thể thao và Du lịch thành phố Cần Thơ. Đến năm 2010 chuyển giao chủ sở hữu sang Công ty TNHH Nhà nước một thành viên XSKT Cần Thơ quản lý. Mùa giải 2014, Đội bóng đá XSKT Cần Thơ thi đấu với đội An Giang trong trận Play off và giành quyền tham dự Giải VĐQG 2015.Mùa giải V.League 2015: xếp hạng 11/14. Mùa giải V.League 2016: xếp hạng 11/14. Mùa giải V.League 2017: xếp hạng 13/14. Mùa giải 2018: Xếp thứ 14, xuống hạng thi đấu Giải HNQG 2019. Mùa giải 2019: Xếp thứ 10 Giải HNQG 2019",
   "coach": "Nguyễn Hữu Đang",
-  "logo_path": "/public\\uploads\\1200px-Cantho_FC.svg-1-215x300.png",
+  "logo_path": "/public\\uploads\\Cantho_FC.png",
   "createAt": {
     "$date": "2021-12-19T18:03:30.746Z"
   },
@@ -117,7 +122,8 @@
   },
   "stadium": {
     "$oid": "61bf74824c9d881894838507"
-  }
+  },
+  "titles": []
 },{
   "_id": {
     "$oid": "61bf749b4c9d88189483852c"
@@ -128,7 +134,7 @@
   },
   "description": "CLB bóng đá Công An Nhân Dân chịu sự quản lý của Tổng cục Chính trị CAND - Bộ Công An. CLB Bóng đá Công An Nhân Dân được lãnh đạo Bộ Công An ký quyết định thành lập năm 2008, lấy các cầu thủ từng thi đấu của các đội CAHN, CA TP.HCM, CA Hải Phòng bắt đầu thi đấu từ hạng ba, hạng nhì, năm 2015 thi đấu tại giải hạng nhất. Mùa giải 2021, CLB CAND được phê duyệt tham dự Giải HNQG LS 2021 sau khi đội bóng Gia Định có đơn xin rút tham dự Giải.",
   "coach": "Vũ Quang Bảo",
-  "logo_path": "/public\\uploads\\logofull_Cong-An-Nhan-Dan.jpg",
+  "logo_path": "/public\\uploads\\Cong-An-Nhan-Dan.jpg",
   "createAt": {
     "$date": "2021-12-19T18:03:30.746Z"
   },
@@ -137,7 +143,8 @@
   },
   "stadium": {
     "$oid": "61bf749b4c9d881894838562"
-  }
+  },
+  "titles": []
 },{
   "_id": {
     "$oid": "61bf74af4c9d881894838570"
@@ -157,7 +164,8 @@
   },
   "stadium": {
     "$oid": "61bf74b04c9d8818948385ae"
-  }
+  },
+  "titles": []
 },{
   "_id": {
     "$oid": "61bf74c50910db56fffaabbc"
@@ -177,7 +185,8 @@
   },
   "stadium": {
     "$oid": "61bf74c50910db56fffaabf0"
-  }
+  },
+  "titles": []
 },{
   "_id": {
     "$oid": "61bf74d40910db56fffaabfe"
@@ -197,7 +206,8 @@
   },
   "stadium": {
     "$oid": "61bf74d50910db56fffaac34"
-  }
+  },
+  "titles": []
 },{
   "_id": {
     "$oid": "61bf74e90910db56fffaac42"
@@ -208,7 +218,7 @@
   },
   "description": "CLB bóng đá Đồng Tháp có trụ sở chính nằm ở thành phố Cao Lãnh, tỉnh Đồng Tháp. Là đội bóng có bề dày thành tích, Đồng Tháp từng 2 lần giành chức vô địch tại giải VĐQG. Những năm gần đây, đội bóng này liên tục lên hạng và xuống hạng giữa giải VĐQG và Hạng Nhất. Mùa giải 2014, thi đấu xuất sắc tại Giải HNQG, Đồng Tháp thăng hạng tham dự Giải VĐQG 2015, tuy nhiên đến 2016 đội đã bị xuống hạng và tiếp tục thi đấu tại hệ thống Giải HNQG cho đến nay. Giải HNQG 2018, mặc dù thể hiện quyết tâm trở lại Giải đấu cao nhất, tuy nhiên Đồng Tháp chỉ cán đích với vị trí thứ 3 trên BXH và tiếp tục thi đấu tại Giải HNQG 2019.",
   "coach": "Nguyễn Anh Tông",
-  "logo_path": "/public\\uploads\\images.png",
+  "logo_path": "/public\\uploads\\Dong-Thap.jpg",
   "createAt": {
     "$date": "2021-12-19T18:06:58.591Z"
   },
@@ -217,7 +227,8 @@
   },
   "stadium": {
     "$oid": "61bf74ea0910db56fffaac7c"
-  }
+  },
+  "titles": []
 },{
   "_id": {
     "$oid": "61bf751d5a533c1c17f09a5d"
@@ -228,7 +239,7 @@
   },
   "description": "Sau hơn 10 năm ra đời, định hình và phát triển, Hà Nội FC ( tiền thân là CLB BĐ Hà Nội T&T ) đã trở thành một trong những clb hàng đầu của bóng đá Việt Nam. Xuất phát bằng kỷ lục 3 năm thăng 3 hạng giúp Hà Nội FC nhanh chóng góp mặt tại V.League vào năm 2009, đến nay niềm tự hào bóng đá Thủ đô luôn có thành tích ổn định trong top đầu. Trải qua 8 mùa bóng liên tiếp, Hà Nội FC xuất hiện trong 2 vị trí cao nhất tại V.League, trong đó đại diện bóng đá Thủ đô đã lên ngôi vô địch 3 lần vào mùa bóng 2010, 2013 và 2016. Riêng tại V.League 2016, chức vô địch của Hà Nội được đánh giá là kỳ tích hiếm thấy trong lịch sử bóng đá Việt Nam. Thành công của Hà Nội FC trong những năm qua đã gây tiếng vang vượt ra khỏi bóng đá Việt Nam. Sau chức vô địch V.League 2016, Hà Nội FC đã vinh dự nhận được thư chúc mừng của Chủ tịch LĐBĐ thế giới (FIFA) Gianni Infantino. Đây là lần thứ 2, niềm tự hào bóng đá Thủ đô nhận được thư chúc mừng của người đứng đầu bóng đá thế giới. Ngoài thành công trên đấu trường V.League, Hà Nội FC cũng đang là lò đào tạo trẻ chất lượng bậc nhất của bóng đá Việt Nam. U21 Hà Nội FC đã 3 lần vô địch giải U21 báo Thanh Niên (2013, 2015 và 2016), U19 Hà Nội FC đoạt chức vô địch U19 quốc gia năm 2011, 2013, 2016 và 2017. Lứa U17 và U15 của Hà Nội FC đều đặn đứng trong top đầu tại các giải quốc gia dành cho các lứa tuổi. Những cầu thủ trẻ của lò đào tạo Hà Nội FC như Quang Hải, Đoàn Văn Hậu… đã góp công lớn trong kỳ tích đưa đội U19 Việt Nam lọt vào VCK World Cup U20 2017 và giành HCB tại VCK U23 Châu Á 2018.",
   "coach": "Park Choong Kyun",
-  "logo_path": "/public\\uploads\\Logo-CLB-Hanoi-5stars-300x300.png",
+  "logo_path": "/public\\uploads\\Logo-CLB-Hanoi.png",
   "createAt": {
     "$date": "2021-12-19T18:08:19.412Z"
   },
@@ -237,7 +248,8 @@
   },
   "stadium": {
     "$oid": "61bf751d5a533c1c17f09a9b"
-  }
+  },
+  "titles": []
 },{
   "_id": {
     "$oid": "61bf75306e481e4d596590e0"
@@ -259,7 +271,8 @@
   },
   "stadium": {
     "$oid": "61bf75306e481e4d59659114"
-  }
+  },
+  "titles": []
 },{
   "_id": {
     "$oid": "61bf75468ea2aed05d93e98a"
@@ -279,7 +292,8 @@
   },
   "stadium": {
     "$oid": "61bf75468ea2aed05d93e9c0"
-  }
+  },
+  "titles": []
 },{
   "_id": {
     "$oid": "61bf755858496962d824d250"
@@ -290,7 +304,7 @@
   },
   "description": "Sau mùa giải HNQG 2018 thi đấu khá thành công, xếp thứ 2 toàn giải. CLB Hà Nội B có cơ hội tranh suất thăng hạng V.League 2019 cùng với CLB Nam Định tại trận đấu play - off tuy nhiên không thành công. Tham dự Giải HNQG 2019, CLB Hà Nội B có tên gọi mới là CLB Hồng Lĩnh Hà Tĩnh. Hồng Lĩnh Hà Tĩnh đăng ký sân thi đấu chính thức là sân vận động Hà Tĩnh, tuy nhiên vì lý do sân vận động đang được nâng cấp sửa chữa, nên giai đoạn 1 của Giải HNQG 2019, Hồng Lĩnh Hà Tĩnh sẽ thi đấu trên sân vận động Vinh.",
   "coach": "Nguyễn Thành Công",
-  "logo_path": "/public\\uploads\\Logo-Ha-Tinh-update.png",
+  "logo_path": "/public\\uploads\\Ha-Tinh.png",
   "createAt": {
     "$date": "2021-12-19T18:09:14.375Z"
   },
@@ -299,7 +313,8 @@
   },
   "stadium": {
     "$oid": "61bf755858496962d824d286"
-  }
+  },
+  "titles": []
 },{
   "_id": {
     "$oid": "61bf756a58496962d824d29b"
@@ -319,7 +334,8 @@
   },
   "stadium": {
     "$oid": "61bf756b58496962d824d2d3"
-  }
+  },
+  "titles": []
 },{
   "_id": {
     "$oid": "61bf75b8a60e5304d40f815c"
@@ -339,7 +355,12 @@
   },
   "stadium": {
     "$oid": "61bf75b8a60e5304d40f8198"
-  }
+  },
+  "titles": [
+    {
+      "$oid": "61d93257681f31c6d110c5c2"
+    }
+  ]
 },{
   "_id": {
     "$oid": "61bf76f088a4a2f9f0789c94"
@@ -359,7 +380,8 @@
   },
   "stadium": {
     "$oid": "61bf76f088a4a2f9f0789cca"
-  }
+  },
+  "titles": []
 },{
   "_id": {
     "$oid": "61bf7734474cf868af1e0006"
@@ -379,7 +401,8 @@
   },
   "stadium": {
     "$oid": "61bf7734474cf868af1e003c"
-  }
+  },
+  "titles": []
 },{
   "_id": {
     "$oid": "61bf776b474cf868af1e005a"
@@ -390,7 +413,7 @@
   },
   "description": "CLB Bóng đá SHB Đà Nẵng tiền thân là CLB bóng đá Thành phố Đà Nẵng, được thành lập năm 1976 và là một trong các đội bóng mạnh của Việt Nam. Từ năm thành lập cho đến nay, CLB Bóng đá SHB Đà Nẵng đã đạt được nhiều thành tích cao tại nhiều giải đấu và là một trong các CLB có nền tảng vững mạnh trong nhiều năm qua với hệ thống đào tạo trẻ đứng hàng đầu quốc gia. Hàng năm các cầu thủ của CLB được gọi tập trung đội tuyển từ U16 đến U19, U22, U23 Quốc gia, đội tuyển nam quốc gia, mỗi tuyến từ 2 đến 4 cầu thủ, đây cũng là niềm tự hào của CLB.",
   "coach": "Phan Thanh Hùng",
-  "logo_path": "/public\\uploads\\shb-da-nang-2021.png",
+  "logo_path": "/public\\uploads\\da-nang.png",
   "createAt": {
     "$date": "2021-12-19T18:16:45.532Z"
   },
@@ -399,7 +422,8 @@
   },
   "stadium": {
     "$oid": "61bf776c474cf868af1e0096"
-  }
+  },
+  "titles": []
 },{
   "_id": {
     "$oid": "61bf782a31094d01f81c6c3e"
@@ -419,5 +443,6 @@
   },
   "stadium": {
     "$oid": "61bf782a31094d01f81c6c7a"
-  }
+  },
+  "titles": []
 }]
